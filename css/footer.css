@@ -1,0 +1,31 @@
+/*------------------footer css--------------*/
+footer {
+  background-color: #121412;
+  margin-top:2%;
+}
+
+.footer-layout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  color: #32CD32;
+}
+
+#footer-msg {
+  text-align: center;
+  padding: 10%;
+  font-size: 20px;
+}
+
+#footer-copyright {
+  padding-top: 80%;
+  font-size: 20px;
+}
+
+#footer-contact-details {
+  padding-top: 2%;
+  padding-right: 9%;
+}
+
+/*------------------------------------------*/
