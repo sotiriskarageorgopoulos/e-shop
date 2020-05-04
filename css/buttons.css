@@ -1,0 +1,242 @@
+.register-button {
+    margin: 7% 0% 7% 40%;
+    padding: 5%;
+    padding-top: 1.5%;
+    width: 26%;
+    height: 5vh;
+}
+
+.order-button {
+    margin: 7% 0% 7% 37%;
+    padding: 4%;
+    padding-top: 1.5%;
+    width: 29%;
+    height: 5vh;
+}
+
+.login-button {
+    margin: 7% 0% 7% 40%;
+    padding: 5%;
+    padding-top: 2%;
+    width: 25%;
+    height: 5vh;
+}
+
+.amd-pc-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding: 5%;
+    padding-top: 1.5%;
+    width: 29%;
+    height: 4vh;
+}
+
+.msystems-vibox-pc-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 20%;
+    height: 4vh;
+}
+
+.fifa-button,
+.ps4-pro,
+.psvita  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 27%;
+    height: 4vh;
+}
+
+.nba2k-button,
+.spidey-button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 3.5%;
+    width: 20%;
+    height: 4vh;
+}
+
+.genius-controller-button,
+.fantastic-four,
+.frontlines,
+.watchmen,
+.pes-2020 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 3.5%;
+    width: 19%;
+    height: 4vh;
+}
+
+.genius-wheel-button,
+.logitect-driver-shift,
+.call-of-duty,
+.sony-wheel {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 3.5%;
+    width: 20%;
+    height: 4vh;
+}
+
+.xbox-oneS,
+.god-of-war,
+.ruse {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 21%;
+    height: 4vh;
+}
+
+.xbox-one {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 22%;
+    height: 4vh;
+}
+
+.steering-wheel,
+.eaxus {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 3.5%;
+    width: 18%;
+    height: 4vh;
+}
+
+.ps4-slim,
+.ps3-slim,
+.lego-marvel-heroes,
+.psvita-3G,
+.assasins {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 24%;
+    height: 4vh;
+}
+
+.spidey-ps4 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 23%;
+    height: 4vh;
+}
+
+.hyperx,
+.call-of-duty-declassified {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1.5%;
+    padding-left: 3.5%;
+    width: 22%;
+    height: 4vh;
+}
+
+.ps3,
+.nintendo-wii-mini,
+.new-super-mario-bros,
+.pokemon-ultra-sun  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-left: 3.5%;
+    width: 30%;
+    height: 4vh;
+}
+
+.spartan-controller {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-left: 3.5%;
+    width: 15%;
+    height: 4vh;
+}
+
+.need-for-speed,
+.nintendo-wii{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-left: 3.5%;
+    width: 25%;
+    height: 4vh;
+}
+
+.lego-marvel-avengers,
+.super-smash-bros {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-left: 3.5%;
+    width: 28%;
+    height: 4vh;
+}
+
+.wii-sports,
+.just-dance,
+.super-mario-galaxy,
+.nintendo-2DS-XL,
+.nintendo-switch,
+.nintendo-3DS-XL,
+.mario-kart {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-left: 3.5%;
+    width: 31%;
+    height: 4vh; 
+}
+
+
+
+button {
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 25px;
+    border: solid 2px #32CD32;
+    background-color: #32CD32;
+    color: #e8ede6;
+    font-size: 17px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
