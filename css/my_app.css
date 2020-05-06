@@ -3,6 +3,7 @@
 @import url("./boxes.css");
 @import url("./footer.css");
 @import url("./buttons.css");
+@import url("./pacman_animation.css");
 
 * {
   box-sizing: border-box;
