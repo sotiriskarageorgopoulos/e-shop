@@ -35,6 +35,35 @@ a:hover {
 @media only screen and (max-width:414px) and (max-height:736px) {
   nav {
     height: 45vh;
+    width: 110%;
+    margin-left: -5%;
+    margin-top: -4%;
+  }
+
+  .list-heading {
+    margin-top: 0%;
+  }
+
+  #sitename {
+    margin-left: 30%;
+  }
+
+  #register-layout {
+    width: 24vw;
+    padding-left: 15%;
+    margin-left: 15%;
+    font-size: 12px;
+  }
+
+  .login-button {
+    width: 25vw;
+    margin-left: 32%;
+  }
+  #logout-layout {
+    width: 28vw;
+    padding-top:4%;
+    padding-left: 10%;
+    margin-top: -10%;
   }
 
   form {
@@ -58,28 +87,63 @@ a:hover {
 
   footer {
     margin-top: 5%;
-  }
-
-  #footer-copyright {
-    font-size: 15px;
-    padding-left: 10px;
+    margin-left: -3%;
+    margin-bottom: -20px;
+    width: 110%;
   }
 
   #footer-contact-details {
-    padding-right: 3%;
+    padding:0px 0px 0px 10px;
   }
 
   #slogan-layout {
     margin-bottom: 5%;
   }
 
- 
+  #footer-copyright {
+    width: 300px;
+    margin: 0px;
+    padding:0px 0px 0px 10px;
+  }
+
 }
 
 /*---------------------------------------------------------*/
 
 /*---------------------Iphone 6/7/8-----------------------------*/
 @media only screen and (max-width:375px) and (max-height:667px) {
+   nav {
+    height: 45vh;
+    width: 110%;
+    margin-left: -5%;
+    margin-top: -4%;
+  }
+
+  .list-heading {
+    margin-top: 0%;
+  }
+
+  #sitename {
+    margin-left: 30%;
+  }
+
+  #register-layout {
+    width: 24vw;
+    padding-left: 15%;
+    margin-left: 15%;
+    font-size: 12px;
+  }
+
+  .login-button {
+    width: 25vw;
+    margin-left: 32%;
+  }
+  #logout-layout {
+    width: 28vw;
+    padding-top:4%;
+    padding-left: 10%;
+    margin-top: -10%;
+  }
   nav {
     height: 70vh;
   }
@@ -157,11 +221,38 @@ a:hover {
 /*------------------Iphone 5---------------------*/
 @media only screen and (max-width:320px) and (min-height:568px) {
   nav {
-    height: 52vh;
+    height: 45vh;
+    width: 112%;
+    margin-left: -5%;
+    margin-top: -4%;
   }
 
-  #slogan-layout {
-    margin-bottom: 5%;
+  .list-heading {
+    margin-top: 0%;
+  }
+
+  #sitename {
+    margin-left: 30%;
+  }
+
+  #register-layout {
+    width: 24vw;
+    padding-left: 13%;
+    margin-left: 15%;
+    font-size: 12px;
+  }
+
+  .login-button {
+    width: 26vw;
+    margin-left: 32%;
+    padding-left: 4%;
+  }
+  #logout-layout {
+    width: 26vw;
+    padding-top:4%;
+    padding-left: 10%;
+    margin-top: -10%;
+    font-size: 12px;
   }
 
   footer {
