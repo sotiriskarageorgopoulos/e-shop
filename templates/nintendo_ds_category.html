@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta charset="ISO-8859-7">
@@ -11,41 +12,61 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
         <li><a href="./index.html" id="logout-layout">Αποσύνδεση</a></li>
     </ul>
 </nav>
+
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία Nintendo DS</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Nintendo 2DS XL</h1>
-                <img src="../icons/nintendo_2dsxl.jpeg" width="200" height="200" alt="Nintendo 2DS XL">
+                <img src="../icons/nintendo_2dsxl.jpeg" alt="Nintendo 2DS XL">
                 <figcaption>
-                    <span>Τιμή: 100&euro;</span>
-                    <br><button class="nintendo-2DS-XL"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">100</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_2DS_XL" name="Nintendo_2DS_XL"
+                        value="Nintendo_2DS_XL">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Nintendo Switch 32GB</h1>
-                <img src="../icons/nintendo_switch.jpeg" width="200" height="100" alt="Nintendo Switch 32GB">
+                <img src="../icons/nintendo_switch.jpeg" alt="Nintendo Switch 32GB" class="nintendo-switch-img">
                 <figcaption>
-                    <span>Τιμή: 300&euro;</span>
-                    <br><button class="nintendo-switch"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_Switch_32GB" name="Nintendo_Switch_32GB"
+                        value="Nintendo_Switch_32GB">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Nintendo 3DS XL</h1>
-                <img src="../icons/nintendo-3ds-xl.webp" width="200" height="200" alt="Nintendo Switch 32GB">
+                <img src="../icons/nintendo-3ds-xl.webp" alt="Nintendo Switch 32GB">
                 <figcaption>
-                    <span>Τιμή: 190&euro;</span>
-                    <br><button class="nintendo-3DS-XL"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">190</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_3DS_XL" name="Nintendo_3DS_XL"
+                        value="Nintendo_3DS_XL">
                 </figcaption>
             </figure>
         </section>
@@ -55,27 +76,38 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading"> Mario Kart 7</h1>
-                <img src="../icons/mario_kart_7_3ds.jpeg" width="200" height="200" alt="Mario Kart 7">
+                <img src="../icons/mario_kart_7_3ds.jpeg" alt="Mario Kart 7">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="mario-kart"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Mario_Kart_7" name="Mario_Kart_7"
+                        value="Mario_Kart_7">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading"> New Super Mario Bros 2</h1>
-                <img src="../icons/new_super_mario_bros_2_3ds.jpeg" width="200" height="200"
-                    alt="New Super Mario Bros 2">
+                <img src="../icons/new_super_mario_bros_2_3ds.jpeg" alt="New Super Mario Bros 2">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="new-super-mario-bros"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="New_Super_Mario_Bros_2" name="New_Super_Mario_Bros_2"
+                        value="New_Super_Mario_Bros_2">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Pokemon Ultra Sun</h1>
-                <img src="../icons/pokemon_ultra_sun_3ds.jpeg" width="200" height="200" alt="Pokemon Ultra Sun">
+                <img src="../icons/pokemon_ultra_sun_3ds.jpeg" alt="Pokemon Ultra Sun">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="pokemon-ultra-sun"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Pokemon_Ultra_Sun" name="Pokemon_Ultra_Sun"
+                        value="Pokemon_Ultra_Sun">
                 </figcaption>
             </figure>
         </section>
@@ -90,10 +122,15 @@
             <p id="footer-copyright">&copy; Copyright 2020</p>
         </section>
         <section id="footer-contact-details">
-            <a href="tel:+302100000000000"><p class="phone-icon icon"> +302100000000000</p></a>
-            <a href="mailto:gaming@eshop.com"><p class="envelope-icon icon"> gaming@eshop.com</p></a>
+            <a href="tel:+302100000000000">
+                <p class="phone-icon icon"> +302100000000000</p>
+            </a>
+            <a href="mailto:gaming@eshop.com">
+                <p class="envelope-icon icon"> gaming@eshop.com</p>
+            </a>
         </section>
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

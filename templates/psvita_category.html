@@ -11,7 +11,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -20,24 +20,37 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία PS VITA</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Sony PlayStation Vita Wi-Fi</h1>
-                <img src="../icons/sony-ps-vita-wifi.jpg" width="200" height="200" alt="Sony PlayStation Vita Wi-Fi">
+                <img src="../icons/sony-ps-vita-wifi.jpg" alt="Sony PlayStation Vita Wi-Fi">
                 <figcaption>
-                    <span>Τιμή: 220&euro;</span>
-                    <br><button class="psvita"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">220</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox"  class="checkboxes" id="PSVita_Wi-Fi" name="PSVita_Wi-Fi" value="PSVita_Wi-Fi">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Sony Playstation Vita 3G/Wi-Fi</h1>
-                <img src="../icons/psvita_3G_wifi.png" width="200" height="200" alt="Sony PlayStation Vita Wi-Fi">
+                <img src="../icons/psvita_3G_wifi.png" alt="Sony PlayStation Vita Wi-Fi">
                 <figcaption>
-                    <span>Τιμή: 250&euro;</span>
-                    <br><button class="psvita-3G"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">250</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br> <input type="checkbox" class="checkboxes" id="PSVita_Wi-Fi&3G" name="PSVita_Wi-Fi&3G" value="PSVita_Wi-Fi&3G">
                 </figcaption>
             </figure>
         </section>
@@ -47,40 +60,51 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Assassin's Creed III Liberation</h1>
-                <img src="../icons/assasin_creed_psvita.jpg" width="200" height="200"
+                <img src="../icons/assasin_creed_psvita.jpg"
                     alt="Assassin's Creed III Liberation">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="assasins"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="Assassin's_Creed_III_Lib" name="Assassin's_Creed_III_Lib" value="Assassin's_Creed_III_Lib">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Need for Speed Most Wanted</h1>
-                <img src="../icons/nfs_psvita.jpeg" width="200" height="200" alt="Need for Speed Most Wanted">
+                <img src="../icons/nfs_psvita.jpeg" alt="Need for Speed Most Wanted">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="need-for-speed"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="Need_for_Speed_Most_Wanted" name="Need_for_Speed_Most_Wanted" value="Need_for_Speed_Most_Wanted">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">LEGO Marvel's Avengers</h1>
-                <img src="../icons/lego_avengers_psvita.jpeg" width="200" height="200" alt="LEGO Marvel's Avengers">
+                <img src="../icons/lego_avengers_psvita.jpeg" alt="LEGO Marvel's Avengers">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="lego-marvel-avengers"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="LEGO_Marvel's_Avengers" name="LEGO_Marvel's_Avengers" value="LEGO_Marvel's_Avengers">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Call of Duty: Black Ops Declassified</h1>
-                <img src="../icons/call_of_duty_psvita.jpg" width="200" height="200"
+                <img src="../icons/call_of_duty_psvita.jpg"
                     alt="Call of Duty: Black Ops Declassified">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="call-of-duty-declassified"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="Black_Ops_Declassified" name="Black_Ops_Declassified" value="Black_Ops_Declassified">
                 </figcaption>
             </figure>
         </section>
-
     </article>
 </body>
 <footer>
@@ -98,4 +122,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

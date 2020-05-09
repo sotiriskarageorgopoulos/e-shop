@@ -11,7 +11,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -20,26 +20,37 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία PS3</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">SONY PS3 SLIM 120 GB BLACK</h1>
-                <img src="../icons/ps3_slim.jpg" width="200" height="200" alt="SONY PS3 SLIM 120 GB BLACK">
+                <img src="../icons/ps3_slim.jpg" alt="SONY PS3 SLIM 120 GB BLACK">
                 <figcaption>
-                    <span>Τιμή: 220&euro;</span>
-                    <br><button class="ps3-slim"><a href="./purchase_details.html"
-                            id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">220</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="SONY_PS3_SLIM_120_GB_BLACK" name="SONY_PS3_SLIM_120_GB_BLACK" value="SONY_PS3_SLIM_120_GB_BLACK">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">PLAYSTATION 3 40GB</h1>
-                <img src="../icons/ps3_40gb.jpg" width="200" height="200" alt="PLAYSTATION 3 40GB">
+                <img src="../icons/ps3_40gb.jpg" alt="PLAYSTATION 3 40GB">
                 <figcaption>
-                    <span>Τιμή: 180&euro;</span>
-                    <br><button class="ps3" id="ps3-40GB-button">
-                        <a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">180</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="PLAYSTATION_3_40GB" name="PLAYSTATION_3_40GB" value="PLAYSTATION_3_40GB">
                 </figcaption>
             </figure>
         </section>
@@ -49,41 +60,47 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">CALL OF DUTY GHOSTS</h1>
-                <img src="../icons/call_of_duty_ps3.jpg" width="200" height="200" alt="CALL OF DUTY GHOSTS">
+                <img src="../icons/call_of_duty_ps3.jpg" alt="CALL OF DUTY GHOSTS">
                 <figcaption>
                     παρέχει μια καθηλωτική νέα εμπειρία gameplay<br>
                     η οποία βασίζεται σε μια εντελώς νέα ιστορία με νέα γραφικά<br>
                     και ήχο τα οποία παρέχονται χάρη στην <br> επόμενης γενιάς Call of Duty μηχανής.<br>
-                    <span>Τιμή: 25&euro;</span>
-                    <br><button class="call-of-duty"><a href="./purchase_details.html"
-                            id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="CALL_OF_DUTY_GHOSTSB" name="CALL_OF_DUTY_GHOSTS" value="CALL_OF_DUTY_GHOSTS">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">LEGO MARVEL SUPERHEROES</h1>
-                <img src="../icons/lego_marvel_heroes_ps3.jpg" width="200" height="200" alt="LEGO MARVEL SUPERHEROES">
+                <img src="../icons/lego_marvel_heroes_ps3.jpg" alt="LEGO MARVEL SUPERHEROES">
                 <figcaption>
                     Πάρτε υπό τον έλεγχό σας περισσότερους <br> από 100 αγαπημένους χαρακτήρες <br>
                     καθώς οι Iron Man, Spider-Man,<br> Hulk, Captain America, Wolverine και πολλοί<br>
                     ακόμη ενώνουν τις δυνάμεις τους<br> για να σταματήσουν τον Loki <br>
                     και πλήθος άλλων κακών της Marvel<br> από το να συναρμολογήσουν ένα<br>υπερόπλο ικανό να καταστρέψει
                     τον κόσμο.
-                    <br><span>Τιμή: 20&euro;</span>
-                    <br><button class="lego-marvel-heroes"><a href="./purchase_details.html"
-                            id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="LEGO_MARVEL_SUPERHEROES" name="LEGO_MARVEL_SUPERHEROES" value="LEGO_MARVEL_SUPERHEROES">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">R.U.S.E.</h1>
-                <img src="../icons/ruse_ps3.jpg" width="200" height="200" alt="LEGO MARVEL SUPERHEROES">
+                <img src="../icons/ruse_ps3.jpg" alt="R.U.S.E.">
                 <figcaption>
                     Το R.U.S.E, είναι ένα μοναδικό και <br>
                     ριζοσπαστικό παιχνίδι στρατηγικής <br>σε πραγματικό χρόνο (Real-Time Strategy)<br>
                     το οποίο επιτρέπει στους παίκτες να παραπλανήσουν <br>
                     τους αντιπάλους τους για να οδηγήσουν<br> το έθνος τους στη νίκη.
-                    <br><span>Τιμή: 20&euro;</span>
-                    <br><button class="ruse"><a href="./purchase_details.html"
-                            id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="R.U.S.E." name="R.U.S.E." value="R.U.S.E.">
                 </figcaption>
             </figure>
         </section>
@@ -93,23 +110,26 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">STEERING WHEEL CONTROLLER HOLDER</h1>
-                <img src="../icons/steering_wheel_ps3.jpg" width="200" height="200"
+                <img src="../icons/steering_wheel_ps3.jpg" 
                     alt="STEERING WHEEL CONTROLLER HOLDER">
                 <figcaption>
-                    <span>Τιμή: 5&euro;</span>
-                    <br><button class="sony-wheel"><a href="./purchase_details.html"
-                            id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">5</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="STEERING_WHEEL_CONTROLLER_HOLDER" name="STEERING_WHEEL_CONTROLLER_HOLDER" value="STEERING_WHEEL_CONTROLLER_HOLDER">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">SPARTAN GEAR WIRELESS BLUETOOTH SIXAXIS CONTROLLER</h1>
-                <img src="../icons/spartan_gear_ps3.jpg" width="250" height="200"
+                <img src="../icons/spartan_gear_ps3.jpg" 
                     alt="SPARTAN GEAR WIRELESS BLUETOOTH SIXAXIS CONTROLLER">
                 <figcaption>
-                    <span>Τιμή: 15&euro;</span>
-                    <br><button class="spartan-controller">
-                        <a href="./purchase_details.html" id="helping-link">Αγορά</a>
-                    </button>
+                    <p>Τιμή: <span class="price">15</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="SPARTAN_GEAR_WIRELESS" name="SPARTAN_GEAR_WIRELESS" value="SPARTAN_GEAR_WIRELESS">
                 </figcaption>
             </figure>
     </article>
@@ -129,4 +149,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

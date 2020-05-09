@@ -4,6 +4,14 @@
 @import url("./footer.css");
 @import url("./buttons.css");
 @import url("./pacman_animation.css");
+@import url("./responsive/iphone6-7-8.css");
+@import url("./responsive/gs5.css");
+@import url("./responsive/ipad.css");
+@import url("./responsive/ipad-pro.css");
+@import url("./responsive/pixel2.css");
+@import url("./responsive/iphone5.css");
+@import url("./responsive/iphone6-7-8plus.css");
+@import url("./img-hover-overlay.css");
 
 * {
   box-sizing: border-box;
@@ -30,359 +38,33 @@ a:hover {
   cursor: pointer;
 }
 
-
-/*----Galaxy S5 & Pixel2 style & Iphone 6/7/8 Plus style-----*/
-@media only screen and (max-width:414px) and (max-height:736px) {
-  nav {
-    height: 45vh;
-    width: 110%;
-    margin-left: -5%;
-    margin-top: -4%;
-  }
-
-  .list-heading {
-    margin-top: 0%;
-  }
-
-  #sitename {
-    margin-left: 30%;
-  }
-
-  #register-layout {
-    width: 24vw;
-    padding-left: 15%;
-    margin-left: 15%;
-    font-size: 12px;
-  }
-
-  .login-button {
-    width: 25vw;
-    margin-left: 32%;
-  }
-  #logout-layout {
-    width: 28vw;
-    padding-top:4%;
-    padding-left: 10%;
-    margin-top: -10%;
-  }
-
-  form {
-    width: 75%;
-  }
-
-  .initial-heading {
-    width: 70%
-  }
-
-  input {
-    height: 4vh;
-    width: 70%;
-  }
-
-  label {
-    width: 100%;
-    margin-left: -5%;
-    font-size: 15px;
-  }
-
-  footer {
-    margin-top: 5%;
-    margin-left: -3%;
-    margin-bottom: -20px;
-    width: 110%;
-  }
-
-  #footer-contact-details {
-    padding:0px 0px 0px 10px;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
-
-  #footer-copyright {
-    width: 300px;
-    margin: 0px;
-    padding:0px 0px 0px 10px;
-  }
-
+img {
+  display: block;
+  width: 150px;
+  height: 200px;
 }
 
-/*---------------------------------------------------------*/
-
-/*---------------------Iphone 6/7/8-----------------------------*/
-@media only screen and (max-width:375px) and (max-height:667px) {
-   nav {
-    height: 45vh;
-    width: 110%;
-    margin-left: -5%;
-    margin-top: -4%;
-  }
-
-  .list-heading {
-    margin-top: 0%;
-  }
-
-  #sitename {
-    margin-left: 30%;
-  }
-
-  #register-layout {
-    width: 24vw;
-    padding-left: 15%;
-    margin-left: 15%;
-    font-size: 12px;
-  }
-
-  .login-button {
-    width: 25vw;
-    margin-left: 32%;
-  }
-  #logout-layout {
-    width: 28vw;
-    padding-top:4%;
-    padding-left: 10%;
-    margin-top: -10%;
-  }
-  nav {
-    height: 70vh;
-  }
-
-  footer {
-    margin-top: 5%;
-  }
-
-  #footer-copyright {
-    font-size: 15px;
-    padding-left: 10px;
-  }
-
-  #footer-contact-details {
-    padding-right: 3%;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
+.psvita-img {
+  width: 200px;
+  height: 150px;
 }
 
-/*---------------------------------------------------------*/
-
-
-/*--------- Pixel2XL & Iphone X style--------------*/
-@media only screen and (max-width:411px) and (max-height:823px) {
-  nav {
-    height: 40vh;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
-
-  .initial-heading {
-    width: 70%
-  }
-
-  form {
-    width: 75%;
-  }
-
-  input {
-    height: 4vh;
-    width: 70%;
-  }
-
-  label {
-    width: 100%;
-    margin-left: -5%;
-    font-size: 15px;
-  }
-
-  footer {
-    margin-top: 5%;
-  }
-
-  #footer-copyright {
-    font-size: 15px;
-    padding-left: 10px;
-  }
-
-  #footer-contact-details {
-    padding-right: 3%;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
+.nintendo-ds-category-img {
+  width: 200px;
+  height: 200px;
 }
 
-/*-----------------------------------------------*/
-
-/*------------------Iphone 5---------------------*/
-@media only screen and (max-width:320px) and (min-height:568px) {
-  nav {
-    height: 45vh;
-    width: 112%;
-    margin-left: -5%;
-    margin-top: -4%;
-  }
-
-  .list-heading {
-    margin-top: 0%;
-  }
-
-  #sitename {
-    margin-left: 30%;
-  }
-
-  #register-layout {
-    width: 24vw;
-    padding-left: 13%;
-    margin-left: 15%;
-    font-size: 12px;
-  }
-
-  .login-button {
-    width: 26vw;
-    margin-left: 32%;
-    padding-left: 4%;
-  }
-  #logout-layout {
-    width: 26vw;
-    padding-top:4%;
-    padding-left: 10%;
-    margin-top: -10%;
-    font-size: 12px;
-  }
-
-  footer {
-    margin-top: 5%;
-  }
-
-  #footer-copyright {
-    font-size: 15px;
-    padding-left: 10px;
-  }
-
-  #footer-contact-details {
-    padding-right: 3%;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
+.nintendo-switch-img {
+  width: 250px;
+  height: 150px;
 }
 
-/*-----------------------------------------------*/
-
-/*-----------------iPad style--------------------*/
-@media only screen and (max-width:768px) and (min-height:1024px) {
-  nav {
-    height: 25vh;
-  }
-
-  nav h1 {
-    margin-top: auto;
-    margin-right: auto;
-    margin-left: 40%;
-    margin-bottom: auto;
-  }
-
-  #sitename {
-    margin-left: 40%;
-  }
-
-  .list-heading {
-    margin-top: 7%;
-    margin-left: 2%;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
-
-  form {
-    width: 60%;
-  }
-
-  input {
-    height: 4vh;
-    width: 70%;
-  }
-
-  label {
-    width: 100%;
-    margin-left: -5%;
-    font-size: 15px;
-  }
-
-  footer {
-    margin-top: 19%;
-  }
-
-  #footer-copyright {
-    font-size: 15px;
-    margin-right: 10%;
-    text-align: center;
-  }
-
-  #footer-contact-details {
-    padding-right: 3%;
-  }
-
-  #slogan-layout {
-    margin-bottom: 5%;
-  }
-
+figure:hover .overlay-nintendo-ds,
+figure:hover .overlay-nintendo-wii,
+figure:hover .overlay-psvita,
+figure:hover .overlay-ps3,
+figure:hover .overlay-ps4 ,
+figure:hover .overlay-xbox ,
+figure:hover .overlay-pc {
+  opacity: 1;
 }
-
-/*-----------------------------------------------*/
-
-/*-------------------iPad Pro--------------------*/
-@media only screen and (max-width:1024px) and (min-height:1366px) {
-  nav {
-    height: 15vh;
-  }
-
-  nav h1 {
-    margin-top: auto;
-    margin-right: auto;
-    margin-left: 40%;
-    margin-bottom: auto;
-  }
-
-  #sitename {
-    margin-left: 40%;
-  }
-
-  #slogan-layout {
-    margin-top: 10%;
-    margin-bottom: 15%;
-  }
-
-  form {
-    width: 50%;
-  }
-
-  input {
-    height: 3vh;
-    width: 70%;
-  }
-
-  label {
-    width: 100%;
-    margin-left: -5%;
-    font-size: 15px;
-  }
-
-  .list-heading {
-    margin-left: 10%;
-    margin-top: 5%;
-  }
-
-  footer {
-    margin-top: 30%;
-  }
-}
-
-/*-----------------------------------------------*/

@@ -1,6 +1,48 @@
-/*----------The style of boxes-------------*/
 figcaption {
+    display: flex;
+    flex-flow: column nowrap;
     text-align: center;
+}
+
+.sc-icon::before {
+    content: '\f07a';
+    font-family: 'FontAwesome';
+    color: aliceblue;
+    padding-right: 20px;
+    font-size: 30px;
+}
+
+.sc-icon {
+    font-size: 16px;
+}
+
+.shopping-cart {
+    display: flex;
+    margin-left: 80%;
+    background-color: #32CD32;
+    color: aliceblue;
+    width: 14%;
+    padding-left: 1%;
+    border: 2px outset #121412;
+    border-radius: 25px;
+}
+
+.buttons-box {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.checkboxes {
+    width: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quantity-boxes {
+    width: 80px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #slogan-layout {
@@ -64,6 +106,7 @@ img {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    position: relative;
     margin-top: 2%;
     margin-right: -3%;
     width: 100%;

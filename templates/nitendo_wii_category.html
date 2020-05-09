@@ -20,24 +20,37 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία Nintendo Wii</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Nintendo Wii White Console</h1>
-                <img src="../icons/nintendo_wii_white.png" width="200" height="200" alt="Nintendo Wii White Console">
+                <img src="../icons/nintendo_wii_white.png" alt="Nintendo Wii White Console">
                 <figcaption>
-                    <span>Τιμή: 220&euro;</span>
-                    <br><button class="nintendo-wii"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">220</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_Wii_White_Console" name="Nintendo_Wii_White_Console" value="Nintendo_Wii_White_Console">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Nintendo Wii Mini</h1>
-                <img src="../icons/nintendo_wii_mini.jpg" width="200" height="200" alt="Nintendo Wii Mini">
+                <img src="../icons/nintendo_wii_mini.jpg" alt="Nintendo Wii Mini">
                 <figcaption>
-                    <span>Τιμή: 200&euro;</span>
-                    <br><button class="nintendo-wii-mini"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">200</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_Wii_Mini" name="Nintendo_Wii_Mini" value="Nintendo_Wii_Mini">
                 </figcaption>
             </figure>
         </section>
@@ -47,34 +60,46 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Wii Sports</h1>
-                <img src="../icons/wii_sports.jpeg" width="200" height="200" alt="Wii Sports">
+                <img src="../icons/wii_sports.jpeg" alt="Wii Sports">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="wii-sports"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Wii_Sports" name="Wii_Sports" value="Wii_Sports">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Just Dance 2020</h1>
-                <img src="../icons/dance_2020-wii.jpeg" width="200" height="200" alt="Just Dance 2020">
+                <img src="../icons/dance_2020-wii.jpeg" alt="Just Dance 2020">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="just-dance"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Just_Dance_2020" name="Just_Dance_2020" value="Just_Dance_2020">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Super Mario Galaxy</h1>
-                <img src="../icons/super_mario_galaxy.jpeg" width="200" height="200" alt="Super Mario Galaxy">
+                <img src="../icons/super_mario_galaxy.jpeg" alt="Super Mario Galaxy">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="super-mario-galaxy"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Super_Mario_Galaxy" name="Super_Mario_Galaxy" value="Super_Mario_Galaxy">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Super Smash Bros Brawl</h1>
-                <img src="../icons/super_smash_bros_brawl_wii.jpeg" width="200" height="200" alt="Super Smash Bros Brawl ">
+                <img src="../icons/super_smash_bros_brawl_wii.jpeg" alt="Super Smash Bros Brawl ">
                 <figcaption>
-                    <span>Τιμή: 20&euro;</span>
-                    <br><button class="super-smash-bros"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Super_Smash_Bros_Brawl" name="Super_Smash_Bros_Brawl" value="Super_Smash_Bros_Brawl">
                 </figcaption>
             </figure>
         </section>
@@ -95,4 +120,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

@@ -11,7 +11,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -20,38 +20,54 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία PC</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">AMD RYZEN 3</h1>
-                <img src="../icons/RYZEN_3.jpeg" width="150px" height="200px"
+                <img src="../icons/RYZEN_3.jpeg"
                     alt="Υπολογιστής INFO PC ENTRY GAMING AMD RYZEN 3">
                 <figcaption>CPU: AMD Ryzen 3 2200G 3.5GHz <br>RAM: 8GB <br> SSD: 240GB
                     <br> Κάρτα γραφικών: AMD Radeon RX 550 2GB <br> Κατασκευαστής: AMD <br>
-                    <span>Τιμή: 300&euro;</span>
-                    <br><button class="amd-pc-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="AMD_RYZEN_3" name="AMD_RYZEN_3" value="AMD_RYZEN_3">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Msystems PC Gaming</h1>
-                <img src="../icons/Msystems_PC.jpeg" width="150px" height="200px" alt="Υπολογιστής Msystems PC Gaming">
+                <img src="../icons/Msystems_PC.jpeg" alt="Υπολογιστής Msystems PC Gaming">
                 <figcaption>CPU: Intel Core i5 9400F 2.9GHz <br> RAM: 16GB<br> SSD: 240GB
                     <br> Κάρτα γραφικών: nVidia GeForce GTX 1660 Ti 6GB<br> Κατασκευαστής: OEM (Υπολογιστές Desktop &
                     All-in-One (OEM))
-                    <br><span>Τιμή: 600&euro;</span>
-                    <br><button class="msystems-vibox-pc-buttons"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">600</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Msystems_PC_Gaming" name="Msystems_PC_Gaming" value="Msystems_PC_Gaming">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Vibox Vision 2 Gaming PC</h1>
-                <img src="../icons/Vibox.jpeg" width="150px" height="200px" alt="Υπολογιστής Vibox Vision 2 Gaming PC">
+                <img src="../icons/Vibox.jpeg"  alt="Υπολογιστής Vibox Vision 2 Gaming PC">
                 <figcaption>CPU: AMD A-Series A4-6300 3.7GHz<br> RAM: 8GB<br> HDD: 1TB
                     <br> Κάρτα γραφικών: AMD Radeon HD 8370D<br> Κατασκευαστής: OEM (Υπολογιστές Desktop & All-in-One
                     (OEM))
-                    <br><span>Τιμή: 1200&euro;</span>
-                    <br><button class="msystems-vibox-pc-buttons"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">1200</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Vibox_Vision_2_Gaming_PC" name="Vibox_Vision_2_Gaming_PC" value="Vibox_Vision_2_Gaming_PC">   
                 </figcaption>
             </figure>
         </section>
@@ -61,32 +77,41 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">NBA 2K19</h1>
-                <img src="../icons/nba_2k_2019.jpeg" width="150px" height="200px" alt="NBA 2K19 PC">
+                <img src="../icons/nba_2k_2019.jpeg" alt="NBA 2K19 PC">
                 <figcaption>
                     To NBA 2K19 γιορτάζει τα 20 χρόνια παρουσίας του<br> έχοντας στο εξώφυλλό του τον δικό μας, Γιάννη
-                    Αντετοκούνμπο!<br><span>Τιμή: 30&euro;</span><br>
-                    <button class="nba2k-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    Αντετοκούνμπο!<br><p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="NBA_2K19" name="NBA_2K19" value="NBA_2K19">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">FIFA 20</h1>
-                <img src="../icons/fifa_20.jpeg" width="150px" height="200px" alt="FIFA 20 PC">
+                <img src="../icons/fifa_20.jpeg"  alt="FIFA 20 PC">
                 <figcaption>
                     Η EA Sports επιστρέφει <br> με το νέο τίτλο της εμβληματικής<br> σειράς ποδοσφαίρου και φέρνει μαζί
                     του<br>
                     στο
-                    προσκήνιο ένα πολυπαιγμένο mode<br> που θα καθηλώσει όλους τους gamers!<br><span>Τιμή:
-                        30&euro;</span><br>
-                    <button class="fifa-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    προσκήνιο ένα πολυπαιγμένο mode<br> που θα καθηλώσει όλους τους gamers!<br>
+                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                        <legend for="quantity">Ποσότητα:
+                            <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                        </legend>
+                    <input type="checkbox" class="checkboxes" id="FIFA_20" name="FIFA_20" value="FIFA_20">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Spiderman: Friend or Foe</h1>
-                <img src="../icons/spiderman_pc.jpg" width="150px" height="200px" alt="Spiderman: Friend or Foe PC">
+                <img src="../icons/spiderman_pc.jpg" alt="Spiderman: Friend or Foe PC">
                 <figcaption>
                     Οι παίκτες συνεργάζονται με διάσημους ήρωες<br> από το σύμπαν Marvel για την καταπολέμηση των
-                    κακοποιών!<br><span>Τιμή: 10&euro;</span>
-                    <button class="spidey-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    κακοποιών!<br><p>Τιμή: <span class="price">10</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Spiderman:_Friend_or_Foe" name="Spiderman:_Friend_or_Foe" value="Spiderman:_Friend_or_Foe">  
                 </figcaption>
             </figure>
         </section>
@@ -96,7 +121,7 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">GENIUS MAXFIRE GRANDIAS USB</h1>
-                <img src="../icons/genius_console_pc.jpg" width="150px" height="150px"
+                <img src="../icons/genius_console_pc.jpg"
                     alt="GENIUS MAXFIRE GRANDIAS USB">
                 <figcaption>
                     Απαιτήσεις συστήματος: IBM PC Pentium 233 MHz συμβατό ή νεότερο,<br>Windows7/Vista/XP, διαθέσιμη USB
@@ -104,14 +129,17 @@
                     Κουμπιά: 8.<br>
                     D-Pad: Ναι.<br>
                     Εγγύηση: 1 Έτος.<br>
-                    <span>Τιμή: 15&euro;</span><br>
-                    <button class="genius-controller-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">10</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="GENIUS_MAXFIRE_GRANDIAS_USB" name="GENIUS_MAXFIRE_GRANDIAS_USB" value="GENIUS_MAXFIRE_GRANDIAS_USB">
                 </figcaption>
             </figure>
             <figure>
-                <h1 class="heading">GENIUS MAXFIRE GRANDIAS USB</h1>
-                <img src="../icons/esperanza_steering_wheel.jpg" width="150px" height="150px"
-                    alt="GENIUS MAXFIRE GRANDIAS USB">
+                <h1 class="heading">Esperanza Steering Wheel</h1>
+                <img src="../icons/esperanza_steering_wheel.jpg" 
+                    alt="Esperanza Steering Wheel">
                 <figcaption>
                     Ξεχωριστά πεντάλ του γκαζιού και του φρένου.<br>
                     13 κουμπιά δράσης.<br>
@@ -119,13 +147,16 @@
                     Ψηφιακό βαράκι ιδανικό για τις στροφές στα παιχνίδια racing.<br>
                     Δόνηση.<br>
                     Περιστροφή του τιμονιού κατά 180 μοίρες.<br>
-                    <span>Τιμή: 20&euro;</span><br>
-                    <button class="genius-wheel-button"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Esperanza_Steering_Wheel" name="Esperanza_Steering_Wheel" value="Esperanza_Steering_Wheel">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">LOGITECH DRIVING FORCE SHIFTER</h1>
-                <img src="../icons/logitech_driving_force_shifter.jpg" width="150px" height="150px"
+                <img src="../icons/logitech_driving_force_shifter.jpg" 
                     alt="LOGITECH DRIVING FORCE SHIFTER">
                 <figcaption>
                     Συμβατότητα: G29 και G920 DRIVING FORCE WHEELS,<br> PlayStation 4, Xbox One, Windows 8.1, Windows 8,
@@ -134,8 +165,11 @@
                     Βάρος χωρίς καλώδιο: 0.72 kg<br>
                     Βάρος με καλώδιο: 0.76 kg<br>
                     Εγγύηση: 2 χρόνια.<br>
-                    <span>Τιμή: 30&euro;</span><br>
-                    <button class="logitect-driver-shift"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="LOGITECH_DRIVING_FORCE_SHIFTER" name="LOGITECH_DRIVING_FORCE_SHIFTER" value="LOGITECH_DRIVING_FORCE_SHIFTER">
                 </figcaption>
             </figure>
         </section>
@@ -156,4 +190,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

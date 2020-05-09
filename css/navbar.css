@@ -15,6 +15,8 @@ ul>li {
 
 .img-logo {
     margin-top: 2%;
+    width: 60px;
+    height: 60px;
 }
 
 figure figcaption {
@@ -32,7 +34,7 @@ figure figcaption {
 
 #register-layout {
     background-color: #32CD32;
-    color:aliceblue;
+    color: aliceblue;
     height: 4vh;
     width: 6vw;
     padding-left: 20%;
@@ -42,7 +44,7 @@ figure figcaption {
 
 #logout-layout {
     background-color: #32CD32;
-    color:aliceblue;
+    color: aliceblue;
     height: 4vh;
     width: 7vw;
     padding-left: 14%;

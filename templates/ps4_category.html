@@ -11,7 +11,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -20,24 +20,37 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία PS4</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">Sony PlayStation 4 Pro 1TB</h1>
-                <img src="../icons/ps4_pro.jpeg" width="150px" height="200px" alt="Sony PlayStation 4 Pro 1TB">
+                <img src="../icons/ps4_pro.jpeg" alt="Sony PlayStation 4 Pro 1TB">
                 <figcaption>
-                    <span>Τιμή: 380&euro;</span>
-                    <br><button class="ps4-pro"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">380</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Sony_PlayStation_4_Pro" name="Sony_PlayStation_4_Pro" value="Sony_PlayStation_4_Pro">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Sony PlayStation 4 Slim 500GB</h1>
-                <img src="../icons/ps4-slim.jpeg" width="150px" height="200px" alt="Sony PlayStation 4 Slim 500GB">
+                <img src="../icons/ps4-slim.jpeg" alt="Sony PlayStation 4 Slim 500GB">
                 <figcaption>
-                    <span>Τιμή: 280&euro;</span>
-                    <br><button class="ps4-slim"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">280</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Sony_PlayStation_4_Slim" name="Sony_PlayStation_4_Slim" value="Sony_PlayStation_4_Slim">
                 </figcaption>
             </figure>
         </section>
@@ -47,35 +60,44 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">eFootball PES 2020 PS4</h1>
-                <img src="../icons/pes2020_ps4.jpeg" width="150px" height="200px" alt="eFootball PES 2020 PS4">
+                <img src="../icons/pes2020_ps4.jpeg" alt="eFootball PES 2020 PS4">
                 <figcaption>
                     Κατεβείτε από τις κερκίδες και μπείτε στο γήπεδο με την επιστροφή<br>
                     της αυθεντικής σειράς ποδοσφαίρου<br> από την Konami στο PS4<br>
-                    <span>Τιμή: 30&euro;</span>
-                    <br><button class="pes-2020"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="PES_2020_PS4" name="PES_2020_PS4" value="PES_2020_PS4">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">Marvel's Spider-Man PS4</h1>
-                <img src="../icons/spiderman_ps4.jpeg" width="150px" height="200px" alt="Marvel's Spider-Man PS4">
+                <img src="../icons/spiderman_ps4.jpeg" alt="Marvel's Spider-Man PS4">
                 <figcaption>
                     Μία νέα αυθεντική ιστορία του Spider-Man<br> με τον έμπειρο πλέον Πίτερ Πάρκερ<br>
                     που έχει αναγάγει σε τέχνη τη μάχη<br>κατά του οργανωμένου εγκλήματος στη Νέα Υόρκη<br>
-                    <span>Τιμή: 25&euro;</span>
-                    <br><button class="spidey-ps4"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Marvel's_Spider-Man_PS4" name="Marvel's_Spider-Man_PS4" value="Marvel's_Spider-Man_PS4">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">God of War</h1>
-                <img src="../icons/god_of_war_ps4.jpeg" width="150px" height="200px" alt="God of War">
+                <img src="../icons/god_of_war_ps4.jpeg" alt="God of War">
                 <figcaption>
                     Η περιπέτεια διαδραματίζεται αυτή την φορά<br>
                     στην παλιά Σκανδιναβία<br>με πρωταγωνιστή τον θεό του πολέμου Kratos.<br>
                     Γηραιότερος, πιο ώριμος με μυστικά,<br>
                     συγκρατημένη οργή και έχοντας πάντα δίπλα του<br> τον γιο του Atreus πλέον μακριά από την αρχαία
                     Ελλάδα.<br>
-                    <span>Τιμή: 25&euro;</span><br>
-                    <button class="god-of-war"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="God_of_War" name="God_of_War" value="God_of_War">
                 </figcaption>
             </figure>
         </section>
@@ -85,7 +107,7 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">HYPERX HX-HSCLS-BL</h1>
-                <img src="../icons/hyperex_ps4.jpg" width="150px" height="200px" 
+                <img src="../icons/hyperex_ps4.jpg"
                 alt="HYPERX HX-HSCLS-BL ακουστικά">
                 <figcaption>
                     Οδηγοί: Δυναμικοί, 53mm με μαγνήτες νεοδημίου.<br>
@@ -93,8 +115,11 @@
                     Απόκριση συχνότητας μικροφώνου: 50Hz-18,000 Hz.<br>
                     Ευαισθησία μικροφώνου: -39dBV (0dB=1V/Pa,1kHz).<br>
                     Αντίσταση: 41 Ω.<br>
-                    <span>Τιμή: 50&euro;</span>
-                    <br><button class="hyperx"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">50</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="HYPERX" name="HYPERX" value="HYPERX">
                 </figcaption>
             </figure>
         </section>
@@ -115,4 +140,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

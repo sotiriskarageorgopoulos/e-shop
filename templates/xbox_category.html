@@ -11,7 +11,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -20,34 +20,47 @@
 </nav>
 <body>
     <article>
+        <section class="buttons-box">
+            <button class="next-button">Επόμενο</button>
+            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+        </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία XBOXs</h1>
         </section>
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">XBOX ONE S</h1>
-                <img src="../icons/xbox_one.jpeg" width="150px" height="200px" alt="XBOX ONE S σε άσπρο χρώμα">
+                <img src="../icons/xbox_one.jpeg" alt="XBOX ONE S σε άσπρο χρώμα">
                 <figcaption>Οπτικός δίσκος: 4K/HDR Blu-ray drive.<br>
                     CPU: 8 Core AMD custom "Jaguar" CPU, στα 1,75GHz.<br>
                     GPU: AMD Radeon, στα 914MHz, με 1,23 TFLOPS.<br>
                     Είσοδος/Έξοδος: Super-Speed USBx (USB 3.0).<br>
                     Μονάδα σκληρού δίσκου: 1ΤB.<br>
                     Μνήμη: 8GB DDR3.<br>
-                    <span>Τιμή: 250&euro;</span>
-                    <br><button class="xbox-oneS"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">200</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="XBOX_ONE_S" name="XBOX_ONE_S" value="XBOX_ONE_S">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">XBOX ONE X</h1>
-                <img src="../icons/xbox_x_series.jpeg" width="150px" height="200px" alt="XBOX ONE σε μαύρο χρώμα">
+                <img src="../icons/xbox_x_series.jpeg" alt="XBOX ONE σε μαύρο χρώμα">
                 <figcaption>Χωρητικότητα: 1TB.<br>
                     Επεξεργαστής: 8-core Custom AMD CPU@ 2.3GHz.<br>
                     Κάρτα γραφικών: Scorpio Engine με 6 Teraflop.<br>
                     Εύρος ζώνης: 326 GB/s.<br>
                     Μνήμη RAM: 12GB GDDR5.<br>
                     Μνήμη Flash: 8 GB.<br>
-                    <span>Τιμή: 300&euro;</span>
-                    <br><button class="xbox-one"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="XBOX_ONE_X" name="XBOX_ONE_X" value="XBOX_ONE_X"> 
                 </figcaption>
             </figure>
         </section>
@@ -57,7 +70,7 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">FANTASTIC FOUR : RISE OF THE SILVER SURFER</h1>
-                <img src="../icons/fantastic_four_xbox_game.jpg" width="150px" height="200px"
+                <img src="../icons/fantastic_four_xbox_game.jpg"
                     alt="FANTASTIC FOUR : RISE OF THE SILVER SURFER">
                 <figcaption>Η πρώτη οικογένεια των υπερ ηρώων της Marvel,<br>
                     αντιμετωπίζει την υπέρτατη πρόκληση.<br> Ο Silver Surfer
@@ -65,30 +78,39 @@
                     Η ομάδα καλείται να αποκαλύψει το μυστήριο του Silver<br>
                     Surfer καθώς και να ανταποκριθεί στην επιστροφή του Dr. Doom,<br>
                     πριν η ανθρωπότητα χάσει κάθε ελπίδα.<br>
-                    <span>Τιμή: 25&euro;</span>
-                    <br><button class="fantastic-four"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="FANTASTIC_FOUR" name="FANTASTIC_FOUR" value="FANTASTIC_FOUR">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">FRONTLINES: FUEL OF WAR LIMITED EDITION</h1>
-                <img src="../icons/frontlines_xbox_game.jpg" width="150px" height="200px"
+                <img src="../icons/frontlines_xbox_game.jpg"
                     alt="FRONTLINES: FUEL OF WAR LIMITED EDITION">
                 <figcaption>Στο μακρινό μέλλον όπου η οικονομία έχει καταρρεύσει,<br>
                     πάρε το ρόλο ενός στρατιώτη και αντιμετώπισε την Red Star Allience,<br>
                     η οποία ευθύνεται για την οικονομική αυτή κρίση.<br>
-                    <span>Τιμή: 30&euro;</span>
-                    <br><button class="frontlines"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="FRONTLINES" name="FRONTLINES" value="FRONTLINES">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">WATCHMEN THE END IS NIGN PART 1 & 2</h1>
-                <img src="../icons/watchmen_xbox_game.jpg" width="150px" height="200px"
+                <img src="../icons/watchmen_xbox_game.jpg"
                     alt="WATCHMEN THE END IS NIGN PART 1 & 2">
                 <figcaption>Πάρε το ρόλο του Rorschach ή του Nite Owl<br>
                     και σώσε την πόλη της Νέας Υόρκης από τον διαβολικό Underboss<br>
                     ο οποίος μόλις το έσκασε από την φυλακή!<br>
-                    <span>Τιμή: 40&euro;</span>
-                    <br><button class="watchmen"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <p>Τιμή: <span class="price">40</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="WATCHMEN" name="WATCHMEN" value="WATCHMEN">
                 </figcaption>
             </figure>
         </section>
@@ -98,7 +120,7 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">STEERING WHEEL WITH PEDALS AND VIBRATION</h1>
-                <img src="../icons/steering_wheels_with_pedals_xbox.jpg" width="200px" height="150px"
+                <img src="../icons/steering_wheels_with_pedals_xbox.jpg"
                     alt="STEERING WHEEL WITH PEDALS AND VIBRATION">
                 <figcaption>
                     Εργονομικός σχεδιασμός.<br>
@@ -106,18 +128,24 @@
                     Ρεαλιστικό πεντάλ.<br>
                     Ισχυρή δόνηση.<br>
                     Βεντούζες στο κάτω μέρος της τιμονιέρας,<br>για την αποφυγή ανεπιθύμητης ολίσθησης.
-                    <br><span>Τιμή: 20&euro;</span>
-                    <br><button class="steering-wheel"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="STEERING_WHEEL" name="STEERING_WHEEL" value="STEERING_WHEEL"> 
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">EAXUS XBOX360 UNIVERSAL REMOTE CONTROL</h1>
-                <img src="../icons/eaxus_xbox.jpg" width="100px" height="200px"
+                <img src="../icons/eaxus_xbox.jpg"
                     alt="EAXUS XBOX360 UNIVERSAL REMOTE CONTROL">
                 <figcaption>
                     Universal τηλεχειριστήριο για την τηλεόραση,<br> το Xbox 306 και για Windows XP Media Center.
-                    <br><span>Τιμή: 5&euro;</span>
-                    <br><button class="eaxus"><a href="./purchase_details.html" id="helping-link">Αγορά</a></button>
+                    <br><p>Τιμή: <span class="price">10</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="EAXUS" name="EAXUS" value="EAXUS">    
                 </figcaption>
             </figure>
         </section>
@@ -138,4 +166,5 @@
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>
