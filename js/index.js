@@ -200,8 +200,8 @@ const nextFormButton = () => {
     let strPostcode = postcodeElement.value;
     let postcode = parseInt(strPostcode);
 
-    let roadRegionPattern = /[Α-Ω]+/gi;
-    let roadNumPostcodePattern = /[0-9]+/g;
+    let roadRegionPattern = /[Α-Ω]/gi;
+    let roadNumPostcodePattern = /[0-9]/g;
 
     let isStringRoad = roadRegionPattern.test(road);
     let isStringRegion = roadRegionPattern.test(region);
@@ -230,6 +230,7 @@ const nextFormButton = () => {
         document.getElementById("form2").style.display = "flex";
         let down = document.getElementById("form2");
         down.scrollIntoView();
+        document.getElementsByClassName("confirm-form-button")[0].disabled = true;
     }
 }
 
@@ -265,6 +266,7 @@ const paymentChoice = () => {
         for (let i = 0; i < creditCardInfo.length; i++) {
             creditCardInfo[i].style.display = "none";
         }
+        document.getElementsByClassName("confirm-form-button")[0].disabled = false;
     } else if (sel.value === "credit_card") {
         for (let i = 0; i < clientInfo.length; i++) {
             clientInfo[i].style.display = "flex";
@@ -272,6 +274,7 @@ const paymentChoice = () => {
         for (let i = 0; i < creditCardInfo.length; i++) {
             creditCardInfo[i].style.display = "flex";
         }
+        document.getElementsByClassName("confirm-form-button")[0].disabled = false;
     }
 }
 
@@ -283,7 +286,7 @@ const confirmFormButton = () => {
     let name = nameElement.value;
     let surname = surnameElement.value;
 
-    let personalInfoPattern = /[Α-Ω]+/gi;
+    let personalInfoPattern = /[Α-Ω]/gi;
     let creditCardNumPattern = /[0-9]+/g;
 
     let isStringName = personalInfoPattern.test(name);
@@ -296,8 +299,10 @@ const confirmFormButton = () => {
         if (isStringName === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο όνομα!");
         if (isStringSurname === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο επώνυμο!");
 
-        alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
-        window.location.href = "./index.html";
+        if (isStringName && isStringSurname) {
+            alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
+            window.location.href = "./index.html";
+        }
     } else if (sel.value === "credit_card") {
         let creditCardNumElement = document.getElementById("credit_card_num");
         let creditCardNumStr = creditCardNumElement.value;
@@ -311,8 +316,10 @@ const confirmFormButton = () => {
         if (isNumberCreditCardNum === false) alert("Εισάγεται μόνο ψηφία στο πεδίο αριθμός πιστωτικής κάρτας!");
         if (creditCardNumStr.length !== 16) alert("Ο Αριθμός Πιστωτικής Κάρτας είναι 16 ψηφία!");
 
-        alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
-        window.location.href = "./index.html";
+        if (isStringName && isStringSurname && isNumberCreditCardNum && creditCardNumStr.length === 16) {
+            alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
+            window.location.href = "./index.html";
+        }
     }
 }
 
@@ -326,7 +333,7 @@ const validRegister = () => {
     let phoneNumElement = document.getElementById("phonenumber");
     let emailElement = document.getElementById("e-mail");
 
-    let stringPattern = /[Α-Ω]+/gi;
+    let stringPattern = /[Α-Ω]/gi;
     let numberPattern = /[0-9]+/g;
     let emailPattern = /\w+@\w+(.com|.gr)/gi;
 
