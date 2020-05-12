@@ -64,8 +64,8 @@ figure:hover .overlay-nintendo-ds,
 figure:hover .overlay-nintendo-wii,
 figure:hover .overlay-psvita,
 figure:hover .overlay-ps3,
-figure:hover .overlay-ps4 ,
-figure:hover .overlay-xbox ,
+figure:hover .overlay-ps4,
+figure:hover .overlay-xbox,
 figure:hover .overlay-pc {
   opacity: 1;
 }

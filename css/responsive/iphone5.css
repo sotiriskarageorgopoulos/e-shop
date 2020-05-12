@@ -1,96 +1,120 @@
 @media only screen and (width:320px) and (height:568px) {
-    nav {
-      height: 45vh;
-      width: 112%;
-      margin-left: -5%;
-      margin-top: -4%;
-    }
-
-    .content {
-      margin-bottom: 15%;
-    }
-
-    nav {
-      margin-bottom: 15%;
-    }
-  
-    .random-button {
-      width: 45%;
-      padding-left: 2.5%;
-    }
-  
-    .next-button {
-      width: 30%;
-      padding-left: 3.5%;
-    }
-
-    .list-heading {
-      margin-top: 0%;
-    }
-  
-    #sitename {
-      margin-left: 30%;
-    }
-  
-    #register-layout {
-      width: 24vw;
-      padding-left: 12%;
-      margin-left: 15%;
-      font-size: 12px;
-    }
-  
-    .register-button {
-      width: 34%;
-      padding-top: 0%;
-      font-size: 12px;
-      margin-left:auto;
-      margin-right: auto;
-    }
-  
-    input{
-      width: 100%;
-    }
-    
-    label {
-      padding-left:10%;
-    }
-  
-    form {
-      width: 75%;
-      margin-bottom: 15%;
-    }
-  
-    .login-button {
-      width: 26vw;
-      margin-left: 32%;
-      padding-left: 4%;
-      padding-top:2% ;
-    }
-    #logout-layout {
-      width: 26vw;
-      padding-top:4%;
-      padding-left: 10%;
-      margin-top: -10%;
-      font-size: 12px;
-    }
-  
-    footer {
-      margin-top: 5%;
-    }
-  
-    #footer-copyright {
-      font-size: 15px;
-      padding-left: 10px;
-    }
-  
-    #footer-contact-details {
-      padding-right: 3%;
-    }
-  
-    #slogan-layout {
-      margin-bottom: 15%;
-      width: 80%;
-    }
-     
+  nav {
+    height: 45vh;
+    width: 112%;
+    margin-left: -5%;
+    margin-top: -4%;
   }
-  
+
+  h1#popup-title {
+    margin-left: 30%;
+  }
+
+  section#pop {
+    width: 90%;
+    height: 30%;
+    left: 3%;
+  }
+
+  div#pop-up-buttons {
+    margin-top: 5%;
+    margin-left: 26%;
+  }
+
+  #pop-up-buttons button {
+    font-size: 12px;
+  }
+
+  label#popup-text {
+    font-size: 14px;
+    margin-left: 1%;
+  }
+
+  .content {
+    margin-bottom: 15%;
+  }
+
+  nav {
+    margin-bottom: 15%;
+  }
+
+  .random-button {
+    width: 45%;
+    padding-left: 2.5%;
+  }
+
+  .next-button {
+    width: 30%;
+    padding-left: 3.5%;
+  }
+
+  .list-heading {
+    margin-top: 0%;
+  }
+
+  #sitename {
+    margin-left: 30%;
+  }
+
+  #register-layout {
+    width: 24vw;
+    padding-left: 12%;
+    margin-left: 15%;
+    font-size: 12px;
+  }
+
+  .register-button {
+    width: 34%;
+    padding-top: 0%;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  label {
+    padding-left: 10%;
+  }
+
+  form {
+    width: 75%;
+    margin-bottom: 15%;
+  }
+
+  .login-button {
+    width: 26vw;
+    margin-left: 32%;
+    padding-left: 4%;
+    padding-top: 2%;
+  }
+
+  #logout-layout {
+    width: 26vw;
+    padding-top: 4%;
+    padding-left: 10%;
+    margin-top: -10%;
+    font-size: 12px;
+  }
+
+  footer {
+    margin-top: 5%;
+  }
+
+  #footer-copyright {
+    font-size: 15px;
+    padding-left: 10px;
+  }
+
+  #footer-contact-details {
+    padding-right: 3%;
+  }
+
+  #slogan-layout {
+    margin-bottom: 15%;
+    width: 80%;
+  }
+
+}

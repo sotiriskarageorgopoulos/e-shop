@@ -369,7 +369,6 @@ const validRegister = () => {
 
 const delPopUp = () => {
     document.getElementById("pop").style.display = "none";
-    popUpTimes++;
 }
 
 const registerPopUp = () => {
