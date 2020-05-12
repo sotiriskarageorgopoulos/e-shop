@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta charset="ISO-8859-7">
@@ -18,14 +19,12 @@
         <li><a href="./index.html" id="logout-layout">Αποσύνδεση</a></li>
     </ul>
 </nav>
+
 <body>
     <article>
         <section class="buttons-box">
-            <button class="next-button">Επόμενο</button>
-            <button class="random-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
-        </section>
-        <section class="shopping-cart">
-            <p class="sc-icon" id="amount">Ποσό: 0&euro;</p>
+            <button class="next-button" onclick="nextButton()">Επόμενο</button>
+            <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
         </section>
         <section>
             <h1 class="heading initial-heading">Κατηγορία PS3</h1>
@@ -39,7 +38,8 @@
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="SONY_PS3_SLIM_120_GB_BLACK" name="SONY_PS3_SLIM_120_GB_BLACK" value="SONY_PS3_SLIM_120_GB_BLACK">
+                    <input type="checkbox" class="checkboxes" id="SONY_PS3_SLIM_120_GB_BLACK"
+                        name="SONY_PS3_SLIM_120_GB_BLACK" value="SONY PS3 SLIM 120 GB BLACK">
                 </figcaption>
             </figure>
             <figure>
@@ -50,7 +50,8 @@
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="PLAYSTATION_3_40GB" name="PLAYSTATION_3_40GB" value="PLAYSTATION_3_40GB">
+                    <input type="checkbox" class="checkboxes" id="PLAYSTATION_3_40GB" name="PLAYSTATION_3_40GB"
+                        value="PLAYSTATION 3 40GB">
                 </figcaption>
             </figure>
         </section>
@@ -69,7 +70,8 @@
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="CALL_OF_DUTY_GHOSTSB" name="CALL_OF_DUTY_GHOSTS" value="CALL_OF_DUTY_GHOSTS">
+                    <input type="checkbox" class="checkboxes" id="CALL_OF_DUTY_GHOSTSB" name="CALL_OF_DUTY_GHOSTS"
+                        value="CALL OF DUTY GHOSTS">
                 </figcaption>
             </figure>
             <figure>
@@ -81,11 +83,13 @@
                     ακόμη ενώνουν τις δυνάμεις τους<br> για να σταματήσουν τον Loki <br>
                     και πλήθος άλλων κακών της Marvel<br> από το να συναρμολογήσουν ένα<br>υπερόπλο ικανό να καταστρέψει
                     τον κόσμο.
-                    <br><p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <br>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="LEGO_MARVEL_SUPERHEROES" name="LEGO_MARVEL_SUPERHEROES" value="LEGO_MARVEL_SUPERHEROES">
+                    <input type="checkbox" class="checkboxes" id="LEGO_MARVEL_SUPERHEROES"
+                        name="LEGO_MARVEL_SUPERHEROES" value="LEGO MARVEL SUPERHEROES">
                 </figcaption>
             </figure>
             <figure>
@@ -96,7 +100,8 @@
                     ριζοσπαστικό παιχνίδι στρατηγικής <br>σε πραγματικό χρόνο (Real-Time Strategy)<br>
                     το οποίο επιτρέπει στους παίκτες να παραπλανήσουν <br>
                     τους αντιπάλους τους για να οδηγήσουν<br> το έθνος τους στη νίκη.
-                    <br><p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <br>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
@@ -110,28 +115,93 @@
         <section class="main-boxes layout">
             <figure>
                 <h1 class="heading">STEERING WHEEL CONTROLLER HOLDER</h1>
-                <img src="../icons/steering_wheel_ps3.jpg" 
-                    alt="STEERING WHEEL CONTROLLER HOLDER">
+                <img src="../icons/steering_wheel_ps3.jpg" alt="STEERING WHEEL CONTROLLER HOLDER">
                 <figcaption>
                     <p>Τιμή: <span class="price">5</span>&euro;</p><br>
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="STEERING_WHEEL_CONTROLLER_HOLDER" name="STEERING_WHEEL_CONTROLLER_HOLDER" value="STEERING_WHEEL_CONTROLLER_HOLDER">
+                    <input type="checkbox" class="checkboxes" id="STEERING_WHEEL_CONTROLLER_HOLDER"
+                        name="STEERING_WHEEL_CONTROLLER_HOLDER" value="STEERING WHEEL CONTROLLER HOLDER">
                 </figcaption>
             </figure>
             <figure>
                 <h1 class="heading">SPARTAN GEAR WIRELESS BLUETOOTH SIXAXIS CONTROLLER</h1>
-                <img src="../icons/spartan_gear_ps3.jpg" 
-                    alt="SPARTAN GEAR WIRELESS BLUETOOTH SIXAXIS CONTROLLER">
+                <img src="../icons/spartan_gear_ps3.jpg" alt="SPARTAN GEAR WIRELESS BLUETOOTH SIXAXIS CONTROLLER">
                 <figcaption>
                     <p>Τιμή: <span class="price">15</span>&euro;</p><br>
                     <legend for="quantity">Ποσότητα:
                         <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="SPARTAN_GEAR_WIRELESS" name="SPARTAN_GEAR_WIRELESS" value="SPARTAN_GEAR_WIRELESS">
+                    <input type="checkbox" class="checkboxes" id="SPARTAN_GEAR_WIRELESS" name="SPARTAN_GEAR_WIRELESS"
+                        value="SPARTAN GEAR WIRELESS">
                 </figcaption>
             </figure>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
+            <div id="sc-list1"></div>
+        </section>
+        <section class="display" id="form1">
+            <form>
+                <label for="road">Oδός*
+                    <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
+                </label>
+                <label for="road number">Αριθμός Oδού*
+                    <input type="number" id="road number" name="road number" placeholder="π.χ. 24" value="" required>
+                </label>
+                <label for="region">Περιοχή*
+                    <input type="text" id="region" name="region" placeholder="π.χ. Νέα Ιωνία" value="" required>
+                </label>
+                <label for="postcode">Τ.Κ*
+                    <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" value="" required>
+                </label>
+                <label for="express">Express Παράδοση
+                    <input type="checkbox" id="express" class="form-checkbox" name="express" placeholder="π.χ. 55555"
+                        value="express_delivery" onclick="formCheckBox()" required>
+                </label>
+                <button type="button" class="next-form-button" onclick="nextFormButton()">Επόμενο</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(1)">Προηγούμενο</button>
+            </form>
+            <div class="new-shopping-cart display">
+                <p class="sc-icon">Ποσό: 0 &euro;</p>
+                <div id="sc-list"></div>
+            </div>
+        </section>
+        <section class="display2" id="form2">
+            <form>
+                <label for="name" class="display3">Όνομα*
+                    <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required>
+                </label>
+                <label for="surname" class="display3">Επίθετο*
+                    <input type="text" id="surname" name="surname" placeholder="π.χ. Παπάς" required>
+                </label>
+                <label for="payment">Τρόπος Πληρωμής*
+                    <select id="payment" onclick="paymentChoice()" required>
+                        <option value="cod">Αντικαταβολή</option>
+                        <option value="credit_card">Πιστωτική Κάρτα</option>
+                    </select>
+                </label>
+                <label for="credit_card" class="display4">Πιστωτική κάρτα*
+                    <select id="credit_card" required>
+                        <option value="VISA">VISA</option>
+                        <option value="Mastercard">Mastercard</option>
+                        <option value="Maestro">Maestro</option>
+                        <option value="American Express">American Express</option>
+                        <option value="Diners">Diners</option>
+                    </select>
+                </label>
+                <label for="credit_card_num" class="display4">Αριθμός Κάρτας*
+                    <input type="number" id="credit_card_num" name="credit_card_num" placeholder="π.χ. 1234567890234567"
+                        required>
+                </label>
+                <label for="expiration" class="display4">Ημερομηνία Λήξης*
+                    <input type="date" id="expiration" name="expiration" required>
+                </label>
+                <button type="button" class="confirm-form-button" onclick="confirmFormButton()">Επιβεβαίωση</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(2)">Προηγούμενο</button>
+            </form>
+        </section>
     </article>
 </body>
 <footer>
@@ -140,14 +210,19 @@
             <p id="footer-msg">Άμεση εξυπηρέτηση <br>σε 24 ώρες από την στιγμή της παραγγελίας</p>
         </section>
         <section>
-            <p id="footer-copyright">&copy; Copyright 2020</p>
+            <p id="footer-copyright">&copy; Copyright <script>document.write(new Date().getFullYear());</script></p>
         </section>
         <section id="footer-contact-details">
-            <a href="tel:+302100000000000"><p class="phone-icon icon"> +302100000000000</p></a>
-            <a href="mailto:gaming@eshop.com"><p class="envelope-icon icon"> gaming@eshop.com</p></a>
+            <a href="tel:+302100000000000">
+                <p class="phone-icon icon"> +302100000000000</p>
+            </a>
+            <a href="mailto:gaming@eshop.com">
+                <p class="envelope-icon icon"> gaming@eshop.com</p>
+            </a>
         </section>
     </article>
 </footer>
 <script src="https://use.fontawesome.com/4d997e20ff.js"></script>
 <script src="../js/index.js"></script>
+
 </html>

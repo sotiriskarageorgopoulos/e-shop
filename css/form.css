@@ -1,39 +1,53 @@
-/*---------------The style of forms-------------------*/    
-  form {
-    border-radius: 10px;
-    border: solid 5px #32CD32;
-    margin: 2% auto 2% auto;
-    background-color: #121412;
-    color: #32CD32;
-    width: 30%;
-    height: 30%;
-  }
+/*---------------The style of forms-------------------*/
+form {
+  border-radius: 10px;
+  border: solid 5px #32CD32;
+  margin: 2% auto 2% auto;
+  background-color: #121412;
+  color: #32CD32;
+  width: 30%;
+  height: 30%;
+}
 
-  input,select {
-    width: 60%;
-    height: 5vh;
-    border-radius: 10px;
-    border: solid 2px #32CD32;
-    padding-left: 2%;
-  }
+.form-checkbox {
+  width: 20px;
+  margin-left: 25%;
+}
 
-  label {
-    display: flex;
-    flex-flow: column nowrap;
-    padding-left: 30%;
-    padding-top: 7%;
-    font-size: 20px;
-  }
+.display4,
+.display3,
+.display2,
+.display {
+  display: none;
+}
 
-  input,select:focus {
-    outline: none;
-  }
+input,
+select {
+  width: 60%;
+  height: 5vh;
+  border-radius: 10px;
+  border: solid 2px #32CD32;
+  padding-left: 2%;
+}
 
-  /*Το χρησιμοποιώ για την 1η εργασια, προκειμένου να μην αλλάζει
+label {
+  display: flex;
+  flex-flow: column nowrap;
+  padding-left: 30%;
+  padding-top: 7%;
+  font-size: 20px;
+}
+
+input,
+select:focus {
+  outline: none;
+}
+
+/*Το χρησιμοποιώ για την 1η εργασια, προκειμένου να μην αλλάζει
   χρώμα το κουμπί login.*/
-  #helping-link {
-    color: #e8ede6;
-    padding-left: 9%;
-  }
+#helping-link {
+  color: #e8ede6;
+  padding-left: 9%;
+}
 
-/*---------------------------------------------------*/  
+/*---------------------------------------------------*/

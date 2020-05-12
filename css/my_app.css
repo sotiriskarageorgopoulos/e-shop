@@ -12,6 +12,7 @@
 @import url("./responsive/iphone5.css");
 @import url("./responsive/iphone6-7-8plus.css");
 @import url("./img-hover-overlay.css");
+@import url("./popup_box.css");
 
 * {
   box-sizing: border-box;
