@@ -334,7 +334,7 @@ const validRegister = () => {
     let emailElement = document.getElementById("e-mail");
 
     let stringPattern = /[Α-Ω]/gi;
-    let numberPattern = /[0-9]+/g;
+    let numberPattern = /[0-9]/g;
     let emailPattern = /\w+@\w+(.com|.gr)/gi;
 
     let name = nameElement.value;
@@ -363,7 +363,7 @@ const validRegister = () => {
     if (isStringCity === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο πόλη!");
     if (isNumberPhoneNum === false) alert("Εισάγεται μόνο ψηφία στο πεδίο τηλέφωνο!");
     if (isCorrectEmail === false) alert("Εισάγεται με ορθό τρόπο το email σας!");
-    if (postcode !== 5) alert("Ο ταχυδρομικός κωδικός περιέχει μόνο 5 ψηφία!");
+    if (postcode.length !== 5) alert("Ο ταχυδρομικός κωδικός περιέχει μόνο 5 ψηφία!");
 
 }
 
