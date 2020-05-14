@@ -200,8 +200,8 @@ const nextFormButton = () => {
     let strPostcode = postcodeElement.value;
     let postcode = parseInt(strPostcode);
 
-    let roadRegionPattern = /[Α-Ω]/gi;
-    let roadNumPostcodePattern = /[0-9]/g;
+    let roadRegionPattern = /^[Α-Ωα-ω]+$/;
+    let roadNumPostcodePattern = /^[0-9]*$/;
 
     let isStringRoad = roadRegionPattern.test(road);
     let isStringRegion = roadRegionPattern.test(region);
@@ -286,8 +286,8 @@ const confirmFormButton = () => {
     let name = nameElement.value;
     let surname = surnameElement.value;
 
-    let personalInfoPattern = /[Α-Ω]/gi;
-    let creditCardNumPattern = /[0-9]+/g;
+    let personalInfoPattern = /^[Α-Ωα-ω]+$/;
+    let creditCardNumPattern = /^[0-9]*$/;
 
     let isStringName = personalInfoPattern.test(name);
     let isStringSurname = personalInfoPattern.test(surname);
@@ -333,8 +333,8 @@ const validRegister = () => {
     let phoneNumElement = document.getElementById("phonenumber");
     let emailElement = document.getElementById("e-mail");
 
-    let stringPattern = /[Α-Ω]/gi;
-    let numberPattern = /[0-9]/g;
+    let stringPattern = /^[Α-Ωα-ω]+$/;
+    let numberPattern = /^[0-9]*$/;
     let emailPattern = /\w+@\w+(.com|.gr)/gi;
 
     let name = nameElement.value;
@@ -346,14 +346,12 @@ const validRegister = () => {
     let phonenumber = phoneNumElement.value;
     let email = emailElement.value;
 
-    let phonenumberNum = parseInt(phonenumber);
-
     let isStringName = stringPattern.test(name);
     let isStringSurname = stringPattern.test(surname);
     let isStringAddress = stringPattern.test(address);
     let isStringRegion = stringPattern.test(region);
     let isStringCity = stringPattern.test(city);
-    let isNumberPhoneNum = numberPattern.test(phonenumberNum);
+    let isNumberPhoneNum = numberPattern.test(phonenumber);
     let isCorrectEmail = emailPattern.test(email);
 
     if (isStringName === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο όνομα!");
