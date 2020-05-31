@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="ISO-8859-7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/my_app.css">
+    <title>E-Gaming</title>
+</head>
+<nav>
+    <a href="./index.html" id="sitename">Gaming</a>
+    <figure>
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
+        <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
+    </figure>
+    <ul class="list-heading">
+        <li><a href="./index.html" id="logout-layout">Αποσύνδεση</a></li>
+    </ul>
+</nav>
+
+<body>
+    <article>
+        <section class="buttons-box">
+            <button class="next-button" onclick="nextButton()">Επόμενο</button>
+            <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section>
+            <h1 class="heading initial-heading">Κατηγορία XBOXs</h1>
+        </section>
+        <section class="main-boxes layout">
+            <figure>
+                <h1 class="heading">XBOX ONE S</h1>
+                <img src="../icons/xbox_one.jpeg" alt="XBOX ONE S σε άσπρο χρώμα">
+                <figcaption>Οπτικός δίσκος: 4K/HDR Blu-ray drive.<br>
+                    CPU: 8 Core AMD custom "Jaguar" CPU, στα 1,75GHz.<br>
+                    GPU: AMD Radeon, στα 914MHz, με 1,23 TFLOPS.<br>
+                    Είσοδος/Έξοδος: Super-Speed USBx (USB 3.0).<br>
+                    Μονάδα σκληρού δίσκου: 1ΤB.<br>
+                    Μνήμη: 8GB DDR3.<br>
+                    <p>Τιμή: <span class="price">200</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="XBOX_ONE_S" name="XBOX_ONE_S" value="XBOX ONE S">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">XBOX ONE X</h1>
+                <img src="../icons/xbox_x_series.jpeg" alt="XBOX ONE σε μαύρο χρώμα">
+                <figcaption>Χωρητικότητα: 1TB.<br>
+                    Επεξεργαστής: 8-core Custom AMD CPU@ 2.3GHz.<br>
+                    Κάρτα γραφικών: Scorpio Engine με 6 Teraflop.<br>
+                    Εύρος ζώνης: 326 GB/s.<br>
+                    Μνήμη RAM: 12GB GDDR5.<br>
+                    Μνήμη Flash: 8 GB.<br>
+                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="XBOX_ONE_X" name="XBOX_ONE_X" value="XBOX ONE X">
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <h1 class="heading initial-heading">Κατηγορία XBOX Games</h1>
+        </section>
+        <section class="main-boxes layout">
+            <figure>
+                <h1 class="heading">FANTASTIC FOUR : RISE OF THE SILVER SURFER</h1>
+                <img src="../icons/fantastic_four_xbox_game.jpg" alt="FANTASTIC FOUR : RISE OF THE SILVER SURFER">
+                <figcaption>Η πρώτη οικογένεια των υπερ ηρώων της Marvel,<br>
+                    αντιμετωπίζει την υπέρτατη πρόκληση.<br> Ο Silver Surfer
+                    έρχεται στη Γη για να προετοιμάσει την καταστροφή.<br>
+                    Η ομάδα καλείται να αποκαλύψει το μυστήριο του Silver<br>
+                    Surfer καθώς και να ανταποκριθεί στην επιστροφή του Dr. Doom,<br>
+                    πριν η ανθρωπότητα χάσει κάθε ελπίδα.<br>
+                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="FANTASTIC_FOUR" name="FANTASTIC_FOUR"
+                        value="FANTASTIC FOUR">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">FRONTLINES: FUEL OF WAR LIMITED EDITION</h1>
+                <img src="../icons/frontlines_xbox_game.jpg" alt="FRONTLINES: FUEL OF WAR LIMITED EDITION">
+                <figcaption>Στο μακρινό μέλλον όπου η οικονομία έχει καταρρεύσει,<br>
+                    πάρε το ρόλο ενός στρατιώτη και αντιμετώπισε την Red Star Allience,<br>
+                    η οποία ευθύνεται για την οικονομική αυτή κρίση.<br>
+                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="FRONTLINES" name="FRONTLINES" value="FRONTLINES">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">WATCHMEN THE END IS NIGN PART 1 & 2</h1>
+                <img src="../icons/watchmen_xbox_game.jpg" alt="WATCHMEN THE END IS NIGN PART 1 & 2">
+                <figcaption>Πάρε το ρόλο του Rorschach ή του Nite Owl<br>
+                    και σώσε την πόλη της Νέας Υόρκης από τον διαβολικό Underboss<br>
+                    ο οποίος μόλις το έσκασε από την φυλακή!<br>
+                    <p>Τιμή: <span class="price">40</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="WATCHMEN" name="WATCHMEN" value="WATCHMEN">
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <h1 class="heading initial-heading">Κατηγορία XBOX Accessoires</h1>
+        </section>
+        <section class="main-boxes layout">
+            <figure>
+                <h1 class="heading">STEERING WHEEL WITH PEDALS AND VIBRATION</h1>
+                <img src="../icons/steering_wheels_with_pedals_xbox.jpg" alt="STEERING WHEEL WITH PEDALS AND VIBRATION">
+                <figcaption>
+                    Εργονομικός σχεδιασμός.<br>
+                    Περιστρεφόμενη τιμονιέρα 180°.<br>
+                    Ρεαλιστικό πεντάλ.<br>
+                    Ισχυρή δόνηση.<br>
+                    Βεντούζες στο κάτω μέρος της τιμονιέρας,<br>για την αποφυγή ανεπιθύμητης ολίσθησης.
+                    <br>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="STEERING_WHEEL" name="STEERING_WHEEL"
+                        value="STEERING WHEEL">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">EAXUS XBOX360 UNIVERSAL REMOTE CONTROL</h1>
+                <img src="../icons/eaxus_xbox.jpg" alt="EAXUS XBOX360 UNIVERSAL REMOTE CONTROL">
+                <figcaption>
+                    Universal τηλεχειριστήριο για την τηλεόραση,<br> το Xbox 306 και για Windows XP Media Center.
+                    <br>
+                    <p>Τιμή: <span class="price">10</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    </legend>
+                    <br><input type="checkbox" class="checkboxes" id="EAXUS" name="EAXUS" value="EAXUS">
+                </figcaption>
+            </figure>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
+            <div id="sc-list1"></div>
+        </section>
+        <section class="display" id="form1">
+            <form>
+                <label for="road">Oδός*
+                    <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
+                </label>
+                <label for="road number">Αριθμός Oδού*
+                    <input type="number" id="road number" name="road number" placeholder="π.χ. 24" value="" required>
+                </label>
+                <label for="region">Περιοχή*
+                    <input type="text" id="region" name="region" placeholder="π.χ. Νέα Ιωνία" value="" required>
+                </label>
+                <label for="postcode">Τ.Κ*
+                    <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" value="" required>
+                </label>
+                <label for="express">Express Παράδοση
+                    <input type="checkbox" id="express" class="form-checkbox" name="express" placeholder="π.χ. 55555"
+                        value="express_delivery" onclick="formCheckBox()" required>
+                </label>
+                <button type="button" class="next-form-button" onclick="nextFormButton()">Επόμενο</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(1)">Προηγούμενο</button>
+            </form>
+            <div class="new-shopping-cart display">
+                <p class="sc-icon">Ποσό: 0 &euro;</p>
+                <div id="sc-list"></div>
+            </div>
+        </section>
+        <section class="display2" id="form2">
+            <form>
+                <label for="name" class="display3">Όνομα*
+                    <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required>
+                </label>
+                <label for="surname" class="display3">Επίθετο*
+                    <input type="text" id="surname" name="surname" placeholder="π.χ. Παπάς" required>
+                </label>
+                <label for="payment">Τρόπος Πληρωμής*
+                    <select id="payment" onclick="paymentChoice()" required>
+                        <option value="cod">Αντικαταβολή</option>
+                        <option value="credit_card">Πιστωτική Κάρτα</option>
+                    </select>
+                </label>
+                <label for="credit_card" class="display4">Πιστωτική κάρτα*
+                    <select id="credit_card" required>
+                        <option value="VISA">VISA</option>
+                        <option value="Mastercard">Mastercard</option>
+                        <option value="Maestro">Maestro</option>
+                        <option value="American Express">American Express</option>
+                        <option value="Diners">Diners</option>
+                    </select>
+                </label>
+                <label for="credit_card_num" class="display4">Αριθμός Κάρτας*
+                    <input type="number" id="credit_card_num" name="credit_card_num" placeholder="π.χ. 1234567890234567"
+                        required>
+                </label>
+                <label for="expiration" class="display4">Ημερομηνία Λήξης*
+                    <input type="date" id="expiration" name="expiration" required>
+                </label>
+                <button type="button" class="confirm-form-button" onclick="confirmFormButton()">Επιβεβαίωση</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(2)">Προηγούμενο</button>
+            </form>
+        </section>
+    </article>
+</body>
+<footer>
+    <article class="footer-layout">
+        <section>
+            <p id="footer-msg">Άμεση εξυπηρέτηση <br>σε 24 ώρες από την στιγμή της παραγγελίας</p>
+        </section>
+        <section>
+            <p id="footer-copyright">&copy; Copyright <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+        </section>
+        <section id="footer-contact-details">
+            <a href="tel:+302100000000000">
+                <p class="phone-icon icon"> +302100000000000</p>
+            </a>
+            <a href="mailto:gaming@eshop.com">
+                <p class="envelope-icon icon"> gaming@eshop.com</p>
+            </a>
+        </section>
+    </article>
+</footer>
+<script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
+
+</html>

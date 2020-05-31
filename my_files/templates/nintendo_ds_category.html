@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="ISO-8859-7">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/my_app.css">
+    <title>E-Gaming</title>
+</head>
+<nav>
+    <a href="./index.html" id="sitename">Gaming</a>
+    <figure>
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
+        <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
+    </figure>
+    <ul class="list-heading">
+        <li><a href="./index.html" id="logout-layout">Αποσύνδεση</a></li>
+    </ul>
+</nav>
+
+<body>
+    <article>
+        <section class="buttons-box">
+            <button class="next-button" onclick="nextButton()">Επόμενο</button>
+            <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
+        </section>
+        <section>
+            <h1 class="heading initial-heading">Κατηγορία Nintendo DS</h1>
+        </section>
+        <section class="main-boxes layout">
+            <figure>
+                <h1 class="heading">Nintendo 2DS XL</h1>
+                <img src="../icons/nintendo_2dsxl.jpeg" alt="Nintendo 2DS XL">
+                <figcaption>
+                    <p>Τιμή: <span class="price">100</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_2DS_XL" name="Nintendo_2DS_XL"
+                        value="Nintendo 2DS XL" onchange="checkProduct()">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">Nintendo Switch 32GB</h1>
+                <img src="../icons/nintendo_switch.jpeg" alt="Nintendo Switch 32GB" class="nintendo-switch-img">
+                <figcaption>
+                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_Switch_32GB" name="Nintendo_Switch_32GB"
+                        value="Nintendo Switch 32GB" onchange="checkProduct()">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">Nintendo 3DS XL</h1>
+                <img src="../icons/nintendo-3ds-xl.webp" alt="Nintendo Switch 32GB">
+                <figcaption>
+                    <p>Τιμή: <span class="price">190</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Nintendo_3DS_XL" name="Nintendo_3DS_XL"
+                        value="Nintendo 3DS XL" onchange="checkProduct()">
+                </figcaption>
+            </figure>
+        </section>
+        <section>
+            <h1 class="heading initial-heading">Κατηγορία Nintendo DS Games</h1>
+        </section>
+        <section class="main-boxes layout">
+            <figure>
+                <h1 class="heading"> Mario Kart 7</h1>
+                <img src="../icons/mario_kart_7_3ds.jpeg" alt="Mario Kart 7">
+                <figcaption>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Mario_Kart_7" name="Mario_Kart_7" value="Mario Kart 7"
+                        onchange="checkProduct()">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading"> New Super Mario Bros 2</h1>
+                <img src="../icons/new_super_mario_bros_2_3ds.jpeg" alt="New Super Mario Bros 2">
+                <figcaption>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="New_Super_Mario_Bros_2" name="New_Super_Mario_Bros_2"
+                        value="New Super Mario Bros 2" onchange="checkProduct()">
+                </figcaption>
+            </figure>
+            <figure>
+                <h1 class="heading">Pokemon Ultra Sun</h1>
+                <img src="../icons/pokemon_ultra_sun_3ds.jpeg" alt="Pokemon Ultra Sun">
+                <figcaption>
+                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
+                    <legend for="quantity">Ποσότητα:
+                        <input type="number" id="quantity" class="quantity-boxes" value="" min="0">
+                    </legend>
+                    <input type="checkbox" class="checkboxes" id="Pokemon_Ultra_Sun" name="Pokemon_Ultra_Sun"
+                        value="Pokemon Ultra Sun" onchange="checkProduct()">
+                </figcaption>
+            </figure>
+        </section>
+        <section class="shopping-cart">
+            <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
+            <div id="sc-list1"></div>
+        </section>
+        <section class="display" id="form1">
+            <form>
+                <label for="road">Oδός*
+                    <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
+                </label>
+                <label for="road number">Αριθμός Oδού*
+                    <input type="number" id="road number" name="road number" placeholder="π.χ. 24" value="" required>
+                </label>
+                <label for="region">Περιοχή*
+                    <input type="text" id="region" name="region" placeholder="π.χ. Νέα Ιωνία" value="" required>
+                </label>
+                <label for="postcode">Τ.Κ*
+                    <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" value="" required>
+                </label>
+                <label for="express">Express Παράδοση
+                    <input type="checkbox" id="express" class="form-checkbox" name="express" placeholder="π.χ. 55555"
+                        value="express_delivery" onclick="formCheckBox()" required>
+                </label>
+                <button type="button" class="next-form-button" onclick="nextFormButton()">Επόμενο</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(1)">Προηγούμενο</button>
+            </form>
+            <div class="new-shopping-cart display">
+                <p class="sc-icon">Ποσό: 0 &euro;</p>
+                <div id="sc-list"></div>
+            </div>
+        </section>
+        <section class="display2" id="form2">
+            <form>
+                <label for="name" class="display3">Όνομα*
+                    <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required>
+                </label>
+                <label for="surname" class="display3">Επίθετο*
+                    <input type="text" id="surname" name="surname" placeholder="π.χ. Παπάς" required>
+                </label>
+                <label for="payment">Τρόπος Πληρωμής*
+                    <select id="payment" onclick="paymentChoice()" required>
+                        <option value="cod">Αντικαταβολή</option>
+                        <option value="credit_card">Πιστωτική Κάρτα</option>
+                    </select>
+                </label>
+                <label for="credit_card" class="display4">Πιστωτική κάρτα*
+                    <select id="credit_card" required>
+                        <option value="VISA">VISA</option>
+                        <option value="Mastercard">Mastercard</option>
+                        <option value="Maestro">Maestro</option>
+                        <option value="American Express">American Express</option>
+                        <option value="Diners">Diners</option>
+                    </select>
+                </label>
+                <label for="credit_card_num" class="display4">Αριθμός Κάρτας*
+                    <input type="number" id="credit_card_num" name="credit_card_num" placeholder="π.χ. 1234567890234567"
+                        required>
+                </label>
+                <label for="expiration" class="display4">Ημερομηνία Λήξης*
+                    <input type="date" id="expiration" name="expiration" required>
+                </label>
+                <button type="button" class="confirm-form-button" onclick="confirmFormButton()">Επιβεβαίωση</button>
+                <button type="button" class="previous-form-button" onclick="previousFormButton(2)">Προηγούμενο</button>
+            </form>
+        </section>
+    </article>
+</body>
+<footer>
+    <article class="footer-layout">
+        <section>
+            <p id="footer-msg">Άμεση εξυπηρέτηση <br>σε 24 ώρες από την στιγμή της παραγγελίας</p>
+        </section>
+        <section>
+            <p id="footer-copyright">&copy; Copyright <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+        </section>
+        <section id="footer-contact-details">
+            <a href="tel:+302100000000000">
+                <p class="phone-icon icon"> +302100000000000</p>
+            </a>
+            <a href="mailto:gaming@eshop.com">
+                <p class="envelope-icon icon"> gaming@eshop.com</p>
+            </a>
+        </section>
+    </article>
+</footer>
+<script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
+
+</html>

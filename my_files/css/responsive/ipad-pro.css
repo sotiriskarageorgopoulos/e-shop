@@ -1,0 +1,186 @@
+@media only screen and (width:1024px) and (height:1366px) {
+  nav {
+    height: 15vh;
+    width: 101%;
+  }
+
+  section.shopping-cart {
+    width: 70%;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #form1 {
+    margin-top: 4%;
+    flex-flow: column nowrap;
+  }
+
+  select#payment {
+    height: 4vh;
+  }
+
+  div.new-shopping-cart.display {
+    width: 50%;
+    height: 4vh;
+    margin: 0% auto 4% auto;
+  }
+
+  button.confirm-form-button,
+  button.next-form-button,
+  button.previous-form-button {
+    width: 25%;
+    padding-top: 3%;
+    padding-bottom: 0%;
+    margin-left: 25%;
+  }
+
+  button.confirm-form-button,
+  button.previous-form-button {
+    width: 35%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  h1#popup-title {
+    margin-left: 30%;
+  }
+
+  section#pop {
+    width: 45%;
+    height: 15%;
+    left: 30%;
+    top: 20%
+  }
+
+  div#pop-up-buttons {
+    margin-top: 5%;
+    margin-left: 26%;
+  }
+
+  #pop-up-buttons button {
+    font-size: 12px;
+  }
+
+  label#popup-text {
+    font-size: 14px;
+    margin-left: 10%;
+  }
+
+  input#e-mail-popup {
+    margin-left: 5%;
+  }
+
+  .shopping-cart {
+    width: 20%;
+    margin-left: 50%;
+    margin-top: -4%;
+  }
+
+  button.random-button {
+    width: 15%;
+    padding-top: 0.5%;
+  }
+
+  button.next-button {
+    width: 10%;
+    padding-top: 0.5%;
+    padding-left: 1.5%;
+  }
+
+  .ipad-style-nav-style {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  form {
+    margin-bottom: 15%;
+  }
+
+  .content {
+    margin-bottom: 20%;
+  }
+
+  #logout-layout {
+    width: 10vw;
+    height: 2.5vh;
+    padding-top: 8%;
+    padding-left: 15%;
+    margin-top: -10%;
+    font-size: 12px;
+  }
+
+  #register-layout {
+    width: 10vw;
+    height: 2vh;
+    padding-top: 5%;
+    margin-top: 0;
+  }
+
+  section#slogan-layout {
+    margin-top: 2%;
+    margin-bottom: 10%;
+  }
+
+  .login-button {
+    width: 11vw;
+    height: 3vh;
+    margin-left: 40%;
+    padding-left: 4%;
+  }
+
+  ul>li,
+  ul.list-heading {
+    margin-top: 7%;
+    margin-bottom: 0;
+  }
+
+  nav h1 {
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: 40%;
+    margin-bottom: auto;
+  }
+
+  #sitename {
+    margin-left: 43%;
+  }
+
+  #slogan-layout {
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+
+  form {
+    width: 50%;
+  }
+
+  input {
+    height: 3vh;
+    width: 70%;
+  }
+
+  label {
+    width: 100%;
+    margin-left: -5%;
+    font-size: 15px;
+  }
+
+  .list-heading {
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+
+  .register-button {
+    width: 12vw;
+    height: 2vh;
+  }
+
+  footer {
+    margin-bottom: 0;
+    width: 101%;
+  }
+}
