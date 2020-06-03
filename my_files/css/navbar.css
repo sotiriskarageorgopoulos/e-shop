@@ -1,4 +1,5 @@
 /*---------navbar style--------------------------*/
+
 .list-heading {
     display: flex;
     justify-content: flex-start;
@@ -35,20 +36,20 @@ figure figcaption {
 #register-layout {
     background-color: #32CD32;
     color: aliceblue;
-    height: 4vh;
+    height: 3vh;
     width: 6vw;
-    padding-left: 20%;
-    padding-top: 7%;
+    padding-left: 24%;
+    padding-top: 4%;
     border-radius: 12.5px;
 }
 
 #logout-layout {
     background-color: #32CD32;
     color: aliceblue;
-    height: 4vh;
-    width: 7vw;
+    height: 3vh;
+    width: 6vw;
     padding-left: 14%;
-    padding-top: 7%;
+    padding-top: 5%;
     border-radius: 12.5px;
 }
 
@@ -62,5 +63,6 @@ nav {
     height: 16vh;
     width: 101%;
 }
+
 
 /*------------------------------------------*/

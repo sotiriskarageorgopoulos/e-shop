@@ -134,8 +134,8 @@ const nextButton = () => {
         let checkboxes = document.getElementsByClassName("checkboxes");
         let quantities = document.getElementsByClassName("quantity-boxes");
         for (let index in checkboxes) {
-            checkboxes[index].disabled = "disabled";
-            quantities[index].disabled = "disabled";
+            checkboxes[index].disabled = true;
+            quantities[index].readOnly = true;
         }
 
         for (let i = 0; i < checkboxes.length; i++) {
@@ -177,12 +177,12 @@ const previousFormButton = (formNum) => {
         let up = document.getElementById("logout-layout");
         up.scrollIntoView();
     } else if (formNum === 2) {
-        document.getElementById("road").disabled = false;
-        document.getElementById("region").disabled = false;
-        document.getElementById("road number").disabled = false;
-        document.getElementById("postcode").disabled = false;
-        document.getElementsByClassName("next-form-button")[0].disabled = false;
-        document.getElementsByClassName("previous-form-button")[0].disabled = false;
+        document.getElementById("road").readOnly = false;
+        document.getElementById("region").readOnly = false;
+        document.getElementById("road_number").readOnly = false;
+        document.getElementById("postcode").readOnly = false;
+        document.getElementsByClassName("next-form-button")[0].readOnly = false;
+        document.getElementsByClassName("previous-form-button")[0].readOnly = false;
         document.getElementById("form2").style.display = "none";
         document.getElementById("form1").style.display = "flex";
     }
@@ -191,7 +191,7 @@ const previousFormButton = (formNum) => {
 const nextFormButton = () => {
     let roadElement = document.getElementById("road");
     let regionElement = document.getElementById("region");
-    let roadNumElement = document.getElementById("road number");
+    let roadNumElement = document.getElementById("road_number");
     let postcodeElement = document.getElementById("postcode");
 
     let road = roadElement.value;
@@ -210,7 +210,7 @@ const nextFormButton = () => {
 
     console.log("is string road? " + isStringRoad);
     console.log("is string region? " + isStringRegion);
-    console.log("is number road number? " + isNumberRoadNum);
+    console.log("is number road_number? " + isNumberRoadNum);
     console.log("is number postcode? " + isNumberPostcode);
 
     if (isStringRoad === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο οδός!");
@@ -221,10 +221,10 @@ const nextFormButton = () => {
 
     if (isStringRoad === true && isNumberRoadNum === true && isStringRegion === true &&
         isNumberPostcode === true && strPostcode.length === 5) {
-        roadElement.disabled = true;
-        regionElement.disabled = true;
-        roadNumElement.disabled = true;
-        postcodeElement.disabled = true;
+        roadElement.readOnly = true;
+        regionElement.readOnly = true;
+        roadNumElement.readOnly = true;
+        postcodeElement.readOnly = true;
         document.getElementsByClassName("next-form-button")[0].disabled = true;
         document.getElementsByClassName("previous-form-button")[0].disabled = true;
         document.getElementById("form2").style.display = "flex";

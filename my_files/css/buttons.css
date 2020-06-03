@@ -2,13 +2,13 @@
     margin: 7% 0% 7% 40%;
     padding: 5%;
     padding-top: 1.5%;
-    width: 26%;
-    height: 5vh;
+    width: 23%;
+    height: 3vh;
 }
 
 .random-button,
 .next-button {
-    width: 7%;
+    width: 6%;
     color: aliceblue;
     background-color: #32CD32;
     display: flex;
@@ -18,7 +18,7 @@
 }
 
 .random-button {
-    width: 10%;
+    width: 9%;
 }
 
 .order-button {
@@ -33,15 +33,15 @@
 .previous-form-button,
 .next-form-button {
     margin: 7% 0% 7% 37%;
-    padding: 4%;
-    padding-top: 1.5%;
-    width: 25%;
-    height: 5vh;
+    padding-top: 0.5%;
+    padding-left: 3%;
+    width: 20%;
+    height: 3vh;
 }
 
 .confirm-form-button,
 .previous-form-button {
-    width: 34%;
+    width: 30%;
     padding-left: 5%;
 }
 
@@ -49,8 +49,8 @@
     margin: 7% 0% 7% 40%;
     padding: 5%;
     padding-top: 2%;
-    width: 25%;
-    height: 5vh;
+    width: 22%;
+    height: 3vh;
 }
 
 button {
