@@ -1,179 +1,153 @@
 @media only screen and (width:360px) and (height:640px) {
-  nav {
-    height: 48vh;
-    width: 110%;
-    margin-left: -5%;
-    margin-top: -4%;
-    margin-bottom: 15%;
-  }
-
-  section.shopping-cart {
-    width: 70%;
-    height: 100%;
-  }
-
-  #form1 {
-    margin-top: 4%;
-    flex-flow: column nowrap;
-  }
-
-  div.new-shopping-cart.display {
-    width: 100%;
-    margin: 4% auto 0% auto;
-  }
-
-  button.confirm-form-button,
-  button.next-form-button,
-  button.previous-form-button {
-    width: 38%;
-    margin-left: 25%;
-  }
-
-  button.confirm-form-button,
-  button.previous-form-button {
-    width: 52%;
-  }
-
-  form {
-    width: 100%;
-  }
-
-  button#check-button.random-button {
-    width: 42%;
-    padding-left: 3%;
-    padding-top: 2%;
-  }
-
-  button.next-button {
-    width: 25%;
-    height: 10%;
-    padding: 2%;
-  }
-
-  h1#popup-title {
-    margin-left: 30%;
-  }
-
-  section#pop {
-    width: 90%;
-    left: 3%;
-  }
-
-  div#pop-up-buttons {
-    margin-top: 5%;
-    margin-left: 26%;
-  }
-
-  #pop-up-buttons button {
-    font-size: 12px;
-  }
-
-  label#popup-text {
-    font-size: 14px;
-    margin-left: 1%;
-  }
-
-  .shopping-cart {
-    width: 50%;
-    margin-left: 20%;
-    margin-top: 5%;
-  }
-
-  .random-button {
-    width: 40%;
-    padding: 2%;
-  }
-
-  .next-button {
-    width: 25%;
-    padding: 2%;
-  }
-
-  .content {
-    margin-bottom: 15%;
-  }
-
-  .list-heading {
-    margin-top: 0%;
-  }
-
-  ul>li,
-  ul.list-heading {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  #sitename {
-    margin-left: 30%;
-  }
-
-  #register-layout {
-    width: 24vw;
-    padding-left: 15%;
-    margin-left: 15%;
-    font-size: 12px;
-    margin-top: 0;
-  }
-
-  .login-button {
-    width: 25vw;
-    margin-left: 32%;
-    padding-left: 4%;
-  }
-
-  .order-button {
-    width: 33%;
-    font-size: 12px;
-    height: 4vh;
-  }
-
-  #logout-layout {
-    width: 28vw;
-    padding-top: 4%;
-    padding-left: 10%;
-    margin-top: -10%;
-    font-size: 12px;
-  }
-
-  form {
-    width: 75%;
-    margin-bottom: 15%;
-  }
-
-  .initial-heading {
-    width: 70%
-  }
-
-  input {
-    height: 4vh;
-    width: 70%;
-  }
-
-  label {
-    width: 100%;
-    margin-left: -5%;
-    font-size: 15px;
-  }
-
-  footer {
-    margin-top: 5%;
-    margin-left: -3%;
-    margin-bottom: -20px;
-    width: 110%;
-  }
-
-  #footer-contact-details {
-    padding: 0px 0px 0px 10px;
-  }
-
-  section#slogan-layout {
-    margin-bottom: 15%;
-    width: 90%;
-  }
-
-  #footer-copyright {
-    width: 300px;
-    margin: 0px;
-    padding: 0px 0px 0px 10px;
-  }
+    nav {
+        height: 48vh;
+        width: 110%;
+        margin-left: -5%;
+        margin-top: -4%;
+        margin-bottom: 15%;
+    }
+    section.shopping-cart {
+        width: 70%;
+        height: 100%;
+    }
+    #form1 {
+        margin-top: 4%;
+        flex-flow: column nowrap;
+    }
+    div.new-shopping-cart.display {
+        width: 100%;
+        margin: 4% auto 0% auto;
+    }
+    button.confirm-form-button,
+    button.next-form-button,
+    button.previous-form-button {
+        width: 38%;
+        margin-left: 25%;
+    }
+    button.confirm-form-button,
+    button.previous-form-button {
+        width: 52%;
+    }
+    form {
+        width: 100%;
+    }
+    button#check-button.random-button {
+        width: 42%;
+        padding-left: 3%;
+        padding-top: 2%;
+    }
+    button.next-button {
+        width: 25%;
+        height: 10%;
+        padding: 2%;
+    }
+    h1#popup-title {
+        margin-left: 30%;
+    }
+    section#pop {
+        width: 90%;
+        left: 3%;
+    }
+    div#pop-up-buttons {
+        margin-top: 5%;
+        margin-left: 26%;
+    }
+    #pop-up-buttons button {
+        font-size: 12px;
+    }
+    label#popup-text {
+        font-size: 14px;
+        margin-left: 1%;
+    }
+    .shopping-cart {
+        width: 50%;
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+    .random-button {
+        width: 40%;
+        padding: 2%;
+    }
+    .next-button {
+        width: 25%;
+        padding: 2%;
+    }
+    .content {
+        margin-bottom: 15%;
+    }
+    .list-heading {
+        margin-top: 0%;
+    }
+    ul>li,
+    ul.list-heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #sitename {
+        margin-left: 30%;
+    }
+    #register-layout {
+        width: 24vw;
+        padding-left: 15%;
+        margin-left: 15%;
+        font-size: 12px;
+        margin-top: 0;
+    }
+    .login-button {
+        width: 25vw;
+        margin-left: 32%;
+        padding-left: 4%;
+    }
+    .order-button {
+        width: 33%;
+        font-size: 12px;
+        height: 4vh;
+    }
+    #logout-layout {
+        width: 28vw;
+        padding-top: 4%;
+        padding-left: 10%;
+        margin-top: -10%;
+        font-size: 12px;
+    }
+    form {
+        width: 75%;
+        margin-bottom: 15%;
+    }
+    .initial-heading {
+        width: 70%
+    }
+    input {
+        height: 4vh;
+        width: 70%;
+    }
+    label {
+        width: 100%;
+        margin-left: -5%;
+        font-size: 15px;
+    }
+    footer {
+        margin-top: 5%;
+        margin-left: -3%;
+        margin-bottom: -20px;
+        width: 110%;
+    }
+    #footer-contact-details {
+        padding: 0px 0px 0px 10px;
+    }
+    section#slogan-layout {
+        margin-bottom: 15%;
+        width: 90%;
+    }
+    #footer-copyright {
+        width: 300px;
+        margin: 0px;
+        padding: 0px 0px 0px 10px;
+    }
+    a.menu-button {
+        width: 70vw;
+        height: 5vh;
+        font-size: 18px;
+        padding-left: 10%;
+    }
 }

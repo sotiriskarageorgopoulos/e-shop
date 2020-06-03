@@ -1,3 +1,22 @@
+.list-of-buttons {
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 5% auto 5% auto;
+}
+
+a.menu-button {
+    width: 20vw;
+    height: 10vh;
+    background-color: #32CD32;
+    color: aliceblue;
+    margin: 2% auto 1% auto;
+    font-size: 30px;
+    padding-top: 2%;
+    padding-left: 2%;
+    border-radius: 25px;
+}
+
 .register-button {
     margin: 7% 0% 7% 40%;
     padding: 5%;
@@ -63,10 +82,12 @@ button {
     font-size: 17px;
 }
 
+.menu-button:hover,
 button:hover {
     cursor: pointer;
 }
 
+.menu-button:hover,
 button:focus {
     outline: none;
 }
