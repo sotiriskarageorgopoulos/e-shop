@@ -1,3 +1,12 @@
+<?php 
+include "../php/config.php";
+include "../php/product.php";
+
+$query1 = "SELECT DISTINCT P.scName FROM Product AS P
+           INNER JOIN Subcategory AS S
+           ON P.scName = S.scName AND S.categoryName = 'XBOX'";
+$res1 = $con->query($query1);
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -11,7 +20,7 @@
 <nav>
     <a href="./index.html" id="sitename">Gaming</a>
     <figure>
-        <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
@@ -25,82 +34,48 @@
             <button class="next-button" onclick="nextButton()">Επόμενο</button>
             <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
         </section>
+        <?php 
+           if($res1->num_rows > 0){
+             while ($subCat = $res1->fetch_assoc()){
+        ?>
         <section>
-            <h1 class="heading initial-heading">Κατηγορία Nintendo Wii</h1>
+            <h1 class="heading initial-heading"><?php echo $subCat["scName"]?></h1>
         </section>
-        <section class="main-boxes layout">
+        <section class="main-boxes layout layout-subcategories">
+        <?php 
+            $scName = $subCat["scName"];
+            $query2 = "SELECT * FROM Product AS P WHERE P.scName = '$scName'";
+            $res2 = $con->query($query2);
+
+            if($res2->num_rows > 0){
+                 while ($prod = $res2->fetch_assoc()){
+                    $product = new Product($prod["productId"],$prod["productName"],$prod["price"],$prod["quantity"],
+                                    $prod["description"],$prod["productImg"],$prod["scName"]);
+                     ?>
             <figure>
-                <h1 class="heading">Nintendo Wii White Console</h1>
-                <img src="../icons/nintendo_wii_white.png" alt="Nintendo Wii White Console">
+                <h1 class="heading"><?php echo $product->getProductName();?></h1>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($product->getProductImg());?>" alt="<?php echo $product->getProductName();?>">
                 <figcaption>
-                    <p>Τιμή: <span class="price">220</span>&euro;</p><br>
-                    <legend for="quantity1">Ποσότητα:
-                        <input type="number" id="quantity1" class="quantity-boxes" value="quantity" min="0">
+                    <p>Τιμή: <span class="price"><?php echo $product->getPrice();?></span>&euro;</p><br>
+                    <?php if($product->getDesc() !== '-') {?>
+                        <p class="desc"><?php echo $product->getDesc(); ?></p>
+                    <?php } ?>
+                    <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
+                    <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
+                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" 
+                        value="<?php echo "quantity".$product->getProductId(); ?>" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="Nintendo_Wii_White_Console" name="Nintendo_Wii_White_Console" value="Nintendo Wii White Console">
+                    <br><input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" name="<?php echo $product->getProductName();?>" 
+                    value="<?php echo $product->getProductName();?>">
                 </figcaption>
             </figure>
-            <figure>
-                <h1 class="heading">Nintendo Wii Mini</h1>
-                <img src="../icons/nintendo_wii_mini.jpg" alt="Nintendo Wii Mini">
-                <figcaption>
-                    <p>Τιμή: <span class="price">200</span>&euro;</p><br>
-                    <legend for="quantity2">Ποσότητα:
-                        <input type="number" id="quantity2" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Nintendo_Wii_Mini" name="Nintendo_Wii_Mini" value="Nintendo Wii Mini">
-                </figcaption>
-            </figure>
+            <?php }}?>
         </section>
-        <section>
-            <h1 class="heading initial-heading">Κατηγορία Nintendo Wii Games</h1>
-        </section>
-        <section class="main-boxes layout">
-            <figure>
-                <h1 class="heading">Wii Sports</h1>
-                <img src="../icons/wii_sports.jpeg" alt="Wii Sports">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity3">Ποσότητα:
-                        <input type="number" id="quantity3" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Wii_Sports" name="Wii_Sports" value="Wii Sports">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Just Dance 2020</h1>
-                <img src="../icons/dance_2020-wii.jpeg" alt="Just Dance 2020">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity4">Ποσότητα:
-                        <input type="number" id="quantity4" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Just_Dance_2020" name="Just_Dance_2020" value="Just Dance 2020">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Super Mario Galaxy</h1>
-                <img src="../icons/super_mario_galaxy.jpeg" alt="Super Mario Galaxy">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity5">Ποσότητα:
-                        <input type="number" id="quantity5" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Super_Mario_Galaxy" name="Super_Mario_Galaxy" value="Super Mario Galaxy">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Super Smash Bros Brawl</h1>
-                <img src="../icons/super_smash_bros_brawl_wii.jpeg" alt="Super Smash Bros Brawl ">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity6">Ποσότητα:
-                        <input type="number" id="quantity6" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Super_Smash_Bros_Brawl" name="Super_Smash_Bros_Brawl" value="Super Smash Bros Brawl">
-                </figcaption>
-            </figure>
-        </section>
+        <?php }}
+           $con->close();
+           $res1->close();
+           $res2->close();
+        ?>
         <section class="shopping-cart">
             <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
             <div id="sc-list1"></div>
@@ -175,7 +150,7 @@
             <p id="footer-msg">Άμεση εξυπηρέτηση <br>σε 24 ώρες από την στιγμή της παραγγελίας</p>
         </section>
         <section>
-            <p id="footer-copyright">&copy; Copyright 2020
+            <p id="footer-copyright">&copy; Copyright
                 <script>
                     document.write(new Date().getFullYear());
                 </script>

@@ -1,3 +1,12 @@
+<?php 
+include "../php/config.php";
+include "../php/product.php";
+
+$query1 = "SELECT DISTINCT P.scName FROM Product AS P
+           INNER JOIN Subcategory AS S
+           ON P.scName = S.scName AND S.categoryName = 'PC'";
+$res1 = $con->query($query1);
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -25,82 +34,47 @@
             <button class="next-button" onclick="nextButton()">Επόμενο</button>
             <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
         </section>
+        <?php 
+           if($res1->num_rows > 0){
+             while ($subCat = $res1->fetch_assoc()){
+        ?>
         <section>
-            <h1 class="heading initial-heading">Κατηγορία PS VITA</h1>
+            <h1 class="heading initial-heading"><?php echo $subCat["scName"]?></h1>
         </section>
-        <section class="main-boxes layout">
+        <section class="main-boxes layout layout-subcategories">
+        <?php 
+            $scName = $subCat["scName"];
+            $query2 = "SELECT * FROM Product AS P WHERE P.scName = '$scName'";
+            $res2 = $con->query($query2);
+
+            if($res2->num_rows > 0){
+                 while ($prod = $res2->fetch_assoc()){
+                    $product = new Product($prod["productId"],$prod["productName"],$prod["price"],$prod["quantity"],
+                                    $prod["description"],$prod["productImg"],$prod["scName"]);
+                     ?>
             <figure>
-                <h1 class="heading">Sony PlayStation Vita Wi-Fi</h1>
-                <img src="../icons/sony-ps-vita-wifi.jpg" alt="Sony PlayStation Vita Wi-Fi">
+                <h1 class="heading"><?php echo $product->getProductName();?></h1>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($product->getProductImg());?>" alt="<?php echo $product->getProductName();?>">
                 <figcaption>
-                    <p>Τιμή: <span class="price">220</span>&euro;</p><br>
-                    <legend for="quantity1">Ποσότητα:
-                        <input type="number" id="quantity1" class="quantity-boxes" value="quantity" min="0">
+                    <p>Τιμή: <span class="price"><?php echo $product->getPrice();?></span>&euro;</p><br>
+                    <?php if($product->getDesc() !== '-') {?>
+                        <p class="desc"><?php echo $product->getDesc(); ?></p>
+                    <?php } ?>
+                    <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
+                    <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
+                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" value="<?php echo "quantity".$product->getProductId(); ?>" min="0">
                     </legend>
-                    <br><input type="checkbox" class="checkboxes" id="PSVita_Wi-Fi" name="PSVita_Wi-Fi" value="PSVita Wi-Fi">
+                    <input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" 
+                    name="<?php echo $product->getProductName();?>" value="<?php echo $product->getProductName();?>">
                 </figcaption>
             </figure>
-            <figure>
-                <h1 class="heading">Sony Playstation Vita 3G/Wi-Fi</h1>
-                <img src="../icons/psvita_3G_wifi.png" alt="Sony PlayStation Vita Wi-Fi">
-                <figcaption>
-                    <p>Τιμή: <span class="price">250</span>&euro;</p><br>
-                    <legend for="quantity2">Ποσότητα:
-                        <input type="number" id="quantity2" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <br> <input type="checkbox" class="checkboxes" id="PSVita_Wi-Fi&3G" name="PSVita_Wi-Fi&3G" value="PSVita Wi-Fi&3G">
-                </figcaption>
-            </figure>
+            <?php }}?>
         </section>
-        <section>
-            <h1 class="heading initial-heading">Κατηγορία PS VITA Games</h1>
-        </section>
-        <section class="main-boxes layout">
-            <figure>
-                <h1 class="heading">Assassin's Creed III Liberation</h1>
-                <img src="../icons/assasin_creed_psvita.jpg" alt="Assassin's Creed III Liberation">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity3">Ποσότητα:
-                        <input type="number" id="quantity3" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <br><input type="checkbox" class="checkboxes" id="Assassin's_Creed_III_Lib" name="Assassin's_Creed_III_Lib" value="Assassin's Creed III Lib">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Need for Speed Most Wanted</h1>
-                <img src="../icons/nfs_psvita.jpeg" alt="Need for Speed Most Wanted">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity4">Ποσότητα:
-                        <input type="number" id="quantity4" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <br><input type="checkbox" class="checkboxes" id="Need_for_Speed_Most_Wanted" name="Need_for_Speed_Most_Wanted" value="Need for Speed Most Wanted">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">LEGO Marvel's Avengers</h1>
-                <img src="../icons/lego_avengers_psvita.jpeg" alt="LEGO Marvel's Avengers">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity5">Ποσότητα:
-                        <input type="number" id="quantity5" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <br><input type="checkbox" class="checkboxes" id="LEGO_Marvel's_Avengers" name="LEGO_Marvel's_Avengers" value="LEGO Marvel's Avengers">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Call of Duty: Black Ops Declassified</h1>
-                <img src="../icons/call_of_duty_psvita.jpg" alt="Call of Duty: Black Ops Declassified">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity6">Ποσότητα:
-                        <input type="number" id="quantity6" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <br><input type="checkbox" class="checkboxes" id="Black_Ops_Declassified" name="Black_Ops_Declassified" value="Black Ops Declassified">
-                </figcaption>
-            </figure>
-        </section>
+        <?php }}
+           $con->close();
+           $res1->close();
+           $res2->close();
+        ?>
         <section class="shopping-cart">
             <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
             <div id="sc-list1"></div>
@@ -110,8 +84,8 @@
                 <label for="road">Oδός*
                     <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
                 </label>
-                <label for="road_number">Αριθμός Oδού*
-                    <input type="number" id="road_number" name="road number" placeholder="π.χ. 24" value="" required>
+                <label for="road number">Αριθμός Oδού*
+                    <input type="number" id="road number" name="road number" placeholder="π.χ. 24" value="" required>
                 </label>
                 <label for="region">Περιοχή*
                     <input type="text" id="region" name="region" placeholder="π.χ. Νέα Ιωνία" value="" required>

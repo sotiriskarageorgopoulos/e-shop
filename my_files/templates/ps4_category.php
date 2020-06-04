@@ -1,3 +1,12 @@
+<?php 
+include "../php/config.php";
+include "../php/product.php";
+
+$query1 = "SELECT DISTINCT P.scName FROM Product AS P
+           INNER JOIN Subcategory AS S
+           ON P.scName = S.scName AND S.categoryName = 'Playstation 4'";
+$res1 = $con->query($query1);
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -25,93 +34,48 @@
             <button class="next-button" onclick="nextButton()">Επόμενο</button>
             <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
         </section>
+        <?php 
+           if($res1->num_rows > 0){
+             while ($subCat = $res1->fetch_assoc()){
+        ?>
         <section>
-            <h1 class="heading initial-heading">Κατηγορία PS4</h1>
+            <h1 class="heading initial-heading"><?php echo $subCat["scName"]?></h1>
         </section>
-        <section class="main-boxes layout">
+        <section class="main-boxes layout layout-subcategories">
+        <?php 
+            $scName = $subCat["scName"];
+            $query2 = "SELECT * FROM Product AS P WHERE P.scName = '$scName'";
+            $res2 = $con->query($query2);
+
+            if($res2->num_rows > 0){
+                 while ($prod = $res2->fetch_assoc()){
+                    $product = new Product($prod["productId"],$prod["productName"],$prod["price"],$prod["quantity"],
+                                    $prod["description"],$prod["productImg"],$prod["scName"]);
+                     ?>
             <figure>
-                <h1 class="heading">Sony PlayStation 4 Pro 1TB</h1>
-                <img src="../icons/ps4_pro.jpeg" alt="Sony PlayStation 4 Pro 1TB">
+                <h1 class="heading"><?php echo $product->getProductName();?></h1>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($product->getProductImg());?>" alt="<?php echo $product->getProductName();?>">
                 <figcaption>
-                    <p>Τιμή: <span class="price">380</span>&euro;</p><br>
-                    <legend for="quantity">Ποσότητα:
-                        <input type="number" id="quantity" class="quantity-boxes" value="quantity" min="0">
+                    <p>Τιμή: <span class="price"><?php echo $product->getPrice();?></span>&euro;</p><br>
+                    <?php if($product->getDesc() !== '-') {?>
+                        <p class="desc"><?php echo $product->getDesc(); ?></p>
+                    <?php } ?>
+                    <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
+                    <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
+                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" 
+                        class="quantity-boxes" value="<?php echo "quantity".$product->getProductId(); ?>" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="Sony_PlayStation_4_Pro" name="Sony_PlayStation_4_Pro" value="Sony PlayStation 4 Pro">
+                    <input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" name="<?php echo $product->getProductName();?>"
+                     value="<?php echo $product->getProductName();?>">
                 </figcaption>
             </figure>
-            <figure>
-                <h1 class="heading">Sony PlayStation 4 Slim 500GB</h1>
-                <img src="../icons/ps4-slim.jpeg" alt="Sony PlayStation 4 Slim 500GB">
-                <figcaption>
-                    <p>Τιμή: <span class="price">280</span>&euro;</p><br>
-                    <legend for="quantity1">Ποσότητα:
-                        <input type="number" id="quantity1" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Sony_PlayStation_4_Slim" name="Sony_PlayStation_4_Slim" value="Sony PlayStation 4 Slim">
-                </figcaption>
-            </figure>
+            <?php }}?>
         </section>
-        <section>
-            <h1 class="heading initial-heading">Κατηγορία PS4 Games</h1>
-        </section>
-        <section class="main-boxes layout">
-            <figure>
-                <h1 class="heading">eFootball PES 2020 PS4</h1>
-                <img src="../icons/pes2020_ps4.jpeg" alt="eFootball PES 2020 PS4">
-                <figcaption>
-                    Κατεβείτε από τις κερκίδες και μπείτε στο γήπεδο με την επιστροφή<br> της αυθεντικής σειράς ποδοσφαίρου<br> από την Konami στο PS4<br>
-                    <p>Τιμή: <span class="price">30</span>&euro;</p><br>
-                    <legend for="quantity2">Ποσότητα:
-                        <input type="number" id="quantity2" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="PES_2020_PS4" name="PES_2020_PS4" value="PES 2020 PS4">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Marvel's Spider-Man PS4</h1>
-                <img src="../icons/spiderman_ps4.jpeg" alt="Marvel's Spider-Man PS4">
-                <figcaption>
-                    Μία νέα αυθεντική ιστορία του Spider-Man<br> με τον έμπειρο πλέον Πίτερ Πάρκερ<br> που έχει αναγάγει σε τέχνη τη μάχη<br>κατά του οργανωμένου εγκλήματος στη Νέα Υόρκη<br>
-                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
-                    <legend for="quantity3">Ποσότητα:
-                        <input type="number" id="quantity3" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Marvel's_Spider-Man_PS4" name="Marvel's_Spider-Man_PS4" value="Marvel's Spider-Man PS4">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">God of War</h1>
-                <img src="../icons/god_of_war_ps4.jpeg" alt="God of War">
-                <figcaption>
-                    Η περιπέτεια διαδραματίζεται αυτή την φορά<br> στην παλιά Σκανδιναβία<br>με πρωταγωνιστή τον θεό του πολέμου Kratos.<br> Γηραιότερος, πιο ώριμος με μυστικά,<br> συγκρατημένη οργή και έχοντας πάντα δίπλα του<br> τον γιο του Atreus πλέον
-                    μακριά από την αρχαία Ελλάδα.
-                    <br>
-                    <p>Τιμή: <span class="price">25</span>&euro;</p><br>
-                    <legend for="quantity4">Ποσότητα:
-                        <input type="number" id="quantity4" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="God_of_War" name="God_of_War" value="God of War">
-                </figcaption>
-            </figure>
-        </section>
-        <section>
-            <h1 class="heading initial-heading">Κατηγορία PS4 Αccessoires</h1>
-        </section>
-        <section class="main-boxes layout">
-            <figure>
-                <h1 class="heading">HYPERX HX-HSCLS-BL</h1>
-                <img src="../icons/hyperex_ps4.jpg" alt="HYPERX HX-HSCLS-BL ακουστικά">
-                <figcaption>
-                    Οδηγοί: Δυναμικοί, 53mm με μαγνήτες νεοδημίου.<br> Απόκριση συχνότητας: 15Hz25,000 Hz.<br> Απόκριση συχνότητας μικροφώνου: 50Hz-18,000 Hz.<br> Ευαισθησία μικροφώνου: -39dBV (0dB=1V/Pa,1kHz).<br> Αντίσταση: 41 Ω.<br>
-                    <p>Τιμή: <span class="price">50</span>&euro;</p><br>
-                    <legend for="quantity5">Ποσότητα:
-                        <input type="number" id="quantity5" class="quantity-boxes" value="quantity" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="HYPERX" name="HYPERX" value="HYPERX">
-                </figcaption>
-            </figure>
-        </section>
+        <?php }}
+           $con->close();
+           $res1->close();
+           $res2->close();
+        ?>
         <section class="shopping-cart">
             <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
             <div id="sc-list1"></div>

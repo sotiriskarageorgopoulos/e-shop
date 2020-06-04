@@ -113,7 +113,6 @@ img {
     border-radius: 5px;
 }
 
-
 .layout {
     display: flex;
     flex-flow: row wrap;
@@ -126,6 +125,17 @@ img {
     background-color: #121412;
 }
 
+.layout-category {
+    margin-top: 4%;
+    margin-bottom: 7%;
+}
+
+section.layout-subcategories {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .main-boxes {
     box-shadow: 5px 10px #32CD32;
 }
@@ -133,5 +143,6 @@ img {
 #psvita-caption {
     text-align: center;
 }
+
 
 /*------------------------------------------*/

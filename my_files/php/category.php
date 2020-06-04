@@ -4,10 +4,10 @@
       private $categoryImg;
       private $scName;
 
-      public function __construct($categoryName,$categoryImg,$scName){
+      public function __construct($categoryName,$categoryImg,$link){
            $this->categoryName = $categoryName;
            $this->categoryImg = $categoryImg;
-           $this->scName = $scName;
+           $this->link = $link;
       }
 
       public function setCategoryName($categoryName){
@@ -20,7 +20,15 @@
 
       public function setSubcategoryName($scName){
         $this->scName = $scName;
-    } 
+      }
+      
+      public function setLink($link){
+        $this->link = $link;
+      }
+
+      public function getLink(){
+        return $this->link; 
+      }
 
       public function getCategoryName(){
           return $this->categoryName;

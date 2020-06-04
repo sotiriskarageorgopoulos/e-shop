@@ -1,8 +1,8 @@
-.overlay-pc {
+.overlay-category {
     position: absolute;
     top: 0;
     bottom: 0;
-    margin-left: 139px;
+    margin-left: 3px;
     margin-top: 80px;
     height: 193px;
     width: 142px;
@@ -11,36 +11,7 @@
     background-color: #32CD32;
 }
 
-#text-pc {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 67%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-}
-
-.overlay-xbox {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 50px;
-    margin-top: 80px;
-    height: 193px;
-    width: 142px;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-xbox {
+#text-category {
     display: flex;
     flex-flow: column nowrap;
     position: relative;
@@ -48,155 +19,6 @@
     width: 100%;
     padding: 0% 0% 0% 10%;
     margin-top: 70%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-size: 12px;
-}
-
-.overlay-ps4 {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 45px;
-    margin-top: 80px;
-    height: 193px;
-    width: 142px;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-ps4 {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 70%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-size: 12px;
-}
-
-.overlay-ps3 {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 45px;
-    margin-top: 80px;
-    height: 193px;
-    width: 142px;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-ps3 {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 67%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-}
-
-.overlay-psvita {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 30px;
-    margin-top: 80px;
-    height: 143px;
-    width: 193px;
-    opacity: 0;
-    padding-left: 0.3%;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-psvita {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 38%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-}
-
-.overlay-nintendo-wii {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 80px;
-    margin-top: 80px;
-    height: 193px;
-    width: 142px;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-nintendo-wii {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 70%;
-    margin-left: 50%;
-    border: 2px dashed aliceblue;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: left;
-    font-size: 12px;
-}
-
-.overlay-nintendo-ds {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-left: 55px;
-    margin-top: 80px;
-    height: 193px;
-    width: 193px;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #32CD32;
-}
-
-#text-nintendo-ds {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    color: aliceblue;
-    width: 100%;
-    padding: 0% 0% 0% 10%;
-    margin-top: 50%;
     margin-left: 50%;
     border: 2px dashed aliceblue;
     -webkit-transform: translate(-50%, -50%);

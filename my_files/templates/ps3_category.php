@@ -1,3 +1,12 @@
+<?php 
+include "../php/config.php";
+include "../php/product.php";
+
+$query1 = "SELECT DISTINCT P.scName FROM Product AS P
+           INNER JOIN Subcategory AS S
+           ON P.scName = S.scName AND S.categoryName = 'Playstation 3'";
+$res1 = $con->query($query1);
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -25,82 +34,48 @@
             <button class="next-button" onclick="nextButton()">Επόμενο</button>
             <button class="random-button" id="check-button" onclick="checkRandomProducts()">Τυχαία Επιλογή</button>
         </section>
+        <?php 
+           if($res1->num_rows > 0){
+             while ($subCat = $res1->fetch_assoc()){
+        ?>
         <section>
-            <h1 class="heading initial-heading">Κατηγορία Nintendo DS</h1>
+            <h1 class="heading initial-heading"><?php echo $subCat["scName"]?></h1>
         </section>
-        <section class="main-boxes layout">
+        <section class="main-boxes layout layout-subcategories">
+        <?php 
+            $scName = $subCat["scName"];
+            $query2 = "SELECT * FROM Product AS P WHERE P.scName = '$scName'";
+            $res2 = $con->query($query2);
+
+            if($res2->num_rows > 0){
+                 while ($prod = $res2->fetch_assoc()){
+                    $product = new Product($prod["productId"],$prod["productName"],$prod["price"],$prod["quantity"],
+                                    $prod["description"],$prod["productImg"],$prod["scName"]);
+                     ?>
             <figure>
-                <h1 class="heading">Nintendo 2DS XL</h1>
-                <img src="../icons/nintendo_2dsxl.jpg" alt="Nintendo 2DS XL">
+                <h1 class="heading"><?php echo $product->getProductName();?></h1>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($product->getProductImg());?>" alt="<?php echo $product->getProductName();?>">
                 <figcaption>
-                    <p>Τιμή: <span class="price">100</span>&euro;</p><br>
-                    <legend for="quantity1">Ποσότητα:
-                        <input type="number" id="quantity1" class="quantity-boxes" value="" min="0">
+                    <p>Τιμή: <span class="price"><?php echo $product->getPrice();?></span>&euro;</p><br>
+                    <?php if($product->getDesc() !== '-') {?>
+                        <p class="desc"><?php echo $product->getDesc(); ?></p>
+                    <?php } ?>
+                    <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
+                    <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
+                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" 
+                        value="<?php echo "quantity".$product->getProductId(); ?>" min="0">
                     </legend>
-                    <input type="checkbox" class="checkboxes" id="Nintendo_2DS_XL" name="Nintendo_2DS_XL" value="Nintendo 2DS XL" onchange="checkProduct()">
+                    <input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" name="<?php echo $product->getProductName();?>" 
+                    value="<?php echo $product->getProductName();?>">
                 </figcaption>
             </figure>
-            <figure>
-                <h1 class="heading">Nintendo Switch 32GB</h1>
-                <img src="../icons/nintendo_switch.jpeg" alt="Nintendo Switch 32GB" class="nintendo-switch-img">
-                <figcaption>
-                    <p>Τιμή: <span class="price">300</span>&euro;</p><br>
-                    <legend for="quantity2">Ποσότητα:
-                        <input type="number" id="quantity2" class="quantity-boxes" value="" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Nintendo_Switch_32GB" name="Nintendo_Switch_32GB" value="Nintendo Switch 32GB" onchange="checkProduct()">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Nintendo 3DS XL</h1>
-                <img src="../icons/nintendo-3ds-xl.webp" alt="Nintendo Switch 32GB">
-                <figcaption>
-                    <p>Τιμή: <span class="price">190</span>&euro;</p><br>
-                    <legend for="quantity3">Ποσότητα:
-                        <input type="number" id="quantity3" class="quantity-boxes" value="" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Nintendo_3DS_XL" name="Nintendo_3DS_XL" value="Nintendo 3DS XL" onchange="checkProduct()">
-                </figcaption>
-            </figure>
+            <?php }}?>
         </section>
-        <section>
-            <h1 class="heading initial-heading">Κατηγορία Nintendo DS Games</h1>
-        </section>
-        <section class="main-boxes layout">
-            <figure>
-                <h1 class="heading"> Mario Kart 7</h1>
-                <img src="../icons/mario_kart_7_3ds.jpeg" alt="Mario Kart 7">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity4">Ποσότητα:
-                        <input type="number" id="quantity4" class="quantity-boxes" value="" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Mario_Kart_7" name="Mario_Kart_7" value="Mario Kart 7" onchange="checkProduct()">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading"> New Super Mario Bros 2</h1>
-                <img src="../icons/new_super_mario_bros_2_3ds.jpeg" alt="New Super Mario Bros 2">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity5">Ποσότητα:
-                        <input type="number" id="quantity5" class="quantity-boxes" value="" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="New_Super_Mario_Bros_2" name="New_Super_Mario_Bros_2" value="New Super Mario Bros 2" onchange="checkProduct()">
-                </figcaption>
-            </figure>
-            <figure>
-                <h1 class="heading">Pokemon Ultra Sun</h1>
-                <img src="../icons/pokemon_ultra_sun_3ds.jpeg" alt="Pokemon Ultra Sun">
-                <figcaption>
-                    <p>Τιμή: <span class="price">20</span>&euro;</p><br>
-                    <legend for="quantity6">Ποσότητα:
-                        <input type="number" id="quantity6" class="quantity-boxes" value="" min="0">
-                    </legend>
-                    <input type="checkbox" class="checkboxes" id="Pokemon_Ultra_Sun" name="Pokemon_Ultra_Sun" value="Pokemon Ultra Sun" onchange="checkProduct()">
-                </figcaption>
-            </figure>
-        </section>
+        <?php }}
+           $con->close();
+           $res1->close();
+           $res2->close();
+        ?>
         <section class="shopping-cart">
             <p class="sc-icon" id="amount">Ποσό: 0 &euro;</p>
             <div id="sc-list1"></div>
