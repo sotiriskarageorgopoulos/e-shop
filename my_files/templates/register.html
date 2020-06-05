@@ -18,7 +18,7 @@
 
 <body>
     <h1 class="heading initial-heading">Εγγραφή</h1>
-    <form method="POST" action="">
+    <form method="POST" action="../php/insert_db.php" onsubmit="return validRegister()">
         <label for="username">Όνομα Χρήστη*
             <input type="text" id="username" name="username" placeholder="π.χ. George" required>
         </label>
@@ -28,11 +28,14 @@
         <label for="surname">Επίθετο*
             <input type="text" id="surname" name="surname" placeholder="π.χ. Παπάς" required>
         </label>
-        <label for="address">Διεύθυνση*
-            <input type="text" id="address" name="address" placeholder="π.χ. Σωκράτους 42" required>
+        <label for="road">Οδός*
+            <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" required>
         </label>
-        <label for="city">Πόλη*
-            <input type="text" id="city" name="city" placeholder="π.χ. Πάτρα" required>
+        <label for="roadnumber">Αριθμός Οδού*
+            <input type="text" id="roadnumber" name="roadnumber" placeholder="π.χ.42" required>
+        </label>
+        <label for="region">Περιοχή*
+            <input type="text" id="region" name="region" placeholder="π.χ. Νέα Σμύρνη" required>
         </label>
         <label for="postcode">Τ.Κ*
             <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" required>
@@ -43,7 +46,7 @@
         <label for="e-mail">Email*
             <input type="email" id="e-mail" name="e-mail" placeholder="π.χ.crisbrown@domain.com" required>
         </label>
-        <button type="button" class="register-button" onclick="validRegister()">Εγγραφή</button>
+        <button type="submit" class="register-button">Εγγραφή</button>
     </form>
 </body>
 <footer>

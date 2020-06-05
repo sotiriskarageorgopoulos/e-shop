@@ -6,21 +6,23 @@ class Person {
     private $username;
     private $email;
     private $password;
-    private $address;
-    private $city;
+    private $road;
+    private $roadNumber;
+    private $region;
     private $postalCode;
     private $phoneNumber;
     private $notify;
 
-    public function __construct($name,$surname,$username,$email,$password,$address,$city,$postalCode,$phoneNumber)
+    public function __construct($name,$surname,$username,$email,$password,$road,$roadNumber,$region,$postalCode,$phoneNumber)
     {
         $this->name = $name;
         $this->surname = $surname;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
-        $this->address = $address;
-        $this->city = $city;
+        $this->road = $road;
+        $this->roadNumber = $roadNumber;
+        $this->region = $region;
         $this->postalCode = $postalCode;
         $this->phoneNumber = $phoneNumber;
         $this->notify = false;
@@ -46,13 +48,17 @@ class Person {
         $this->email = $email;
     }
 
-    public function setCity($city) {
-        $this->city = $city;
+    public function setRegion($region) {
+        $this->region = $region;
     }
 
-    public function setAddress($address){
-       $this->address = $address;
+    public function setRoad($road){
+       $this->road = $road;
     }
+     
+    public function setRoadNumber($roadNum){
+        $this->roadNumber = $roadNum;
+     }
 
     public function setPostalCode($postalCode){
         $this->postalCode = $postalCode;
@@ -86,12 +92,16 @@ class Person {
         return $this->email;
     }
 
-    public function getCity() {
-        return $this->city;
+    public function getRegion() {
+        return $this->region;
     }
 
-    public function getAddress() {
-        return $this->address;
+    public function getRoad() {
+        return $this->road;
+    }
+
+    public function getRoadNumber() {
+        return $this->roadNumber;
     }
 
     public function getPostalCode() {

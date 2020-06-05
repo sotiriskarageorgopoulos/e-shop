@@ -326,9 +326,9 @@ const confirmFormButton = () => {
 const validRegister = () => {
     let nameElement = document.getElementById("name");
     let surnameElement = document.getElementById("surname");
-    let addressElement = document.getElementById("address");
+    let roadElement = document.getElementById("road");
+    let roadNumElement = document.getElementById("roadnumber");
     let regionElement = document.getElementById("region");
-    let cityElement = document.getElementById("city");
     let postcodeElement = document.getElementById("postcode");
     let phoneNumElement = document.getElementById("phonenumber");
     let emailElement = document.getElementById("e-mail");
@@ -339,30 +339,37 @@ const validRegister = () => {
 
     let name = nameElement.value;
     let surname = surnameElement.value;
-    let address = addressElement.value;
+    let road = roadElement.value;
+    let roadNum = roadNumElement.value;
     let region = regionElement.value;
-    let city = cityElement.value;
     let postcode = postcodeElement.value;
     let phonenumber = phoneNumElement.value;
     let email = emailElement.value;
 
     let isStringName = stringPattern.test(name);
     let isStringSurname = stringPattern.test(surname);
-    let isStringAddress = stringPattern.test(address);
+    let isStringRoad = stringPattern.test(road);
+    let isNumberRoadNum = numberPattern.test(roadNum);
     let isStringRegion = stringPattern.test(region);
-    let isStringCity = stringPattern.test(city);
     let isNumberPhoneNum = numberPattern.test(phonenumber);
+    let isNumberPostalCode = numberPattern.test(postcode);
     let isCorrectEmail = emailPattern.test(email);
 
     if (isStringName === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο όνομα!");
     if (isStringSurname === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο επίθετο!");
-    if (isStringAddress === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο διεύθυνση!");
+    if (isStringRoad === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο οδός!");
+    if (isNumberRoadNum === false) alert("Εισάγεται μόνο ψηφία στο πεδίο αριθμός οδού!");
+    if (isNumberPostalCode === false) alert("Εισάγεται μόνο ψηφία στο πεδίο ταχυδρομικός κωδικός!");
     if (isStringRegion === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο περιοχή!");
-    if (isStringCity === false) alert("Εισάγεται μόνο χαρακτήρες στο πεδίο πόλη!");
     if (isNumberPhoneNum === false) alert("Εισάγεται μόνο ψηφία στο πεδίο τηλέφωνο!");
     if (isCorrectEmail === false) alert("Εισάγεται με ορθό τρόπο το email σας!");
     if (postcode.length !== 5) alert("Ο ταχυδρομικός κωδικός περιέχει μόνο 5 ψηφία!");
 
+    if (isStringName === false || isStringSurname === false || isStringRoad === false || isNumberRoadNum === false ||
+        isNumberPostalCode === false || isStringRegion === false || isNumberPhoneNum === false || isCorrectEmail === false ||
+        postcode.length !== 5) return false;
+
+    return true;
 }
 
 const delPopUp = () => {
