@@ -1,3 +1,6 @@
+<?php 
+ session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
     <title>E-Gaming</title>
 </head>
 <nav>
-    <a href="./index.html" id="sitename">Gaming</a>
+    <a href="./login.php" id="sitename">Gaming</a>
     <figure>
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
@@ -21,6 +24,17 @@
 
 <body>
     <article>
+        <section id="pop">
+            <button id="close" onclick="delPopUp()">X</button>
+            <h1 id="popup-title">Gaming</h1>
+            <label for="e-mail-popup" id="popup-text">Για νέες προσφορές κάνε subscribe στο newsletter μας !
+                <input type="email" id="e-mail-popup" name="e-mail" placeholder="π.χ.crisbrown@domain.com" required>
+            </label>
+            <div id="pop-up-buttons">
+                <button onclick="registerPopUp()">Εγγραφή</button>
+                <button onclick="delPopUp()">Δεν επιθυμώ</button>
+            </div>
+        </section>
         <section class="list-of-buttons">
             <a href="./category.html" class="menu-button">Κατηγορίες Προϊόντων</a>
             <a href="" class="menu-button">Ιστορικό Παραγγελιών</a>

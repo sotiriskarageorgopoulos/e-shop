@@ -1,3 +1,7 @@
+<?php 
+    include "../models/config.php"; 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -15,38 +19,81 @@
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
-        <li><a href="./register.html" target="_blank" id="register-layout">Εγγραφή</a></li>
+        <li><a href="./register.php" target="_blank" id="register-layout">Εγγραφή</a></li>
     </ul>
 </nav>
 
 <body>
     <article>
-        <section id="pop">
-            <button id="close" onclick="delPopUp()">X</button>
-            <h1 id="popup-title">Gaming</h1>
-            <label for="e-mail-popup" id="popup-text">Για νέες προσφορές κάνε subscribe στο newsletter μας !
-                <input type="email" id="e-mail-popup" name="e-mail" placeholder="π.χ.crisbrown@domain.com" required>
-            </label>
-            <div id="pop-up-buttons">
-                <button onclick="registerPopUp()">Εγγραφή</button>
-                <button onclick="delPopUp()">Δεν επιθυμώ</button>
-            </div>
-        </section>
         <section id="slogan-layout">
             <p>&quot; Ψάχνεις να βρείς gaming εξοπλισμό;</p>
             <p>Εδώ θα βρεις ότι χρειάζεσαι! &quot;</p>
         </section>
         <section>
-            <form method="POST" action="">
+            <form method="POST" action="login.php">
                 <label for="username">Όνομα Χρήστη
                     <input type="text" id="username" name="username" placeholder="π.χ user123" required>
                 </label>
                 <label for="password">Συνθηματικό
                     <input type="password" id="password" name="password" placeholder="π.χ 123" required>
                 </label>
-                <button type="submit" class="login-button"><a href="./category.html"
-                        id="helping-link">Σύνδεση</a></button>
+                <button type="submit" class="login-button">Σύνδεση</button>
             </form>
+            <?php 
+
+            function decryptPassword($password){
+                $encrypted = base64_decode($password);
+                $pass = '3sc3RLrpd17';
+                $key = substr(hash('sha256', $pass, true), 0, 32);
+                $cipher = 'aes-256-gcm';
+                $iv_len = openssl_cipher_iv_length($cipher);
+                $tag_length = 16;
+                $iv = substr($encrypted, 0, $iv_len);
+                $tag = substr($encrypted, $iv_len, $tag_length);
+                $ciphertext = substr($encrypted, $iv_len + $tag_length);
+                
+                $decrypted = openssl_decrypt($ciphertext, $cipher, $key, OPENSSL_RAW_DATA, $iv, $tag);
+                return $decrypted;
+            }
+
+            function console($msg){
+                echo "<script language='javascript'>";
+                echo "console.log($msg)";
+                echo "</script>";
+            }
+              if(isset($_POST['username']) && isset($_POST["password"])){
+                $username = $_POST['username'];
+                $password = $_POST["password"];
+                $_SESSION["username"] = $username;
+                $_SESSION["password"] = $password;
+                $isValidUsername = false;
+
+                $query = "SELECT username FROM Person";
+                $res = $con->query($query);
+                
+                while($user = $res->fetch_assoc()){
+                    if($username === $user["username"]){
+                        $isValidUsername = true;
+                    }
+                }
+            
+                if($isValidUsername){
+                    $query = "SELECT password FROM Person WHERE username = '$username'";
+                    $res1 = $con->query($query);
+                    while($user = $res1->fetch_assoc()){
+                        $decryptedPass = decryptPassword($user["password"]);
+                        if($decryptedPass === $password){
+                           header('Location: ./menu.php');
+                        }
+                        else{
+                            echo "<script language='javascript'>";
+                            echo "alert('Τα στοιχεία σας είναι λανθασμένα!')";
+                            echo "</script>";
+                        }
+                    }
+                }
+            }
+            ?>
         </section>
         <section>
             <div class="final-result">

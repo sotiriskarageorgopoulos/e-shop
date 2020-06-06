@@ -1,3 +1,13 @@
+<?php 
+   session_start();
+   if($_SESSION["existUsername"] !== null){
+       $msg = $_SESSION["existUsername"];
+       $_SESSION["existUsername"] = null;
+       echo '<script language="javascript">';
+       echo 'alert("Το όνομα χρήστη υπάρχει ήδη!")';
+       echo '</script>';
+   }
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -9,7 +19,7 @@
     <title>E-Gaming</title>
 </head>
 <nav>
-    <a href="./index.html" id="sitename">Gaming</a>
+    <a href="./login.php" id="sitename">Gaming</a>
     <figure class="ipad-style-nav-style">
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
@@ -18,7 +28,7 @@
 
 <body>
     <h1 class="heading initial-heading">Εγγραφή</h1>
-    <form method="POST" action="../php/insert_db.php" onsubmit="return validRegister()">
+    <form method="POST" action="./insert_register_db.php" onsubmit="return validRegister()">
         <label for="username">Όνομα Χρήστη*
             <input type="text" id="username" name="username" placeholder="π.χ. George" required>
         </label>

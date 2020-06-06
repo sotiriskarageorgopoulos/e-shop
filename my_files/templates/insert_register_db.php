@@ -1,14 +1,25 @@
 <?php 
-    include "config.php";
-    include "person.php";
+    include "../models/config.php";
+    include "../models/person.php";
+   
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../css/my_app.css">
     <title>E-Gaming</title>
 </head>
+<nav>
+    <a href="./index.html" id="sitename">Gaming</a>
+    <figure class="ipad-style-nav-style">
+        <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
+        <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
+    </figure>
+</nav>
 <body>
 <?php   
     $query = "SELECT username FROM Person";
@@ -42,19 +53,24 @@
         $subject = "Εγγραφή στο E-Gaming!";
         $mail= mail($person->getEmail(),$subject,$msg);
         
-        if($mail){
-            echo "Σας έχει σταλεί στο email ο κωδικός πρόβασης!";
-        }
-        else{
-            echo "Απέτυχε η αποστολή του κωδικού στο email σας."; 
-        }
+        if($mail){ ?>
+        
+        <div class="notification-layout">
+            <h1>Σας έχει σταλεί στο email ο κωδικός πρόβασης!</h1>
+        </div>
+    
+    <?php }
+        else{ ?>
+        <div class="notification-layout">
+            <h1>Απέτυχε η αποστολή του κωδικού στο email σας.</h1>
+        </div>
+    <?php    }
     
         $con->close();
    }
     else {
-        echo '<script language="javascript">';
-        echo 'alert("Αυτό το όνομα χρήστη υπάρχει ήδη!")';
-        echo '</script>';
+        $_SESSION["existUsername"] = "Το όνομα χρήστη υπάρχει ήδη!";
+        header('Location: ./register.php');
     }
                 
     function encryptPassword($password){
@@ -83,5 +99,28 @@
  ?>
 
 </body>
-
+<footer>
+    <article class="footer-layout">
+        <section>
+            <p id="footer-msg">Άμεση εξυπηρέτηση <br>σε 24 ώρες από την στιγμή της παραγγελίας</p>
+        </section>
+        <section>
+            <p id="footer-copyright">&copy; Copyright
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+        </section>
+        <section id="footer-contact-details">
+            <a href="tel:+302100000000000">
+                <p class="phone-icon icon"> +302100000000000</p>
+            </a>
+            <a href="mailto:gaming@eshop.com">
+                <p class="envelope-icon icon"> gaming@eshop.com</p>
+            </a>
+        </section>
+    </article>
+</footer>
+<script src="https://use.fontawesome.com/4d997e20ff.js"></script>
+<script src="../js/index.js"></script>
 </html>

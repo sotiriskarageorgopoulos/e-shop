@@ -1,11 +1,11 @@
 <?php 
-include "../php/config.php";
-include "../php/product.php";
-
-$query1 = "SELECT DISTINCT P.scName FROM Product AS P
-           INNER JOIN Subcategory AS S
-           ON P.scName = S.scName AND S.categoryName = 'NINTENDO WII'";
-$res1 = $con->query($query1);
+    include "../php/config.php";
+    include "../php/product.php";
+    session_start();
+    $query1 = "SELECT DISTINCT P.scName FROM Product AS P
+            INNER JOIN Subcategory AS S
+            ON P.scName = S.scName AND S.categoryName = 'NINTENDO WII'";
+    $res1 = $con->query($query1);
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -18,13 +18,13 @@ $res1 = $con->query($query1);
     <title>E-Gaming</title>
 </head>
 <nav>
-    <a href="./index.html" id="sitename">Gaming</a>
+    <a href="./login.php" id="sitename">Gaming</a>
     <figure>
         <img src="../icons/logo.jpg" width="60" height="60" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
-        <li><a href="./index.html" id="logout-layout">Αποσύνδεση</a></li>
+        <li><a href="./login.php" id="logout-layout">Αποσύνδεση</a></li>
     </ul>
 </nav>
 
