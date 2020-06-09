@@ -166,7 +166,7 @@ const previousFormButton = (formNum) => {
         for (var index in checkboxes) {
             checkboxes[index].disabled = false;
             checkboxes[index].checked = false;
-            quantities[index].disabled = false;
+            quantities[index].readOnly = false;
             quantities[index].value = "";
         }
         let shoppingCart = document.getElementsByClassName("shopping-cart")[0];
@@ -181,8 +181,9 @@ const previousFormButton = (formNum) => {
         document.getElementById("region").readOnly = false;
         document.getElementById("road_number").readOnly = false;
         document.getElementById("postcode").readOnly = false;
-        document.getElementsByClassName("next-form-button")[0].readOnly = false;
-        document.getElementsByClassName("previous-form-button")[0].readOnly = false;
+        document.getElementById("express").disabled = false;
+        document.getElementsByClassName("next-form-button")[0].disabled = false;
+        document.getElementsByClassName("previous-form-button")[0].disabled = false;
         document.getElementById("form2").style.display = "none";
         document.getElementById("form1").style.display = "flex";
     }
@@ -193,6 +194,7 @@ const nextFormButton = () => {
     let regionElement = document.getElementById("region");
     let roadNumElement = document.getElementById("road_number");
     let postcodeElement = document.getElementById("postcode");
+    let checkBoxDelivery = document.getElementById("express");
 
     let road = roadElement.value;
     let region = regionElement.value;
@@ -225,14 +227,61 @@ const nextFormButton = () => {
         regionElement.readOnly = true;
         roadNumElement.readOnly = true;
         postcodeElement.readOnly = true;
+        checkBoxDelivery.disabled = true;
         document.getElementsByClassName("next-form-button")[0].disabled = true;
         document.getElementsByClassName("previous-form-button")[0].disabled = true;
         document.getElementById("form2").style.display = "flex";
         let down = document.getElementById("form2");
         down.scrollIntoView();
         document.getElementsByClassName("confirm-form-button")[0].disabled = true;
+        getCheckedBoxes();
+        getInputsOfFirstForm(roadElement, regionElement, roadNumElement, postcodeElement);
+        return true;
+    } else {
+        return false;
     }
 }
+
+const getInputsOfFirstForm = (roadElement, regionElement, roadNumElement, postcodeElement) => {
+    let checkBoxDelivery = document.getElementById("express");
+    divElement = document.getElementById("newInputs");
+
+    let newRoadEl = createNewInputs(roadElement);
+    let newRegionEl = createNewInputs(regionElement);
+    let newRoadNumEl = createNewInputs(roadNumElement);
+    let newPostcodeEl = createNewInputs(postcodeElement);
+    let newCheckBoxDelivery = createNewInputs(checkBoxDelivery);
+
+    divElement.appendChild(newRoadEl);
+    divElement.appendChild(newRegionEl);
+    divElement.appendChild(newRoadNumEl);
+    divElement.appendChild(newPostcodeEl);
+    divElement.appendChild(newCheckBoxDelivery);
+
+    divElement.style.display = "none";
+}
+
+const createNewInputs = (element) => {
+    let newElement = document.createElement("input");
+    newElement.name = element.name;
+    newElement.value = element.value;
+    return newElement;
+}
+
+const getCheckedBoxes = () => {
+        let checkboxes = document.getElementsByClassName("checkboxes");
+        let divElement = document.getElementById("newCheckboxes");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked === true) {
+                let newCheckBox = createNewInputs(checkboxes[i]);
+                divElement.appendChild(newCheckBox);
+            }
+        }
+
+        divElement.style.display = "none";
+    }
+    //Θα πάρω τις ποσοστητες , θα τις κανω checkbox με όνομα το id του text input.
 
 const formCheckBox = () => {
     let checkbox = document.getElementsByClassName("form-checkbox")[0];
@@ -301,7 +350,10 @@ const confirmFormButton = () => {
 
         if (isStringName && isStringSurname) {
             alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
-            window.location.href = "./index.html";
+            return true;
+            //window.location.href = "./index.html";
+        } else {
+            return false;
         }
     } else if (sel.value === "credit_card") {
         let creditCardNumElement = document.getElementById("credit_card_num");
@@ -318,7 +370,10 @@ const confirmFormButton = () => {
 
         if (isStringName && isStringSurname && isNumberCreditCardNum && creditCardNumStr.length === 16) {
             alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
-            window.location.href = "./index.html";
+            return true;
+            //window.location.href = "./index.php";
+        } else {
+            return false;
         }
     }
 }

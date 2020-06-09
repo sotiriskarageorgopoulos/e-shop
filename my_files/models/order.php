@@ -11,18 +11,15 @@ class Order {
     private $username;
     private $productId;
     private $completionDate;
+    private $typeOfCard;
 
-    public function __construct($orderId,$road,$roadNumber,$postalCode,$delivery,$wayOfPayment,
-    $cardNumber,$expirationDateOfCard,$username,$productId,$completionDate)
+    public function __construct($road,$roadNumber,$postalCode,$delivery,$wayOfPayment,$username,$productId,$completionDate)
     {
-        $this->orderId = $orderId;
         $this->road = $road;
         $this->roadNumber = $roadNumber;
         $this->postalCode = $postalCode;
         $this->delivery = $delivery;
         $this->wayOfPayment = $wayOfPayment;
-        $this->cardNumber = $cardNumber;
-        $this->expirationDateOfCard = $expirationDateOfCard;
         $this->username = $username;
         $this->productId = $productId;
         $this->completionDate = $completionDate;
@@ -31,6 +28,10 @@ class Order {
     public function setOrderId($orderId){
         $this->orderId = $orderId;
     }
+
+    public function setTypeOfCard($typeOfCard){
+        $this->typeOfCard = $typeOfCard;
+      }
 
     public function setRoad($road){
         $this->road = $road;
@@ -89,6 +90,7 @@ class Order {
     }
 
     public function getDelivery() {
+        if($this->delivery === "") return "-";
         return $this->delivery;
     }
 
@@ -97,6 +99,7 @@ class Order {
     }
 
     public function getCardNumber() {
+        if($this->cardNumber == null) return "-";
         return $this->cardNumber;
     }
 
@@ -114,6 +117,10 @@ class Order {
 
     public function getCompletionDate(){
         return $this->completionDate;
+    }
+
+    public function getTypeOfCard(){
+        return $this->typeOfCard;
     }
 }
 

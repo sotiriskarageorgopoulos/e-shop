@@ -1,6 +1,6 @@
 <?php 
-    include "../php/config.php";
-    include "../php/category.php";
+    include "../models/config.php";
+    include "../models/category.php";
 
     session_start();
     $query1 = "SELECT * FROM Category";

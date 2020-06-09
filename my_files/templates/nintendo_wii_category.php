@@ -1,6 +1,6 @@
 <?php 
-    include "../php/config.php";
-    include "../php/product.php";
+    include "../models/config.php";
+    include "../models/product.php";
     session_start();
     $query1 = "SELECT DISTINCT P.scName FROM Product AS P
             INNER JOIN Subcategory AS S
@@ -86,7 +86,7 @@
                     <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
                 </label>
                 <label for="road_number">Αριθμός Oδού*
-                    <input type="number" id="road_number" name="road number" placeholder="π.χ. 24" value="" required>
+                    <input type="number" id="road_number" name="road_number" placeholder="π.χ. 24" value="" required>
                 </label>
                 <label for="region">Περιοχή*
                     <input type="text" id="region" name="region" placeholder="π.χ. Νέα Ιωνία" value="" required>
