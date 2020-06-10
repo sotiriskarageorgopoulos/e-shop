@@ -194,7 +194,7 @@ const nextFormButton = () => {
     let regionElement = document.getElementById("region");
     let roadNumElement = document.getElementById("road_number");
     let postcodeElement = document.getElementById("postcode");
-    let checkBoxDelivery = document.getElementById("express");
+    let checkBoxDelivery = document.getElementById("delivery");
 
     let road = roadElement.value;
     let region = regionElement.value;
@@ -235,6 +235,7 @@ const nextFormButton = () => {
         down.scrollIntoView();
         document.getElementsByClassName("confirm-form-button")[0].disabled = true;
         getCheckedBoxes();
+        getQuantities();
         getInputsOfFirstForm(roadElement, regionElement, roadNumElement, postcodeElement);
         return true;
     } else {
@@ -243,7 +244,7 @@ const nextFormButton = () => {
 }
 
 const getInputsOfFirstForm = (roadElement, regionElement, roadNumElement, postcodeElement) => {
-    let checkBoxDelivery = document.getElementById("express");
+    let checkBoxDelivery = document.getElementById("delivery");
     divElement = document.getElementById("newInputs");
 
     let newRoadEl = createNewInputs(roadElement);
@@ -269,22 +270,38 @@ const createNewInputs = (element) => {
 }
 
 const getCheckedBoxes = () => {
-        let checkboxes = document.getElementsByClassName("checkboxes");
-        let divElement = document.getElementById("newCheckboxes");
+    let checkboxes = document.getElementsByClassName("checkboxes");
+    let divElement = document.getElementById("newCheckboxes");
 
-        for (let i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked === true) {
-                let newCheckBox = createNewInputs(checkboxes[i]);
-                divElement.appendChild(newCheckBox);
-            }
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked === true) {
+            let newCheckBox = createNewInputs(checkboxes[i]);
+            divElement.appendChild(newCheckBox);
         }
-
-        divElement.style.display = "none";
     }
-    //Θα πάρω τις ποσοστητες , θα τις κανω checkbox με όνομα το id του text input.
+
+    divElement.style.display = "none";
+}
+
+const getQuantities = () => {
+    let quantities = document.getElementsByClassName("quantity-boxes");
+    let divElement = document.getElementById("newCheckboxes");
+
+    for (let i = 0; i < quantities.length; i++) {
+        if (quantities[i].value !== "") {
+            let newElement = document.createElement("input");
+            newElement.name = "quantities[]";
+            newElement.value = quantities[i].value;
+            newElement.id = "quantity" + i;
+            divElement.appendChild(newElement);
+        }
+    }
+
+    divElement.style.display = "none";
+}
 
 const formCheckBox = () => {
-    let checkbox = document.getElementsByClassName("form-checkbox")[0];
+    let checkbox = document.getElementById("delivery");
     let amountText = document.getElementsByClassName("sc-icon")[1].innerHTML;
     let amountPattern = /\d+/g;
     let amountStr = amountText.match(amountPattern).toLocaleString();
@@ -301,6 +318,12 @@ const formCheckBox = () => {
         amount -= 6;
         amount += delivery;
         document.getElementsByClassName("sc-icon")[1].innerText = "Ποσό: " + amount + " €" + " - " + "Έξοδα Αποστολής: " + delivery + " €";
+    }
+
+    if (checkbox.checked === true) {
+        checkbox.value = "express delivery"
+    } else if (checkbox.checked === false) {
+        checkbox.value = "delivery"
     }
 }
 
@@ -351,7 +374,6 @@ const confirmFormButton = () => {
         if (isStringName && isStringSurname) {
             alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
             return true;
-            //window.location.href = "./index.html";
         } else {
             return false;
         }
@@ -371,7 +393,6 @@ const confirmFormButton = () => {
         if (isStringName && isStringSurname && isNumberCreditCardNum && creditCardNumStr.length === 16) {
             alert("Η παραγγελίας σας ολοκληρώθηκε επιτυχώς!");
             return true;
-            //window.location.href = "./index.php";
         } else {
             return false;
         }

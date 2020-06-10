@@ -1,10 +1,6 @@
 <?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     include "../models/config.php";
     include "../models/product.php";
-    include "../models/order.php";
 
     function console( $data ){
         echo '<script>';
@@ -67,7 +63,7 @@
         <section>
             <h1 class="heading initial-heading"><?php echo $subCat["scName"]?></h1>
         </section>
-        <section class="main-boxes layout">
+        <section class="main-boxes layout layout-subcategories">
         <?php 
             $scName = $subCat["scName"];
             $query2 = "SELECT * FROM Product AS P WHERE P.scName = '$scName'";
@@ -118,9 +114,9 @@
                 <label for="postcode">Τ.Κ*
                     <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" value="" required>
                 </label>
-                <label for="express">Express Παράδοση
-                    <input type="checkbox" id="express" class="form-checkbox" name="express" 
-                        value="express_delivery" onclick="formCheckBox()">
+                <label for="delivery">Express Παράδοση
+                    <input type="checkbox" id="delivery" class="form-checkbox" name="delivery" 
+                        value="delivery" onclick="formCheckBox()">
                 </label>
                 <button type="submit" name="submit1" class="next-form-button">Επόμενο</button>
                 <button type="button" class="previous-form-button" onclick="previousFormButton(1)">Προηγούμενο</button>
@@ -131,7 +127,7 @@
             </div>
         </section>
         <section class="display2" id="form2">
-            <form name="form2" action="" target="content" method="POST" onsubmit="return confirmFormButton()">
+            <form name="form2" action="" method="POST" onsubmit="return confirmFormButton()">
                 <label for="name" class="display3">Όνομα*
                     <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required>
                 </label>
@@ -175,14 +171,12 @@
                     $roadNumber = $_POST["road_number"];
                     $region = $_POST["region"];
                     $postcode = $_POST["postcode"];
-                    $delivery = $_POST["express"];
-                    if($_POST["express"] !== "express_delivery"){
-                        $delivery = "delivery";
-                    }
+                    $delivery = $_POST["delivery"];
                     $products = $_POST['products'];
                     $name = $_POST["name"];
                     $surname = $_POST["surname"];
                     $payment = $_POST["payment"];
+                    $submissionDate = date_create()->format('Y-m-d H:i:s');
 
                     if($payment === "credit_card"){
                         $cardNumber = $_POST["credit_card_num"];
@@ -200,41 +194,41 @@
                         $username = $user["username"];
                     }
 
-                    foreach($products as $product){
+                    $quantities = $_POST["quantities"];
+
+                    for($i=0; $i < count($products);$i++){
+
+                        $product = $products[$i];
+                        $quantity = $quantities[$i];
+
                         $query4 = "SELECT productId FROM Product WHERE productName = '$product'";
                         $res4 = $con->query($query4);
                         while($prod = $res4->fetch_assoc()){
                             $pid = $prod["productId"];
-                            console("'Product Id: $pid'");
-                            console("'Road: $road'");
-                            console("'Road Number: $roadNumber'");
-                            console("'Postal code: $postcode'");
-                            console("'Delivery: $delivery'");
-                            console("'Payment: $payment'");
-                            console("'Card Number: $cardNumber'");
-                            console("'Expiration Date: $expirationDate'");
-                            console("'Random Completion Date: $randomCompletionDate'");
-                            console("'Username: $username'");
-                            console("'Type Of Card: $typeOfCard'");
-                           
-                            if($expirationDate === null){
+                            
+                            if($payment === "cod"){
                                 $insert = "INSERT INTO OrderProduct 
-                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,productId,username,typeOfCard,road)
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity,submissionDate)
                                 VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,NULL,
-                                '$pid','$username','$typeOfCard','$road')";
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
                             
                                 $res5 = $con->query($insert);
                             }
                             else {
                                 $insert = "INSERT INTO OrderProduct 
-                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,productId,username,typeOfCard,road)
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity)
                                 VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',NULL,
-                                '$pid','$username','$typeOfCard','$road')";
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
                             
                                 $res5 = $con->query($insert);
                             }
-                        }}
-                   // header('Location: ./login.php');
+                        }
+                    }
+                    echo "<script language='javascript'>";
+                    echo "window.location.href = 'login.php';";
+                    echo "</script>";
                 }
            }
            $con->close();

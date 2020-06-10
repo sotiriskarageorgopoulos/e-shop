@@ -2,11 +2,32 @@
     include "../models/config.php";
     include "../models/product.php";
 
+    function console( $data ){
+        echo '<script>';
+        echo "console.log($data)";
+        echo '</script>';
+      }
+     
     session_start();
     $query1 = "SELECT DISTINCT P.scName FROM Product AS P
             INNER JOIN Subcategory AS S
             ON P.scName = S.scName AND S.categoryName = 'XBOX'";
     $res1 = $con->query($query1);
+
+    $randomCompletionDate = null;
+    $road = "-";
+    $roadNumber = 0;
+    $region = "-";
+    $postcode = 0;
+    $delivery = "-";
+    $name = "-";
+    $surname = "-";
+    $payment = "-";
+    $username = "-";
+    $cardNumber = 0;
+    $typeOfCard = "-";
+    $expirationDate = null;
+    $products = [];
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -59,21 +80,19 @@
                 <figcaption>
                     <p>Τιμή: <span class="price"><?php echo $product->getPrice();?></span>&euro;</p><br>
                     <?php if($product->getDesc() !== '-') {?>
-                        <p class="desc"><?php echo $product->getDesc(); ?></p>
+                        <p><?php echo $product->getDesc(); ?></p>
                     <?php } ?>
                     <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
                     <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
-                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" 
-                        value="<?php echo "quantity".$product->getProductId(); ?>" min="0">
+                        <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" value="" min="0">
                     </legend>
-                    <br><input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" name="<?php echo $product->getProductName();?>" 
-                    value="<?php echo $product->getProductName();?>">
+                    <input type="checkbox" class="checkboxes" id="<?php echo $product->getProductName();?>" name="products[]"
+                    value="<?php echo $product->getProductName();?>" onchange="checkProduct()">
                 </figcaption>
             </figure>
-            <?php }}?>
+         <?php }}?>
         </section>
         <?php }}
-           $con->close();
            $res1->close();
            $res2->close();
         ?>
@@ -82,7 +101,7 @@
             <div id="sc-list1"></div>
         </section>
         <section class="display" id="form1">
-            <form>
+            <form name="form1" action="" method="POST" target="content"  onsubmit="return nextFormButton()">
                 <label for="road">Oδός*
                     <input type="text" id="road" name="road" placeholder="π.χ. Σωκράτους" value="" required>
                 </label>
@@ -95,11 +114,11 @@
                 <label for="postcode">Τ.Κ*
                     <input type="number" id="postcode" name="postcode" placeholder="π.χ. 55555" value="" required>
                 </label>
-                <label for="express">Express Παράδοση
-                    <input type="checkbox" id="express" class="form-checkbox" name="express"
-                        value="express_delivery" onclick="formCheckBox()" required>
+                <label for="delivery">Express Παράδοση
+                    <input type="checkbox" id="delivery" class="form-checkbox" name="delivery" 
+                        value="delivery" onclick="formCheckBox()">
                 </label>
-                <button type="button" class="next-form-button" onclick="nextFormButton()">Επόμενο</button>
+                <button type="submit" name="submit1" class="next-form-button">Επόμενο</button>
                 <button type="button" class="previous-form-button" onclick="previousFormButton(1)">Προηγούμενο</button>
             </form>
             <div class="new-shopping-cart display">
@@ -108,7 +127,7 @@
             </div>
         </section>
         <section class="display2" id="form2">
-            <form>
+            <form name="form2" action="" method="POST" onsubmit="return confirmFormButton()">
                 <label for="name" class="display3">Όνομα*
                     <input type="text" id="name" name="name" placeholder="π.χ. Γιώργος" required>
                 </label>
@@ -116,14 +135,14 @@
                     <input type="text" id="surname" name="surname" placeholder="π.χ. Παπάς" required>
                 </label>
                 <label for="payment">Τρόπος Πληρωμής*
-                    <select id="payment" onclick="paymentChoice()" required>
+                    <select name="payment" id="payment" onclick="paymentChoice()" required>
                         <option value="">Επέλεξε...</option>
                         <option value="cod">Αντικαταβολή</option>
                         <option value="credit_card">Πιστωτική Κάρτα</option>
                     </select>
                 </label>
                 <label for="credit_card" class="display4">Πιστωτική κάρτα*
-                    <select id="credit_card" required>
+                    <select name="credit_card" id="credit_card">
                         <option value="">Επέλεξε...</option>
                         <option value="VISA">VISA</option>
                         <option value="Mastercard">Mastercard</option>
@@ -133,17 +152,104 @@
                     </select>
                 </label>
                 <label for="credit_card_num" class="display4">Αριθμός Κάρτας*
-                    <input type="number" id="credit_card_num" name="credit_card_num" placeholder="π.χ. 1234567890234567"
-                        required>
+                    <input type="number" id="credit_card_num" name="credit_card_num" placeholder="π.χ. 1234567890234567">
                 </label>
                 <label for="expiration" class="display4">Ημερομηνία Λήξης*
-                    <input type="date" id="expiration" name="expiration" required>
+                    <input type="date" id="expiration" name="expiration">
                 </label>
-                <button type="button" class="confirm-form-button" onclick="confirmFormButton()">Επιβεβαίωση</button>
+                <div id="newCheckboxes"></div>
+                <div id="newInputs"></div>
+                <button type="submit" name="submit2" class="confirm-form-button">Επιβεβαίωση</button>
                 <button type="button" class="previous-form-button" onclick="previousFormButton(2)">Προηγούμενο</button>
             </form>
+           <?php
+           
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if($_POST['name'] !== null && $_POST['surname'] !== null && $_POST['payment'] !== null){
+                
+                    $road = $_POST["road"];
+                    $roadNumber = $_POST["road_number"];
+                    $region = $_POST["region"];
+                    $postcode = $_POST["postcode"];
+                    $delivery = $_POST["delivery"];
+                    $products = $_POST['products'];
+                    $name = $_POST["name"];
+                    $surname = $_POST["surname"];
+                    $payment = $_POST["payment"];
+                    $submissionDate = date_create()->format('Y-m-d H:i:s');
+
+                    if($payment === "credit_card"){
+                        $cardNumber = $_POST["credit_card_num"];
+                        $expirationDate = $_POST["expiration"];
+                        $typeOfCard = $_POST["credit_card"];
+                    }
+                   
+                    $query3 = "SELECT username 
+                            FROM Person 
+                            WHERE name = '$name' AND surname = '$surname'";
+
+                    $res3 = $con->query($query3);
+                    
+                    while($user = $res3->fetch_assoc()){
+                        $username = $user["username"];
+                    }
+
+                    $quantities = $_POST["quantities"];
+
+                    for($i=0; $i < count($products);$i++){
+
+                        $product = $products[$i];
+                        $quantity = $quantities[$i];
+
+                        $query4 = "SELECT productId FROM Product WHERE productName = '$product'";
+                        $res4 = $con->query($query4);
+                        while($prod = $res4->fetch_assoc()){
+                            $pid = $prod["productId"];
+                            console("'Product Id: $pid'");
+                            console("'Product Id: $product'");
+                            console("'Road: $road'");
+                            console("'Road Number: $roadNumber'");
+                            console("'Postal code: $postcode'");
+                            console("'Delivery: $delivery'");
+                            console("'Payment: $payment'");
+                            console("'Card Number: $cardNumber'");
+                            console("'Expiration Date: $expirationDate'");
+                            console("'Random Completion Date: $randomCompletionDate'");
+                            console("'Username: $username'");
+                            console("'Type Of Card: $typeOfCard'");
+                            console("'Quantity: $quantity'");
+
+                            if($payment === "cod"){
+                                $insert = "INSERT INTO OrderProduct 
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity,submissionDate)
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,NULL,
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
+                            
+                                $res5 = $con->query($insert);
+                            }
+                            else {
+                                $insert = "INSERT INTO OrderProduct 
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity)
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',NULL,
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
+                            
+                                $res5 = $con->query($insert);
+                            }
+                        }
+                    }
+                    echo "<script language='javascript'>";
+                    echo "window.location.href = 'login.php';";
+                    echo "</script>";
+                }
+           }
+           $con->close();
+            ?>
+            <iframe name="content"></iframe>
         </section>
     </article>
+
 </body>
 <footer>
     <article class="footer-layout">

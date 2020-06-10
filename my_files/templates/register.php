@@ -1,12 +1,14 @@
 <?php 
    session_start();
-   if($_SESSION["existUsername"] !== null){
-       $msg = $_SESSION["existUsername"];
-       $_SESSION["existUsername"] = null;
-       echo '<script language="javascript">';
-       echo 'alert("Το όνομα χρήστη υπάρχει ήδη!")';
-       echo '</script>';
-   }
+   if(isset($_SESSION["existUsername"])){
+      if($_SESSION["existUsername"] !== null){
+        $msg = $_SESSION["existUsername"];
+        $_SESSION["existUsername"] = null;
+        echo '<script language="javascript">';
+        echo 'alert("Το όνομα χρήστη υπάρχει ήδη!")';
+        echo '</script>';
+       }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="el">
