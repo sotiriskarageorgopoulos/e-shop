@@ -80,6 +80,7 @@
                 if($isValidUsername){
                     $query = "SELECT password FROM Person WHERE username = '$username'";
                     $res1 = $con->query($query);
+                    $_SESSION["username"] = $username;
                     while($user = $res1->fetch_assoc()){
                         $decryptedPass = decryptPassword($user["password"]);
                         if($decryptedPass === $password){

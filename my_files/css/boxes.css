@@ -158,5 +158,18 @@ div.notification-layout {
     font-size: 15px;
 }
 
+.order-layout {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 2px solid #32CD32;
+    width: 70%;
+    margin: 3% 0% 3% 0%;
+    padding: 2%;
+}
+
+.order-details {
+    margin-right: 2%;
+}
+
 
 /*------------------------------------------*/

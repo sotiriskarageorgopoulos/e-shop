@@ -71,3 +71,7 @@ img {
 a:hover .overlay-category {
     opacity: 1;
 }
+
+#value {
+    display: none;
+}
