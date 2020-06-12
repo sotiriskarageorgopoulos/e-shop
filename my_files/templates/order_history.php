@@ -5,7 +5,7 @@
   if(isset($_SESSION["username"])){
     $username = $_SESSION["username"];
 
-    $query1 = "SELECT DISTINCT O.orderId,O.productId,O.quantity,O.completionDate,O.submissionDate 
+    $query1 = "SELECT DISTINCT O.orderId,O.productId,O.quantity,O.submissionDate 
       FROM OrderProduct AS O
       WHERE O.username='$username'";
       
@@ -56,19 +56,15 @@
            <p class="order-details">Ποσότητα: <?php echo $quantity;?></p>
            <p class="order-details">Τιμή: <?php echo $price;?></p>
            <p class="order-details">Συνολικά Έξοδα: <?php echo $quantity*$price;?></p>
-        <?php }
-        $completionDate = $order["completionDate"];
-        if($completionDate === null){
-            $completionDate = "Δεν έχει παραδοθεί";
-        }?>
-        <p class="order-details">Ημερομηνία Παράδοσης: <?php echo $completionDate;?></p>
-        <?php 
-          if($completionDate === "Δεν έχει παραδοθεί"){
-        ?>
-           <div id="value">
-               <input name="deletedPid" value="<?php echo $pid; ?>">
-           </div>
-           <button type="submit" class="delete-order-btn">Aκύρωση</button>
+            <?php }
+            $submissionDate = $order["submissionDate"];
+            ?>
+            <p class="order-details">Ημερομηνία Διεκπεραίωσης: <?php echo $submissionDate;?></p>
+            <div id="value">
+                <input name="deletedPid" value="<?php echo $pid; ?>">
+            </div>
+            <button type="submit" class="delete-order-btn">Aκύρωση</button>
+        </form>
         <?php 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if(isset($_POST["deletedPid"])){
@@ -76,16 +72,17 @@
                     $query3 = "DELETE FROM OrderProduct 
                                WHERE productId = $delPid";
                     $con->query($query3);
+                    echo '<script language="javascript">';
+                    echo 'window.location.href = window.location.href;';
+                    echo '</script>';
                 }
             }   
           }
         ?>
-       </form>
     <?php   
       }
       $con->close();
-    }}?>
-    <?php ?>
+    }?>
   </section>
 </article>
 </body>

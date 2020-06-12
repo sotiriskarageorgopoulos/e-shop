@@ -86,8 +86,6 @@ button {
 .menu-button:hover,
 button:hover {
     cursor: pointer;
-    background-color: #cc3333;
-    border: 2px outset #cc3333;
 }
 
 .delete-order-btn:focus,
@@ -106,4 +104,9 @@ button:focus {
     margin-left: 80%;
     width: 15%;
     height: 3vh;
+}
+
+.delete-order-btn:hover {
+    background-color: #cc3333;
+    border: 2px outset #cc3333;
 }
