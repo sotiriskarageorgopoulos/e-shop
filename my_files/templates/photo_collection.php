@@ -2,7 +2,7 @@
     include "../models/config.php";
     session_start();
     if(isset($_SESSION["username"])){
-    $query1 = "SELECT username,postImg 
+    $query1 = "SELECT username,postImg,submissionDate 
                FROM Post";
     $res1 = $con->query($query1);
     function console( $data ){
@@ -61,7 +61,10 @@
               while($post = $res1->fetch_assoc()){?>
               <figure>
                 <img src="data:image/jpeg;base64,<?php echo base64_encode(hex2bin($post["postImg"]));?>">
-                <figcaption><?php echo $post["username"]; ?></figcaption>
+                <figcaption>
+                    <p><?php echo $post["username"]; ?></p>
+                    <p><?php echo $post["submissionDate"]; ?></p>
+                </figcaption>
               </figure>
               <?php } 
             }?>
