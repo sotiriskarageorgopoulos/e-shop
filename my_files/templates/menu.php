@@ -38,7 +38,7 @@
         <section class="list-of-buttons">
             <a href="./category.php" class="menu-button">Κατηγορίες Προϊόντων</a>
             <a href="./order_history.php" class="menu-button">Ιστορικό Παραγγελιών</a>
-            <a href="" class="menu-button">Συλλογή Φωτογραφιών</a>
+            <a href="./photo_collection.php" class="menu-button">Συλλογή Φωτογραφιών</a>
         </section>
     </article>
 </body>

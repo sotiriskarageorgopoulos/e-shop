@@ -461,3 +461,8 @@ const registerPopUp = () => {
     if (isCorrectEmail) document.getElementById("pop").style.display = "none";
 
 }
+
+const createSubmitFotoForm = () => {
+    let form = document.getElementsByClassName("foto-submit-form")[0];
+    form.style.display = "block";
+}

@@ -25,6 +25,8 @@ a.menu-button {
     height: 3vh;
 }
 
+.foto-submit-btn,
+.foto-submission-btn,
 .random-button,
 .next-button {
     width: 6%;
@@ -109,4 +111,15 @@ button:focus {
 .delete-order-btn:hover {
     background-color: #cc3333;
     border: 2px outset #cc3333;
+}
+
+.foto-submission-btn {
+    width: 12%;
+}
+
+.foto-submit-btn {
+    width: 19%;
+    padding-left: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
 }

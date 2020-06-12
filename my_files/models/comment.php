@@ -6,6 +6,7 @@ class Comment {
     private $submissionDate;
     private $username;
     private $postId;
+    private $averageOfGrade;
 
     public function __construct($commentId,$desc,$grade,$submissionDate,$username,$postId)
     {
@@ -19,6 +20,10 @@ class Comment {
 
     public function setCommentId($id){
         $this->commentId = $id;
+    }
+
+    public function setAverageOfGrade($avg) {
+        $this->averageOfGrade = $avg; 
     }
 
     public function setDesc($desc){
@@ -63,6 +68,10 @@ class Comment {
 
     public function getPostId(){
         return $this->postId;
+    }
+
+    public function getAvgOfGrade(){
+        return $this->averageOfGrade;
     }
 }
 ?>
