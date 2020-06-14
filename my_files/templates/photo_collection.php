@@ -2,7 +2,7 @@
     include "../models/config.php";
     session_start();
     if(isset($_SESSION["username"])){
-    $query1 = "SELECT username,postImg,submissionDate 
+    $query1 = "SELECT *
                FROM Post";
     $res1 = $con->query($query1);
     function console( $data ){
@@ -58,15 +58,18 @@
         </section>
         <section class="main-boxes layout">
             <?php 
-              while($post = $res1->fetch_assoc()){?>
+              while($post = $res1->fetch_assoc()){
+                $postId = $post["postId"]?>
               <figure>
-                <img src="data:image/jpeg;base64,<?php echo base64_encode(hex2bin($post["postImg"]));?>">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode(hex2bin($post["postImg"]));?>" class="collection-img"
+                 onclick="goToImgInfo(<?php echo $postId ?>)">
                 <figcaption>
                     <p><?php echo $post["username"]; ?></p>
                     <p><?php echo $post["submissionDate"]; ?></p>
                 </figcaption>
               </figure>
-              <?php } 
+              <?php
+              } 
             }?>
         </section>
         </article>

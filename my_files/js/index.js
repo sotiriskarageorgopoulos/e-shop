@@ -466,3 +466,22 @@ const createSubmitFotoForm = () => {
     let form = document.getElementsByClassName("foto-submit-form")[0];
     form.style.display = "block";
 }
+
+const goToImgInfo = (id) => {
+    window.location.href = 'photo_info.php?' + id;
+}
+
+const ratingStars = (numOfStars) => {
+    let stars = document.getElementsByClassName("star-icon");
+    for (let i = 0; i <= numOfStars; i++) {
+        stars[i].style.color = "orange";
+    }
+
+    for (let j = numOfStars + 1; j <= 4; j++) {
+        stars[j].style.color = "grey";
+    }
+
+    let inputElement = document.getElementById("grade-result");
+    inputElement.value = numOfStars + 1;
+
+}

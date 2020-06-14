@@ -1,3 +1,12 @@
+.info-layout {
+    width: 70%;
+    height: auto;
+    background-color: #121412;
+    color: #32CD32;
+    padding: 2%;
+    margin: 2% auto 2% auto;
+}
+
 figcaption {
     display: flex;
     flex-flow: column nowrap;

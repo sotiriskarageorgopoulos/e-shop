@@ -63,3 +63,57 @@ input#foto {
     margin-top: 2%;
     border: none;
 }
+
+.comment-form {
+    width: 70%;
+    padding: 2%;
+}
+
+.grade-stars {
+    margin-top: 2%;
+    margin-left: 44%;
+}
+
+label.comment-text {
+    padding: 0%;
+    margin-top: 2%;
+}
+
+.comments-layout {
+    margin-left: 25%;
+    background-color: aliceblue;
+    color: #121412;
+    width: 50%;
+    padding: 2% 0% 2% 4%;
+    border: 5px aliceblue outset;
+}
+
+.comment-layout {
+    border: 5px outset #121412;
+    width: 90%;
+    padding-left: 6%;
+    margin-bottom: 2%;
+}
+
+#grade-result {
+    display: none;
+}
+
+.comment-btn {
+    margin-top: 3%;
+    border: 2px outset #32CD32;
+    width: 11%;
+}
+
+.comment-grade {
+    padding-left: 5%;
+}
+
+.comment-date {
+    font-size: 12px;
+}
+
+.comment-info {
+    display: flex;
+    flex-flow: row wrap;
+}

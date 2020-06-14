@@ -14,7 +14,7 @@
     <title>E-Gaming</title>
 </head>
 <nav>
-    <a href="./index.html" id="sitename">Gaming</a>
+    <a href="./login.php" id="sitename">Gaming</a>
     <figure class="ipad-style-nav-style">
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>

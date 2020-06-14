@@ -75,3 +75,22 @@ a:hover .overlay-category {
 #value {
     display: none;
 }
+
+.collection-img:hover {
+    cursor: pointer;
+}
+
+.star-icon::before {
+    content: '\f005';
+}
+
+.star-icon {
+    font-family: 'FontAwesome';
+    font-size: 22px;
+    color: grey;
+}
+
+.star-icon:hover {
+    color: orange;
+    cursor: pointer;
+}
