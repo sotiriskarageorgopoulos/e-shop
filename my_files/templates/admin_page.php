@@ -18,9 +18,6 @@
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
-    <ul class="list-heading">
-        <li><a href="./register.php" target="_blank" id="register-layout">Εγγραφή</a></li>
-    </ul>
 </nav>
 
 <body>
