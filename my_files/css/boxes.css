@@ -82,6 +82,23 @@ figcaption {
     box-shadow: 5px 10px #32CD32;
 }
 
+#admin-choice-btn {
+    margin-top: 4%;
+    margin-left: 20%;
+    color: aliceblue;
+    background-color: #32CD32;
+    width: 10%;
+    height: 3vh;
+    padding-top: 0.2%;
+    padding-left: 1.5%;
+    border: 2px solid #32CD32;
+    border-radius: 13.5px;
+}
+
+#admin-choice-btn:hover {
+    cursor: pointer;
+}
+
 #sitename {
     display: flex;
     font-size: 35px;

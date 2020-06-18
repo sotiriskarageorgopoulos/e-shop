@@ -1,9 +1,14 @@
 /*---------navbar style--------------------------*/
 
+.list-heading-login,
 .list-heading {
     display: flex;
     justify-content: flex-start;
     margin-left: 25%;
+}
+
+.list-heading-login {
+    margin-left: 0%;
 }
 
 ul>li {

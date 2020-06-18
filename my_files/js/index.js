@@ -485,3 +485,7 @@ const ratingStars = (numOfStars) => {
     inputElement.value = numOfStars + 1;
 
 }
+
+const goToAdminPage = () => {
+    window.location.href = "./admin_page.php"
+}

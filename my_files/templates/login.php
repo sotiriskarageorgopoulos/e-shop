@@ -13,12 +13,13 @@
     <title>E-Gaming</title>
 </head>
 <nav>
-    <h1 id="sitename">Gaming</h1>
+    <h1 id="sitename" href="login.php">Gaming</h1>
     <figure>
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
-    <ul class="list-heading">
+    <p id="admin-choice-btn" onclick="goToAdminPage()">Σελίδα Διαχειριστή</p>
+    <ul class="list-heading-login">
         <li><a href="./register.php" target="_blank" id="register-layout">Εγγραφή</a></li>
     </ul>
 </nav>
