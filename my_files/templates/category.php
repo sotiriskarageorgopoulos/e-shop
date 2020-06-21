@@ -36,11 +36,11 @@
             <?php 
                 if($res1->num_rows > 0){
                    while ($cat = $res1->fetch_assoc()){
-                       $category = new Category($cat["categoryName"],$cat["categoryImg"],$cat["link"]);
+                       $category = new Category($cat["categoryName"],$cat["categoryImg"]);
                        $categoryName = $category->getCategoryName();
                 ?>
             <figure>
-                <a href="<?php echo $category->getLink(); ?>" target="_blank">
+                    <a href="./category_product.php?name=<?php echo $categoryName; ?>" target="_blank">
                     <p class="heading"><?php echo $categoryName; ?></p>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($category->getCategoryImg());?>" alt="<?php echo $categoryName; ?>" />
                     <div class="overlay-category">
@@ -54,7 +54,8 @@
                               $scName = $category->getSubcategoryName();
                             ?>
                             <p class="tick"><?php echo $scName;?></p>
-                        <?php } ?>
+                        <?php }
+                        ?>
                         </div>
                     </div>
                 </a>

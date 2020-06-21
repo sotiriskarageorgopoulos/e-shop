@@ -18,10 +18,13 @@
 </head>
 <nav>
     <a href="./login.php" id="sitename">Gaming</a>
-    <figure class="ipad-style-nav-style">
+    <figure>
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
+    <ul class="list-heading">
+        <li><a href="./login.php" id="logout-layout">Αποσύνδεση</a></li>
+    </ul>
 </nav>
 <body>
 <article>

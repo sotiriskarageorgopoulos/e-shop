@@ -122,3 +122,32 @@ label.comment-text {
     margin-top: 8%;
     margin-bottom: 8%;
 }
+
+.admin-category-textarea,
+.admin-category-input {
+    height: 4vh;
+    margin-left: 2%;
+    margin-bottom: 0%;
+    width: 50%;
+}
+
+.admin-category-textarea {
+    height: 13vh;
+    padding-left: 0.5%;
+}
+
+#admin-ins-form-prod,
+#admin-up-prod-form-title,
+#admin-up-prod-form-price,
+#admin-up-prod-form-img,
+#admin-ins-form,
+#admin-up-form1,
+#admin-up-form {
+    display: none;
+    width: 40%;
+}
+
+#admin-ins-form-prod,
+#admin-ins-form {
+    width: 40%;
+}

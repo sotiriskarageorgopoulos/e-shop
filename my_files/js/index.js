@@ -1,5 +1,6 @@
 let checkedProduct = false;
 let randomChoice = false;
+let countSCInputs = 0;
 
 const checkRandomProducts = () => {
     let checkboxes = document.getElementsByClassName("checkboxes");
@@ -459,7 +460,6 @@ const registerPopUp = () => {
     let isCorrectEmail = emailPattern.test(email);
     if (isCorrectEmail === false) alert("Εισάγεται με ορθό τρόπο το email σας!");
     if (isCorrectEmail) document.getElementById("pop").style.display = "none";
-
 }
 
 const createSubmitFotoForm = () => {
@@ -488,4 +488,57 @@ const ratingStars = (numOfStars) => {
 
 const goToAdminPage = () => {
     window.location.href = "./admin_page.php"
+}
+
+const displayAdminUpFormTitle = (categoryName) => {
+    document.getElementById("admin-up-form").style.display = "block";
+    document.getElementById("prevCategoryName").value = categoryName;
+    let down = document.getElementById("admin-up-form");
+    down.scrollIntoView();
+}
+
+const displayAdminUpFormImg = (categoryName) => {
+    document.getElementById("admin-up-form1").style.display = "block";
+    document.getElementById("prevCategoryName1").value = categoryName;
+    let down = document.getElementById("admin-up-form");
+    down.scrollIntoView();
+}
+
+const displayAdminInsForm = (formType) => {
+    if (formType === 'category') document.getElementById("admin-ins-form").style.display = "block";
+    else if (formType === 'product') document.getElementById("admin-ins-form-prod").style.display = "block";
+}
+
+const displayAdminUpFormProdName = (pid) => {
+    document.getElementById("admin-up-prod-form-title").style.display = "block";
+    document.getElementById("pid1").value = pid;
+    let down = document.getElementById("admin-up-prod-form-title");
+    down.scrollIntoView();
+}
+
+const displayAdminUpFormProdImg = (pid) => {
+    document.getElementById("admin-up-prod-form-img").style.display = "block";
+    document.getElementById("pid3").value = pid;
+    let down = document.getElementById("admin-up-prod-form-img");
+    down.scrollIntoView();
+}
+
+const displayAdminUpFormProdPrice = (pid) => {
+    document.getElementById("admin-up-prod-form-price").style.display = "block";
+    document.getElementById("pid2").value = pid;
+    let down = document.getElementById("admin-up-prod-form-price");
+    down.scrollIntoView();
+}
+
+const createSubCategoryInputs = () => {
+    let label = document.createElement("label");
+    label.htmlFor = "sc" + countSCInputs;
+    label.innerText = "'Ονομα Υποκατηγορίας";
+    let input = document.createElement("input");
+    input.type = "text";
+    input.name = "sc[]";
+    input.id = "sc" + countSCInputs;
+    input.classList.add("admin-category-input");
+    document.getElementById("subcategoriesInputs").appendChild(label);
+    label.appendChild(input);
 }

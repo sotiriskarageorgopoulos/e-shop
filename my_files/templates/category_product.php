@@ -9,25 +9,31 @@
       }
      
     session_start();
-    $query1 = "SELECT DISTINCT P.scName FROM Product AS P
-            INNER JOIN Subcategory AS S
-            ON P.scName = S.scName AND S.categoryName = 'Playstation 4'";
-    $res1 = $con->query($query1);
+    if(isset($_SESSION["categoryName"])) {
+        $url = $_SERVER['REQUEST_URI'];
+        $urlParsed = parse_url($url);
+        parse_str($urlParsed["query"],$query);
+        $categoryName = $query["name"];
+        console("'djdjd: $categoryName'");
+        $query1 = "SELECT DISTINCT P.scName FROM Product AS P
+                INNER JOIN Subcategory AS S
+                ON P.scName = S.scName AND S.categoryName = '$categoryName'";
+        $res1 = $con->query($query1);
 
-    $randomCompletionDate = null;
-    $road = "-";
-    $roadNumber = 0;
-    $region = "-";
-    $postcode = 0;
-    $delivery = "-";
-    $name = "-";
-    $surname = "-";
-    $payment = "-";
-    $username = "-";
-    $cardNumber = 0;
-    $typeOfCard = "-";
-    $expirationDate = null;
-    $products = [];
+        $randomCompletionDate = null;
+        $road = "-";
+        $roadNumber = 0;
+        $region = "-";
+        $postcode = 0;
+        $delivery = "-";
+        $name = "-";
+        $surname = "-";
+        $payment = "-";
+        $username = "-";
+        $cardNumber = 0;
+        $typeOfCard = "-";
+        $expirationDate = null;
+        $products = [];
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -202,29 +208,27 @@
                         $quantity = $quantities[$i];
 
                         $query4 = "SELECT productId FROM Product WHERE productName = '$product'";
-                        if($res4 = $con->query($query4)){
-                            while($prod = $res4->fetch_assoc()){
-                                $pid = $prod["productId"];
-                                
-                                if($payment === "cod"){
-                                    $insert = "INSERT INTO OrderProduct 
-                                    (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
-                                    productId,username,typeOfCard,road,quantity,submissionDate)
-                                    VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,NULL,
-                                    '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
-                                
-                                    $res5 = $con->query($insert);
-                                    console("'res5: $res5'");
-                                }
-                                else {
-                                    $insert = "INSERT INTO OrderProduct 
-                                    (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
-                                    productId,username,typeOfCard,road,quantity)
-                                    VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',NULL,
-                                    '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
-                                
-                                    $res5 = $con->query($insert);
-                                }
+                        $res4 = $con->query($query4);
+                        while($prod = $res4->fetch_assoc()){
+                            $pid = $prod["productId"];
+                            
+                            if($payment === "cod"){
+                                $insert = "INSERT INTO OrderProduct 
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity,submissionDate)
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,NULL,
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
+                            
+                                $res5 = $con->query($insert);
+                            }
+                            else {
+                                $insert = "INSERT INTO OrderProduct 
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                productId,username,typeOfCard,road,quantity)
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',NULL,
+                                '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
+                            
+                                $res5 = $con->query($insert);
                             }
                         }
                     }
@@ -232,12 +236,15 @@
                     echo "window.location.href = 'login.php';";
                     echo "</script>";
                 }
-           }
+            }
+
            $con->close();
+           }
             ?>
             <iframe name="content"></iframe>
         </section>
     </article>
+
 </body>
 <footer>
     <article class="footer-layout">

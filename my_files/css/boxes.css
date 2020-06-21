@@ -139,6 +139,7 @@ img {
     border-radius: 5px;
 }
 
+.admin-category,
 .layout {
     display: flex;
     flex-flow: row wrap;
@@ -149,6 +150,14 @@ img {
     width: 100%;
     color: #32CD32;
     background-color: #121412;
+}
+
+.admin-categories {
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .layout-category {
