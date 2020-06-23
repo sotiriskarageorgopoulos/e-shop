@@ -1,5 +1,10 @@
 <?php 
+ include "../models/config.php"; 
  session_start();
+ if($_SESSION["username"]){
+     $username = $_SESSION["username"];
+     $query1 = "SELECT notify FROM Person WHERE username='$username'";
+     $res1 = $con->query($query1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,17 +29,37 @@
 
 <body>
     <article>
-        <section id="pop">
+        <?php 
+          while($user = $res1->fetch_assoc()){
+            $notify = intval($user["notify"]);
+            if($notify === 0){
+        ?>
+        <form action="" method="POST" id="pop" onsubmit="registerPopUp()">
             <button id="close" onclick="delPopUp()">X</button>
             <h1 id="popup-title">Gaming</h1>
             <label for="e-mail-popup" id="popup-text">Για νέες προσφορές κάνε subscribe στο newsletter μας !
                 <input type="email" id="e-mail-popup" name="e-mail" placeholder="π.χ.crisbrown@domain.com" required>
             </label>
             <div id="pop-up-buttons">
-                <button onclick="registerPopUp()">Εγγραφή</button>
-                <button onclick="delPopUp()">Δεν επιθυμώ</button>
+                <button type="submit">Εγγραφή</button>
+                <button type="button" onclick="delPopUp()">Δεν επιθυμώ</button>
             </div>
-        </section>
+        </form>
+          <?php }
+             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if(isset($_POST["e-mail"])){
+                    $email = $_POST["e-mail"];
+                    $notify = 1;
+                    $query2 = "UPDATE Person SET notify='$notify' WHERE email='$email'";
+                    $res2 = $con->query($query2);
+
+                    echo '<script language="javascript">';
+                    echo 'window.location.href = window.location.href;';
+                    echo '</script>';
+                }
+             }
+            }
+          ?>
         <section class="list-of-buttons">
             <a href="./category.php" class="menu-button">Κατηγορίες Προϊόντων</a>
             <a href="./order_history.php" class="menu-button">Ιστορικό Παραγγελιών</a>
@@ -42,6 +67,7 @@
         </section>
     </article>
 </body>
+ <?php } ?>
 <footer>
     <article class="footer-layout">
         <section>

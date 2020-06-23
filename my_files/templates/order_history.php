@@ -8,6 +8,12 @@
     $query1 = "SELECT DISTINCT O.orderId,O.productId,O.quantity,O.submissionDate 
       FROM OrderProduct AS O
       WHERE O.username='$username'";
+
+    function console( $data ){
+        echo '<script>';
+        echo "console.log($data)";
+        echo '</script>';
+    }
       
     $res1 = $con->query($query1);
 ?>
@@ -29,6 +35,9 @@
 </nav>
 <body>
 <article>
+        <section class="buttons-box">
+            <button class="print-order-btn" onclick="printOrderHistory()">Εκτύπωση</button>
+        </section>
     <section>
         <h1 class="heading initial-heading">Παραγγελίες</h1>
     </section>
@@ -41,8 +50,7 @@
           $quantity = $order["quantity"]; 
           $id = $order["orderId"];
         ?>
-       <form class="order-layout" action="" method="POST">
-           <?php 
+         <?php 
                $pid = $order["productId"];
                $query2 = "SELECT P.productName,P.price
                FROM Product AS P
@@ -52,6 +60,7 @@
                 $productName = $prod["productName"];
                 $price = $prod["price"];
            ?>
+       <form class="order-layout" action="" method="POST">
            <p class="order-details">Προϊόν: <?php echo $productName;?></p>
            <p class="order-details">Ποσότητα: <?php echo $quantity;?></p>
            <p class="order-details">Τιμή: <?php echo $price;?></p>
@@ -62,27 +71,45 @@
             <p class="order-details">Ημερομηνία Διεκπεραίωσης: <?php echo $submissionDate;?></p>
             <div id="value">
                 <input name="deletedPid" value="<?php echo $pid; ?>">
+                <input name="delQuantity" value="<?php echo $quantity; ?>">
             </div>
+            <div id="addDelQuantities"></div>
             <button type="submit" class="delete-order-btn">Aκύρωση</button>
         </form>
+       <?php }?>
         <?php 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                if(isset($_POST["deletedPid"])){
+                if(isset($_POST["deletedPid"]) && isset($_POST["delQuantity"])){
                     $delPid = $_POST["deletedPid"];
+                    $newQuantity = intval($_POST["delQuantity"]);
+
+                    $query4 = "SELECT quantity FROM Product WHERE productId = $delPid";
+                    $res4 = $con->query($query4);
+                    if($res4->num_rows > 0) {
+                        console("'$res4->num_rows'");
+                        while($prod = $res4->fetch_assoc()){
+                            $prodQuantity = intval($prod["quantity"]);
+                            $prodQuantity += $newQuantity;
+                            $query5 = "UPDATE Product SET quantity='$prodQuantity' WHERE productId = $delPid";
+                            $res5 = $con->query($query5);
+                        }
+                    }
+                    
                     $query3 = "DELETE FROM OrderProduct 
-                               WHERE productId = $delPid";
+                                WHERE productId = $delPid";
                     $con->query($query3);
+                    
                     echo '<script language="javascript">';
                     echo 'window.location.href = window.location.href;';
                     echo '</script>';
-                }
             }   
           }
         ?>
-    <?php   
-      }
-      $con->close();
-    }?>
+    <?php 
+    }
+   }
+    $con->close();
+    ?>
   </section>
 </article>
 </body>

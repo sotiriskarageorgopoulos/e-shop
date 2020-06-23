@@ -1,5 +1,6 @@
 let checkedProduct = false;
 let randomChoice = false;
+let firstLoading = true;
 let countSCInputs = 0;
 
 const checkRandomProducts = () => {
@@ -175,6 +176,7 @@ const previousFormButton = (formNum) => {
         deleteInfo();
         document.getElementById("amount").innerHTML = "Ποσό: 0&euro;";
         document.getElementsByClassName("display")[0].style.display = "none";
+        calcAvailableQuantities("previous")
         let up = document.getElementById("logout-layout");
         up.scrollIntoView();
     } else if (formNum === 2) {
@@ -237,6 +239,7 @@ const nextFormButton = () => {
         document.getElementsByClassName("confirm-form-button")[0].disabled = true;
         getCheckedBoxes();
         getQuantities();
+        calcAvailableQuantities("next");
         getInputsOfFirstForm(roadElement, regionElement, roadNumElement, postcodeElement);
         return true;
     } else {
@@ -507,6 +510,7 @@ const displayAdminUpFormImg = (categoryName) => {
 const displayAdminInsForm = (formType) => {
     if (formType === 'category') document.getElementById("admin-ins-form").style.display = "block";
     else if (formType === 'product') document.getElementById("admin-ins-form-prod").style.display = "block";
+    else if (formType === 'message') document.getElementById("admin-ins-form-message").style.display = "block";
 }
 
 const displayAdminUpFormProdName = (pid) => {
@@ -541,4 +545,64 @@ const createSubCategoryInputs = () => {
     input.classList.add("admin-category-input");
     document.getElementById("subcategoriesInputs").appendChild(label);
     label.appendChild(input);
+}
+
+const calcAvailableQuantities = (btn) => {
+    let availableQuantities = document.getElementsByClassName("availableQuantities");
+    let checkboxes = document.getElementsByClassName("checkboxes");
+    let askedQuantities = document.getElementsByClassName("quantity-boxes");
+    let newQuantitiesInputs = document.getElementById("newQuantities");
+    console.log("lala");
+    if (btn === "next") {
+        console.log("lalala");
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked === true) {
+                let avq = parseInt(availableQuantities[i].innerText);
+                let asq = parseInt(askedQuantities[i].value);
+                let existedQuantities = avq - asq;
+                let newInput = document.createElement("input");
+                let newInput1 = document.createElement("input");
+
+                if (existedQuantities > 0) {
+                    newInput.value = existedQuantities;
+                    newInput.name = "newQuantities[]";
+                    newInput.type = "hidden";
+                    newInput1.name = "productNames[]";
+                    newInput1.type = "hidden";
+                    newInput1.value = checkboxes[i].value;
+                } else {
+                    newInput.value = 0;
+                }
+                newQuantitiesInputs.appendChild(newInput1);
+                newQuantitiesInputs.appendChild(newInput);
+            }
+        }
+    } else if (btn === "previous") {
+        newQuantitiesInputs.innerHTML = "";
+    }
+}
+const printOrderHistory = () => {
+    let myWindow = window.open('', 'Ιστορικό Παραγγελιών', 'width=1200,height=1200');
+    let info = document.getElementsByClassName("order-details");
+    let numOfBoxes = info.length / 5;
+
+    myWindow.document.write('<html><head><title>' + document.title + '</title>' +
+        '</head>' + '<body style="border: 2px solid black;padding: 2%;">');
+    myWindow.document.write('<h1 style="margin-left:27%;">Ιστορικό Παραγγελιών</h1>');
+    let infoCounter = 0;
+    for (let i = 0; i < numOfBoxes; i++) {
+        myWindow.document.write('<div style="border: 2px solid black; margin-bottom: 2%;padding: 2%;">');
+        myWindow.document.write('<p>' + info[infoCounter++].innerText + '</p>');
+        myWindow.document.write('<p>' + info[infoCounter++].innerText + '</p>');
+        myWindow.document.write('<p>' + info[infoCounter++].innerText + '</p>');
+        myWindow.document.write('<p>' + info[infoCounter++].innerText + '</p>');
+        myWindow.document.write('<p>' + info[infoCounter++].innerText + '</p>');
+        myWindow.document.write('</div>');
+    }
+    myWindow.document.write('</body>' + '</html>');
+
+    myWindow.document.close();
+    myWindow.focus();
+    myWindow.print();
+    myWindow.close();
 }

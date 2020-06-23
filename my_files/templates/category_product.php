@@ -9,12 +9,10 @@
       }
      
     session_start();
-    if(isset($_SESSION["categoryName"])) {
         $url = $_SERVER['REQUEST_URI'];
         $urlParsed = parse_url($url);
         parse_str($urlParsed["query"],$query);
         $categoryName = $query["name"];
-        console("'djdjd: $categoryName'");
         $query1 = "SELECT DISTINCT P.scName FROM Product AS P
                 INNER JOIN Subcategory AS S
                 ON P.scName = S.scName AND S.categoryName = '$categoryName'";
@@ -88,7 +86,7 @@
                     <?php if($product->getDesc() !== '-') {?>
                         <p><?php echo $product->getDesc(); ?></p>
                     <?php } ?>
-                    <p>Διαθέσιμη Ποσότητα: <?php echo $product->getQunatity() ?></p>
+                    <p>Διαθέσιμη Ποσότητα: <ins class="availableQuantities"><?php echo $product->getQunatity() ?></ins></p>
                     <legend for="<?php echo "quantity".$product->getProductId(); ?>">Ποσότητα:
                         <input type="number" id="<?php echo "quantity".$product->getProductId(); ?>" class="quantity-boxes" value="" min="0">
                     </legend>
@@ -165,6 +163,7 @@
                 </label>
                 <div id="newCheckboxes"></div>
                 <div id="newInputs"></div>
+                <div id="newQuantities"></div>
                 <button type="submit" name="submit2" class="confirm-form-button">Επιβεβαίωση</button>
                 <button type="button" class="previous-form-button" onclick="previousFormButton(2)">Προηγούμενο</button>
             </form>
@@ -214,24 +213,35 @@
                             
                             if($payment === "cod"){
                                 $insert = "INSERT INTO OrderProduct 
-                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,
                                 productId,username,typeOfCard,road,quantity,submissionDate)
-                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,NULL,
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber',NULL,
                                 '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
                             
                                 $res5 = $con->query($insert);
                             }
                             else {
                                 $insert = "INSERT INTO OrderProduct 
-                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,completionDate,
+                                (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,
                                 productId,username,typeOfCard,road,quantity)
-                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',NULL,
+                                VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',
                                 '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
                             
                                 $res5 = $con->query($insert);
                             }
                         }
                     }
+
+                    $newQuantities = $_POST["newQuantities"];
+                    $productNames = $_POST["productNames"];
+
+                    for($i = 0; $i < count($newQuantities); $i++){
+                        $pName = $productNames[$i];
+                        $newQuantity = $newQuantities[$i];
+                        $query5 = "UPDATE Product SET quantity='$newQuantity' WHERE productName = '$pName'";
+                        $res5 = $con->query($query5);
+                    }
+
                     echo "<script language='javascript'>";
                     echo "window.location.href = 'login.php';";
                     echo "</script>";
@@ -239,7 +249,6 @@
             }
 
            $con->close();
-           }
             ?>
             <iframe name="content"></iframe>
         </section>

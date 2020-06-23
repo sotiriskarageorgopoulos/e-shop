@@ -94,3 +94,7 @@ a:hover .overlay-category {
     color: orange;
     cursor: pointer;
 }
+
+.availableQuantities {
+    text-decoration: none;
+}

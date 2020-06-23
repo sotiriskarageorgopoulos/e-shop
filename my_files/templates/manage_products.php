@@ -32,6 +32,19 @@
     <section class="buttons-box">
         <button class="admin-ins-btn" onclick="displayAdminInsForm('category')">Εισαγωγή Κατηγορίας</button>
         <button class="admin-ins-btn" onclick="displayAdminInsForm('product')">Εισαγωγή Προϊόντος</button>
+        <button class="admin-ins-btn" onclick="displayAdminInsForm('message')">Αποστολή Μηνύματος</button>
+    </section>
+    <section>
+        <form action="" method="POST" id="admin-ins-form-message">
+            <p class="heading">Αποστολή Μηνύματος</p>
+            <label for="subject">Θέμα
+                <input type="text" id="subject" class="admin-category-input" name="subject" value="" required>
+            </label>
+            <label for="productDesc">
+                <textarea id="productDesc" class="admin-category-textarea tetxarea-message" maxlength="400" name="message"></textarea>
+            </label>
+            <button type="submit" class="ins-admin-btn">Αποστολή</button>
+        </form>
     </section>
     <section>
         <form action="" method="POST" enctype="multipart/form-data" id="admin-ins-form-prod">
@@ -301,6 +314,19 @@
                 echo '<script language="javascript">';
                 echo 'window.location.href = window.location.href;';
                 echo '</script>'; 
+             }
+
+             if(isset($_POST["message"]) && isset($_POST["subject"])){
+                $query14 = "SELECT email FROM Person WHERE notify = '1'";
+                $res14 = $con->query($query14);
+                $message = $_POST["message"];
+
+                while($user = $res14->fetch_assoc()) {
+                   $email = $user["email"];
+                   $subject = $_POST["subject"];
+                   $msg = wordwrap($message,70);
+                   mail($email,$subject,$msg); 
+                }
              }
             
         }

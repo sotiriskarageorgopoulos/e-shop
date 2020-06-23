@@ -1,6 +1,6 @@
 #pop {
     width: 40%;
-    height: 30%;
+    height: 23%;
     bottom: 50%;
     right: 30%;
     border: 2px solid #32CD32;
@@ -52,7 +52,6 @@
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }

@@ -136,6 +136,7 @@ label.comment-text {
     padding-left: 0.5%;
 }
 
+#admin-ins-form-message,
 #admin-ins-form-prod,
 #admin-up-prod-form-title,
 #admin-up-prod-form-price,
@@ -147,7 +148,11 @@ label.comment-text {
     width: 40%;
 }
 
-#admin-ins-form-prod,
-#admin-ins-form {
-    width: 40%;
+.tetxarea-message {
+    width: 60%;
+    height: 15vh;
+}
+
+#buttonreplacement {
+    display: none;
 }

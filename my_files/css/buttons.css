@@ -25,6 +25,7 @@ a.menu-button {
     height: 3vh;
 }
 
+.print-order-btn,
 .admin-ins-btn,
 .foto-submit-btn,
 .foto-submission-btn,
@@ -37,6 +38,10 @@ a.menu-button {
     margin: 2.5% 0% 0.01% 2.5%;
     padding-left: 1%;
     border: 2px inset #32CD32;
+}
+
+.print-order-btn {
+    width: 6.5%;
 }
 
 .admin-ins-btn {
