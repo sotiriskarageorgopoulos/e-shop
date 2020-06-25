@@ -68,9 +68,9 @@
         margin-right: auto;
     }
     ul>li,
-    ul.list-heading {
-        margin-top: 9%;
-        margin-bottom: 0;
+    ul.list-heading-login {
+        margin: 0%;
+        padding: 0%;
     }
     #logout-layout {
         width: 13vw;
@@ -81,18 +81,18 @@
         font-size: 12px;
     }
     #register-layout {
-        width: 13vw;
-        height: 3vh;
+        width: 9vw;
+        height: 2vh;
         padding-left: 15%;
-        margin-left: 15%;
+        margin: 109% 0% 0% 0% !important;
         font-size: 12px;
-        margin-top: 0;
+        margin-top: 0%;
     }
-    .login-button {
+    button.login-button {
         width: 13vw;
         height: 3vh;
         margin-left: 40%;
-        padding-left: 4%;
+        padding: 1% 0% 0% 3.5%;
     }
     nav h1 {
         margin-top: auto;
@@ -149,5 +149,110 @@
     }
     .list-of-buttons {
         margin: 20% auto 16% auto;
+    }
+    p#admin-choice-btn {
+        width: 17vw !important;
+        font-size: 12px;
+        height: 2vh !important;
+        padding: 0.1% 0% 0% 2%;
+        margin: 10% 2% 0% 10%;
+    }
+    figure {
+        margin-right: 0% !important;
+    }
+    form.admin-login {
+        margin-top: 20%
+    }
+    .center-logo {
+        margin-left: 23%;
+    }
+    section.layout-subcategories {
+        width: 90%;
+    }
+    section.shopping-cart {
+        width: 80% !important;
+        margin-left: 2%;
+        padding-left: 2%;
+        margin-top: 10%;
+    }
+    button.next-form-button,
+    button.previous-form-button {
+        width: 20% !important;
+        margin-left: 25%;
+        font-size: 12px;
+        padding-top: 0.2%;
+        height: 2vh;
+    }
+    button.previous-form-button {
+        padding-top: 0% !important;
+        width: 27% !important;
+    }
+    button.confirm-form-button {
+        padding-top: 0% !important;
+        width: 25% !important;
+        padding-left: 4%;
+        font-size: 12px;
+        height: 2vh;
+    }
+    h1.heading {
+        width: 40%;
+    }
+    button.print-order-btn {
+        width: 18%;
+        padding-left: 3%;
+        margin-left: 5%;
+    }
+    form.order-layout {
+        width: 90%
+    }
+    button.delete-order-btn {
+        margin-left: 80%;
+        width: 20%;
+        height: 3vh;
+        padding-left: 3%;
+    }
+    button.foto-submission-btn {
+        width: 29% !important;
+        padding-left: 2.5%;
+    }
+    section.admin-categories {
+        width: 80%;
+    }
+    section.buttons-box {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    button.admin-ins-btn {
+        width: 26% !important;
+        padding-left: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form#admin-ins-form-message,
+    form#admin-ins-form-prod,
+    form#admin-ins-form {
+        width: 70%;
+    }
+    input.admin-category-input {
+        width: 70%;
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-prod-form-title,
+    form#admin-up-form1,
+    form#admin-up-form {
+        margin-top: 15%;
+        width: 80%
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-form1 {
+        margin-top: 0%;
+    }
+    div.notification-layout {
+        width: 70%;
+        font-size: 12px;
+        padding-left: 3%;
+        margin: 20% auto 27% auto;
     }
 }

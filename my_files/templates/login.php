@@ -20,7 +20,7 @@
     </figure>
     <p id="admin-choice-btn" onclick="goToAdminPage()">Σελίδα Διαχειριστή</p>
     <ul class="list-heading-login">
-        <li><a href="./register.php" target="_blank" id="register-layout">Εγγραφή</a></li>
+        <li id="register-layout" onclick="goToRegisterPage()">Εγγραφή</li>
     </ul>
 </nav>
 

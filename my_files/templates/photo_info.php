@@ -23,7 +23,7 @@
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
-        <li><a href="./login.php" id="logout-layout">Αποσύνδεση</a></li>
+        <li id="logout-layout" onclick="logOut()">Αποσύνδεση</li>
     </ul>
 </nav>
 <body>
@@ -67,7 +67,7 @@
                 <h1><?php echo $comment["username"]; ?></h1>
                 <div class="comment-info">
                     <p><?php echo $comment["description"]; ?></p>
-                    <p class="comment-grade" onla>Βαθμολογία: <?php echo $comment["grade"]; ?></p>
+                    <p class="comment-grade">Βαθμολογία: <?php echo $comment["grade"]; ?></p>
                 </div>
                 <p class="comment-date">Ημερομηνία Υποβολής:
                 <?php echo $comment["submissionDate"]; ?></p>
@@ -87,7 +87,7 @@
          </div>
          <input id="grade-result" name="grade" value="">
          <label class="comment-text">
-             <p>Σχόλιο :</p>
+             Σχόλιο :
              <textarea name="desc" rows="7" columns="3" class="comment-text" maxlength="400"></textarea>
          </label>
          <button type="submit" class="comment-btn">Υποβολή</button>

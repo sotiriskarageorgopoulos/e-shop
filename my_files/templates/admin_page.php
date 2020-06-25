@@ -14,7 +14,7 @@
 </head>
 <nav>
     <h1 id="sitename">Gaming</h1>
-    <figure>
+    <figure class="center-logo">
         <img src="../icons/logo.jpg" alt="Το logo του e-gaming shop." class="img-logo">
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>

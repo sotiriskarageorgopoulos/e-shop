@@ -490,7 +490,7 @@ const ratingStars = (numOfStars) => {
 }
 
 const goToAdminPage = () => {
-    window.location.href = "./admin_page.php"
+    window.location.href = "./admin_page.php";
 }
 
 const displayAdminUpFormTitle = (categoryName) => {
@@ -605,4 +605,12 @@ const printOrderHistory = () => {
     myWindow.focus();
     myWindow.print();
     myWindow.close();
+}
+
+const goToRegisterPage = () => {
+    window.location.href = "./register.php";
+}
+
+const logOut = () => {
+    window.location.href = "./login.php";
 }

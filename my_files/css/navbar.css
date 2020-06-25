@@ -43,19 +43,23 @@ figure figcaption {
     color: aliceblue;
     height: 3vh;
     width: 6vw;
-    padding-left: 24%;
+    padding-left: 19%;
     padding-top: 4%;
     border-radius: 12.5px;
 }
 
-#logout-layout {
+li#logout-layout {
     background-color: #32CD32;
     color: aliceblue;
     height: 3vh;
-    width: 6vw;
-    padding-left: 14%;
+    width: 7vw;
+    padding-left: 12%;
     padding-top: 5%;
     border-radius: 12.5px;
+}
+
+li#logout-layout:hover {
+    cursor: pointer;
 }
 
 nav {
@@ -67,6 +71,10 @@ nav {
     margin-left: -0.6%;
     height: 16vh;
     width: 101%;
+}
+
+#register-layout:hover {
+    cursor: pointer;
 }
 
 

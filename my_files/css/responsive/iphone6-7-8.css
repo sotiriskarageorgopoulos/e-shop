@@ -89,29 +89,34 @@
         width: 40%;
         margin-bottom: 15%;
     }
-    .register-button {
+    button.register-button {
         width: 32%;
-        height: 4vh;
+        height: 3vh;
         font-size: 14px;
-        padding-top: 2.5%;
+        padding-top: 0%;
         margin-left: auto;
         margin-right: auto;
     }
     #register-layout {
-        width: 24vw;
+        width: 24vw !important;
         padding-left: 15%;
         margin-left: 15%;
         font-size: 12px;
+        padding-top: 4% !important;
     }
-    .login-button {
-        width: 25vw;
+    button.login-button {
+        width: 21vw !important;
+        height: 3.5vh !important;
+        padding-top: 0.5% !important;
         margin-left: 32%;
     }
-    #logout-layout {
+    li#logout-layout {
         width: 28vw;
-        padding-top: 4%;
-        padding-left: 11%;
+        padding-top: 5% !important;
+        padding-left: 30%;
+        padding-right: 30%;
         margin-top: -10%;
+        font-size: 13px;
     }
     nav {
         height: 70vh;
@@ -128,5 +133,70 @@
     }
     section#slogan-layout {
         margin-bottom: 15%;
+    }
+    p#admin-choice-btn {
+        width: 34vw !important;
+        font-size: 13px;
+        padding-left: 10%;
+    }
+    button.print-order-btn {
+        width: 30%;
+        padding-left: 3%;
+    }
+    form.order-layout {
+        width: 90%
+    }
+    button.delete-order-btn {
+        margin-left: 60%;
+        width: 38%;
+        height: 4vh;
+        padding-left: 3%;
+    }
+    button.foto-submission-btn {
+        width: 55% !important;
+        padding-left: 2.5%;
+    }
+    form.foto-submit-form {
+        width: 85%
+    }
+    button.foto-submit-btn {
+        width: 22%;
+        font-size: 12px;
+        padding-left: 2%;
+        margin-top: 0%;
+    }
+    section.admin-categories {
+        width: 100%;
+    }
+    section.buttons-box {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    button.admin-ins-btn {
+        width: 52% !important;
+        padding-left: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form#admin-ins-form-message,
+    form#admin-ins-form-prod,
+    form#admin-ins-form {
+        width: 100%;
+    }
+    input.admin-category-input {
+        width: 70%;
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-prod-form-title,
+    form#admin-up-form1,
+    form#admin-up-form {
+        margin-top: 15%;
+        width: 100%
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-form1 {
+        margin-top: 0%;
     }
 }

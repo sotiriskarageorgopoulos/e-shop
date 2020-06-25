@@ -15,14 +15,19 @@
         flex-flow: column nowrap;
     }
     div.new-shopping-cart.display {
-        width: 100%;
+        width: 90% !important;
+        padding-left: 3%;
         margin: 4% auto 0% auto;
     }
     button.confirm-form-button,
     button.next-form-button,
     button.previous-form-button {
-        width: 38%;
+        width: 40% !important;
         margin-left: 25%;
+        font-size: 12px;
+    }
+    button.next-form-button {
+        width: 27% !important;
     }
     button.confirm-form-button,
     button.previous-form-button {
@@ -91,22 +96,22 @@
         padding-left: 15%;
         margin-left: 15%;
         font-size: 12px;
-        margin-top: 0;
     }
-    .login-button {
-        width: 25vw;
-        margin-left: 32%;
-        padding-left: 4%;
+    button.login-button {
+        width: 20vw !important;
+        padding: 0.2% 0% 0% 4% !important;
+        font-size: 12px !important;
     }
     .order-button {
         width: 33%;
         font-size: 12px;
         height: 4vh;
     }
-    #logout-layout {
-        width: 28vw;
-        padding-top: 4%;
-        padding-left: 10%;
+    li#logout-layout {
+        width: 100vw;
+        padding-top: 4% !important;
+        padding-left: 30%;
+        padding-right: 30%;
         margin-top: -10%;
         font-size: 12px;
     }
@@ -149,5 +154,109 @@
         height: 5vh;
         font-size: 18px;
         padding-left: 10%;
+    }
+    p#admin-choice-btn {
+        width: 33vw !important;
+        padding-left: 2% !important;
+        margin-left: 12% !important;
+        font-size: 12px;
+    }
+    button.register-button {
+        width: 34%;
+        font-size: 14px;
+        padding-top: 0%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.layout-subcategories {
+        width: 80%;
+    }
+    section.shopping-cart {
+        width: 80% !important;
+        margin-left: 10%;
+        padding-left: 2%;
+        margin-top: 10%;
+    }
+    button.print-order-btn {
+        width: 30%;
+        padding-left: 3%;
+    }
+    form.order-layout {
+        width: 90%
+    }
+    button.delete-order-btn {
+        margin-left: 60%;
+        width: 40%;
+        height: 4vh;
+        padding-left: 3%;
+    }
+    button.foto-submission-btn {
+        width: 58%;
+        padding-left: 2.5%;
+    }
+    section.info-layout {
+        width: 90%
+    }
+    div.comments-layout {
+        width: 100%;
+        margin-left: 0;
+    }
+    form.comment-form {
+        width: 100%
+    }
+    h1.grade-title {
+        margin-left: 30%;
+    }
+    div.grade-stars {
+        margin-top: 4%;
+        margin-left: 28%;
+    }
+    textarea.comment-text {
+        margin-left: 0.2%;
+    }
+    button.comment-btn {
+        width: 32%
+    }
+    label.comment-text {
+        margin-left: 0.2%;
+    }
+    section.admin-categories {
+        width: 100%;
+    }
+    section.buttons-box {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    button.admin-ins-btn {
+        width: 54% !important;
+        padding-left: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    form#admin-ins-form-message,
+    form#admin-ins-form-prod,
+    form#admin-ins-form {
+        width: 100%;
+    }
+    input.admin-category-input {
+        width: 70%;
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-prod-form-title,
+    form#admin-up-form1,
+    form#admin-up-form {
+        margin-top: 15%;
+        width: 100%
+    }
+    form#admin-up-prod-form-price,
+    form#admin-up-prod-form-img,
+    form#admin-up-form1 {
+        margin-top: 0%;
+    }
+    div.notification-layout {
+        width: 100%;
+        font-size: 12px;
+        padding-left: 2%
     }
 }

@@ -25,7 +25,7 @@
         <figcaption>Το μόνο eshop που απευθύνεται για gamers στην Ελλάδα!</figcaption>
     </figure>
     <ul class="list-heading">
-        <li><a href="./login.php" id="logout-layout">Αποσύνδεση</a></li>
+        <li id="logout-layout" onclick="logOut()">Αποσύνδεση</li>
     </ul>
 </nav>
 <body>
