@@ -38,7 +38,7 @@
     }
     button#check-button.random-button {
         padding-left: 3%;
-        padding-top: 2%;
+        padding-top: 1%;
     }
     button.next-button {
         width: 25%;
@@ -190,7 +190,7 @@
         margin-top: 10%;
     }
     button.print-order-btn {
-        width: 27%;
+        width: 27% !important;
         padding-left: 3%;
     }
     form.order-layout {
@@ -204,7 +204,7 @@
         width: 95%
     }
     button.foto-submit-btn {
-        width: 18%;
+        width: 18% !important;
         font-size: 12px;
         padding-left: 2%;
         margin-top: 0%;
@@ -243,7 +243,7 @@
         flex-flow: column nowrap;
     }
     button.admin-ins-btn {
-        width: 47% !important;
+        width: 48% !important;
         padding-left: 2%;
         margin-left: auto;
         margin-right: auto;
@@ -273,5 +273,9 @@
         width: 100%;
         font-size: 12px;
         padding-left: 3%
+    }
+    button.delete-order-btn {
+        width: 36% !important;
+        height: 4vh !important;
     }
 }

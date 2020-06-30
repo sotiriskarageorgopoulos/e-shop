@@ -211,6 +211,8 @@
                 $query8 = "INSERT INTO Product (productName,price,quantity,`description`,productImg,scName)
                            VALUES('$pname','$price','$quantity','$desc','$img','$productSc')";
 
+                $res8 = $con->query($query8);
+
                 echo '<script language="javascript">';
                 echo 'window.location.href = window.location.href;';
                 echo '</script>';   

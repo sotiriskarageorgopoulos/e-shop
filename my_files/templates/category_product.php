@@ -223,7 +223,7 @@
                             else {
                                 $insert = "INSERT INTO OrderProduct 
                                 (roadNumber,postalcode,delivery,wayOfPayment,cardNumber,expirationDateOfCard,
-                                productId,username,typeOfCard,road,quantity)
+                                productId,username,typeOfCard,road,quantity,submissionDate)
                                 VALUES('$roadNumber','$postcode','$delivery','$payment','$cardNumber','$expirationDate',
                                 '$pid','$username','$typeOfCard','$road','$quantity','$submissionDate')";
                             
